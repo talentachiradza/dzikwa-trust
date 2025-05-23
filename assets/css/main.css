@@ -1,6 +1,9 @@
+/* Add this at the very top of your CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* Base Styles */
 :root {
-    --primary-color: #476e88;
+    --primary-color: #05636d;
     --secondary-color: #e74c3c;
     --accent-color: #3498db;
     --light-color: #ecf0f1;
@@ -12,7 +15,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
@@ -26,11 +29,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 h3 {
@@ -43,7 +46,6 @@ h5{
 
 .lead {
     font-size: 1.25rem;
-    font-weight: 300;
 }
 
 /* Buttons */
@@ -75,7 +77,7 @@ h5{
 }
 
 .btn-lg {
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 1.5rem;
     font-size: 1.1rem;
 }
 
@@ -85,6 +87,10 @@ h5{
 .hero-slider {
     position: relative;
     overflow: hidden;
+}
+
+section{
+    padding: 0rem !important;
 }
 
 .hero-slide {
@@ -479,14 +485,510 @@ section {
     transform: translate(0) scale(1) !important;
 }
 
+
+/* Sponsorship Page Styles */
+.sponsor-hero {
+    background: linear-gradient(rgba(0, 82, 155, 0.8), rgba(0, 82, 155, 0.9)), url('../images/sponsor-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.step-card {
+    transition: transform 0.3s;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.step-card:hover {
+    transform: translateY(-5px);
+}
+.step-number {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.child-card {
+    transition: transform 0.3s;
+}
+.child-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Gallery Styles */
+.gallery-item {
+    position: relative;
+    margin-bottom: 15px;
+}
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+
+/* Team Page Styles */
+.team-card {
+    transition: transform 0.3s;
+}
+.team-card:hover {
+    transform: translateY(-5px);
+}
+.social-links a {
+    color: #666;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: #00529b;
+}
+
+/* Volunteer Page Styles */
+.icon-box {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/***** About Page Styles *****/
+.about-hero {
+    background: linear-gradient(rgba(255,255,255,0.9)), url('../images/about-bg-pattern.png');
+    background-size: cover;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 3px solid var(--primary);
+}
+
+.mission-values i {
+    font-size: 1.2rem;
+}
+
+.partners-section img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.partners-section img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/***** Team Page Styles *****/
+.team-hero {
+    background: linear-gradient(rgba(0,82,155,0.8), rgba(0,82,155,0.9)), url('../images/team-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.team-card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.team-card img {
+    transition: transform 0.5s;
+}
+
+.team-card:hover img {
+    transform: scale(1.05);
+}
+
+.team-card .social-links {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.team-card:hover .social-links {
+    opacity: 1;
+}
+
+.staff-section img {
+    transition: transform 0.3s;
+    border: 3px solid white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.staff-section img:hover {
+    transform: scale(1.1);
+}
+
+/***** Volunteer Page Styles *****/
+.volunteer-hero {
+    background: linear-gradient(rgba(255,255,255,0.9)), url('../images/volunteer-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.step-card {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s;
+    border: 1px solid #eee;
+}
+
+.step-card:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,82,155,0.1);
+}
+
+.step-card:hover .step-number {
+    background: white;
+    color: var(--primary);
+}
+
+.opportunity-card {
+    border-left: 4px solid var(--primary);
+    transition: transform 0.3s;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.volunteer-form .form-control {
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.volunteer-form .btn-primary {
+    padding: 12px;
+    font-weight: 600;
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/***** Shared Components *****/
+/* Mission/Value Cards */
+.value-card {
+    border-left: 4px solid var(--primary);
+    transition: all 0.3s;
+}
+
+.value-card:hover {
+    background: rgba(0,82,155,0.05);
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 30px;
+    }
+    
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-year {
+        left: -40px;
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .team-card .card-body {
+        padding: 1rem;
+    }
+    
+    .volunteer-form {
+        padding: 1.5rem;
+    }
+}
+
+/***** Contact Page Styles *****/
+.contact-hero {
+    background: linear-gradient(rgba(0,82,155,0.8), rgba(0,82,155,0.9)), url('../images/contact-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-info-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.contact-info-item .icon-box {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.map-section iframe {
+    filter: grayscale(50%);
+    transition: filter 0.3s;
+}
+
+.map-section iframe:hover {
+    filter: grayscale(0%);
+}
+
+/***** Donation Calculator Styles *****/
+.donation-calculator .form-range::-webkit-slider-thumb {
+    background: var(--primary);
+}
+
+.donation-calculator .form-range::-moz-range-thumb {
+    background: var(--primary);
+}
+
+.impact-results {
+    transition: all 0.3s;
+}
+
+#calculatedImpact {
+    font-size: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    #calculatedImpact {
+        font-size: 2.5rem;
+    }
+}
+
+/* Recurring Toggle */
+.recurring-toggle {
+    background: rgba(0,82,155,0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+.calendar-day {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.calendar-arrow {
+    padding: 0 1rem;
+    color: #6c757d;
+}
+
+/* Donor Wall */
+.donor-avatar {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Allocation Chart */
+.allocation-controls {
+    background: rgba(0,0,0,0.02);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+.allocation-slider::-webkit-slider-thumb {
+    background: var(--primary);
+}
+
+/* Milestones */
+.milestone-tracker {
+    position: relative;
+    height: 80px;
+    margin: 0 2rem;
+}
+.milestone-progress {
+    height: 6px;
+    background: #e9ecef;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+}
+.milestone-progress .progress-bar {
+    background: var(--primary);
+    transition: width 0.6s ease;
+}
+.milestone-points {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.milestone {
+    text-align: center;
+    position: relative;
+    width: 80px;
+}
+.milestone-badge {
+    width: 40px;
+    height: 40px;
+    background: #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    font-weight: bold;
+}
+.milestone.active .milestone-badge {
+    background: var(--primary);
+    color: white;
+}
+.milestone-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/***** Gallery Filter Styles *****/
+.filter-buttons .btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.gallery-item {
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(0.98);
+}
+
+/* Leaderboard Styles */
+.avatar-sm {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+  
+  #leaderboardBody tr:hover {
+    background-color: rgba(0, 82, 155, 0.05);
+  }
+  
+  /* Chart Container */
+  .chart-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 2rem;
+  }
+  
+  /* Offline Indicator */
+  .offline-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+  }
+  
+  body.offline .offline-indicator {
+    display: block;
+  }
+
+
 /* Responsive Adjustments */
 @media (max-width: 1199.98px) {
     .hero-content h1 {
         font-size: 4rem;
     }
     h2{
-       font-size: 10rem;
+       font-size: 4rem;
     }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 992px) {
+      .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    h2{
+        font-size: 3rem;
+     }
 }
 
 @media (max-width: 991.98px) {

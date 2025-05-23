@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dzikwa Trust Fund - Empowering Children Through Education</title>
@@ -106,102 +105,86 @@
         </div>
     </nav>
 
-    <main class="about-page">
-        <!-- Hero Banner -->
-        <section class="about-hero py-5 bg-light">
-            <div class="container py-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h1 class="display-4 fw-bold mb-4">Our Story of Hope</h1>
-                        <p class="lead">Transforming lives in Dzivarasekwa since 2008 through education, nutrition, and community development.</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="assets/images/pic 1.jpg" alt="Dzikwa Trust children" class="img-fluid rounded shadow">
-                    </div>
+    <main class="gallery-page">
+        <!-- Hero -->
+        <section class="gallery-hero py-5 text-white" style="background-color: var(--primary-color);">
+            <div class="container py-5 text-center">
+                <h1 class="display-4 fw-bold mb-3">Transformation Stories</h1>
+                <p class="lead">Witness the power of education through our children's journeys</p>
+            </div>
+        </section>
+
+        <!-- Gallery Filters -->
+        <section class="gallery-filters py-4 bg-light">
+            <div class="container">
+                <div class="filter-buttons d-flex flex-wrap justify-content-center gap-2">
+                    <button class="btn btn-outline-primary active" data-filter="all">All</button>
+                    <button class="btn btn-outline-primary" data-filter="graduates">Graduates</button>
+                    <button class="btn btn-outline-primary" data-filter="school">School Life</button>
+                    <button class="btn btn-outline-primary" data-filter="events">Events</button>
                 </div>
             </div>
         </section>
 
-        <!-- Mission Section -->
-        <section class="mission-section py-5">
+        <!-- Photo Gallery -->
+        <section class="photo-gallery py-5">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 order-lg-2">
-                        <img src="assets/images/pic 1.jpg" alt="Children learning" class="img-fluid rounded mb-4 mb-lg-0">
+                <div class="row g-3 gallery-grid">
+                    <!-- Image 1 -->
+                    <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="graduates">
+                        <a href="assets/images/pic 1.jpg" data-lightbox="gallery" data-title="Tinashe - Class of 2020">
+                            <img src="assets/images/pic 1.jpg" alt="Graduate" class="img-fluid rounded">
+                            <div class="gallery-caption">Tinashe - Class of 2020</div>
+                        </a>
                     </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
-                        <p>To break the cycle of poverty by providing comprehensive educational support, nutritional meals, and life skills development to vulnerable children in Dzivarasekwa.</p>
-                        <div class="mission-values mt-5">
-                            <h3 class="h4 mb-3">Our Core Values</h3>
-                            <ul class="list-unstyled">
-                                <li class="mb-3 d-flex">
-                                    <i class="fas fa-heart text-primary me-3 mt-1"></i>
-                                    <span><strong>Compassion:</strong> We treat every child with dignity and care</span>
-                                </li>
-                                <li class="mb-3 d-flex">
-                                    <i class="fas fa-shield-alt text-primary me-3 mt-1"></i>
-                                    <span><strong>Integrity:</strong> We maintain transparency in all our operations</span>
-                                </li>
-                                <li class="mb-3 d-flex">
-                                    <i class="fas fa-hand-holding-heart text-primary me-3 mt-1"></i>
-                                    <span><strong>Empowerment:</strong> We equip children with tools for lifelong success</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- More images -->
                 </div>
             </div>
         </section>
 
-        <!-- History Timeline -->
-        <section class="timeline-section py-5 bg-light">
+        <!-- Video Stories -->
+        <section class="video-stories bg-light py-5">
             <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5">Our Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2008</div>
-                        <div class="timeline-content">
-                            <h3>Founded in Dzivarasekwa</h3>
-                            <p>Started with 15 children in a small community center</p>
+                <h2 class="display-5 fw-bold text-center mb-5">Video Stories</h2>
+                <div class="row g-4">
+                    <!-- Video 1 -->
+                    <div class="col-md-6">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/example1" allowfullscreen></iframe>
                         </div>
+                        <h3 class="h5 mt-3">From Dzikwa to University</h3>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2012</div>
-                        <div class="timeline-content">
-                            <h3>First Computer Lab</h3>
-                            <p>Established ICT program with 10 donated computers</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <div class="timeline-content">
-                            <h3>100th Graduate</h3>
-                            <p>Tinashe became our first graduate to work in tech</p>
-                        </div>
-                    </div>
+                    <!-- More videos -->
                 </div>
             </div>
         </section>
 
-        <!-- Partners Section -->
-        <section class="partners-section py-5">
+        <!-- Alumni Spotlights -->
+        <section class="alumni py-5">
             <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5">Our Trusted Partners</h2>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-6 col-md-3">
-                        <img src="assets/images/pic 1.jpg" alt="Partner 1" class="img-fluid">
+                <h2 class="display-5 fw-bold text-center mb-5">Where Are They Now?</h2>
+                <div class="row g-4">
+                    <!-- Alumni 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="alumni-card card h-100 border-0 shadow-sm">
+                            <img src="assets/images/pic 1.jpg" class="card-img-top" alt="Rudo">
+                            <div class="card-body">
+                                <h3 class="h5">Rudo K.</h3>
+                                <p class="text-muted">Class of 2019</p>
+                                <p class="card-text">Now studying medicine at University of Zimbabwe</p>
+                                <blockquote class="blockquote mt-3">
+                                    <p>"Dzikwa gave me the foundation to chase my dreams."</p>
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <img src="assets/images/pic 1.jpg" alt="Partner 2" class="img-fluid">
-                    </div>
-                    <!-- Add more partners -->
+                    <!-- More alumni -->
                 </div>
             </div>
         </section>
     </main>
 
-     <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
         <div class="container">
             <div class="row g-4">

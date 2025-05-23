@@ -148,3 +148,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Form submission handler
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real implementation, you would process the payment here
+            alert('Thank you for your donation! In a real implementation, this would process your payment.');
+        });
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+            });
+          }

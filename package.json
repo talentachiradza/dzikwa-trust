@@ -9,10 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@splidejs/splide": "^4.1.4",
     "aos": "^2.3.4",
-    "bootstrap": "^5.3.6"
+    "bootstrap": "^5.3.6",
+    "firebase-functions": "^6.3.2",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
+    "nodemailer": "^7.0.3"
   },
-  "devDependencies": {},
   "description": ""
 }

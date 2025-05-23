@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Dzikwa Trust</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            background-color: #00529b;
+            min-height: 100vh;
+            color: white;
+        }
+        .sidebar .nav-link {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 5px;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+        }
+        .sidebar .nav-link i {
+            width: 20px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+        }
+        .stat-card {
+            border-left: 4px solid #00529b;
+        }
+        .progress-thin {
+            height: 6px;
+        }
+        .recent-donations {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Mobile-first responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      height: auto;
+      z-index: 1000;
+      padding: 0.5rem !important;
+    }
+    
+    .sidebar .nav {
+      flex-direction: row !important;
+      overflow-x: auto;
+    }
+    
+    .sidebar .nav-link {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+      margin-bottom: 0;
+    }
+    
+    .sidebar .nav-link i {
+      margin-right: 0;
+      display: block;
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+    
+    .main-content {
+      padding-bottom: 60px !important;
+    }
+    
+    .table-responsive {
+      font-size: 0.8rem;
+    }
+    
+    .stat-card {
+      margin-bottom: 1rem;
+    }
+    
+    .modal-dialog {
+      margin: 0.5rem auto;
+    }
+  }
+  
+  /* Touch-friendly elements */
+  .btn, .form-control {
+    min-height: 44px; /* Apple recommended minimum touch target */
+  }
+  
+  /* Offline indicator for mobile */
+  .offline-indicator {
+    position: fixed;
+    bottom: 60px; /* Above mobile nav */
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar p-0">
+                <div class="p-4">
+                    <img src="assets/images/logo.png" alt="Dzikwa Trust Logo" class="img-fluid mb-4" width="180">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#goals">
+                                <i class="fas fa-bullseye"></i> Goals
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#donations">
+                                <i class="fas fa-donate"></i> Donations
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#donors">
+                                <i class="fas fa-users"></i> Donors
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reports">
+                                <i class="fas fa-chart-bar"></i> Reports
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class="nav-link" href="../index.html">
+                                <i class="fas fa-sign-out-alt"></i> Back to Main Site
+                            </a>
+                        </li>
+                        <li class="nav-item">
+    <a class="nav-link" href="#leaderboard">
+      <i class="fas fa-trophy"></i> Donor Leaderboard
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#donorManagement">
+      <i class="fas fa-user-friends"></i> Donor Management
+    </a>
+  </li>
+                    </ul>
+                </div>
+
+
+ 
+
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 ms-sm-auto px-md-4 py-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Admin Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <span class="text-muted me-3" id="currentDate"></span>
+                    </div>
+                </div>
+
+  
+  <!-- Add to main content -->
+  <div class="card mb-4" id="donorManagement">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">Donor Management</h5>
+      <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addDonorModal">
+        <i class="fas fa-plus"></i> Add Donor
+      </button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table" id="donorsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Total Given</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add Donor Modal -->
+  <div class="modal fade" id="addDonorModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add New Donor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="donorForm">
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Donor Type</label>
+              <select class="form-select" name="type">
+                <option value="individual">Individual</option>
+                <option value="corporate">Corporate</option>
+                <option value="foundation">Foundation</option>
+              </select>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" name="isRecurring">
+              <label class="form-check-label">Recurring Donor</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="saveDonor">Save Donor</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card stat-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="text-muted mb-2">Monthly Goal</h6>
+                                        <h3 id="currentGoal">100</h3>
+                                    </div>
+                                    <div class="avatar-sm bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-bullseye text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <span class="text-success" id="goalProgressText">75%</span>
+                                    <div class="progress progress-thin mt-1">
+                                        <div id="goalProgressBar" class="progress-bar bg-success" role="progressbar" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="text-muted mb-2">Current Sponsors</h6>
+                                        <h3 id="currentSponsors">75</h3>
+                                    </div>
+                                    <div class="avatar-sm bg-info bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-child text-info"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <span class="text-muted">Last month: 68</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="text-muted mb-2">Monthly Donations</h6>
+                                        <h3 id="monthlyDonations">$2,450</h3>
+                                    </div>
+                                    <div class="avatar-sm bg-warning bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-dollar-sign text-warning"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <span class="text-success">+12% from last month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="text-muted mb-2">New Donors</h6>
+                                        <h3 id="newDonors">14</h3>
+                                    </div>
+                                    <div class="avatar-sm bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-user-plus text-success"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <span class="text-success">+5 this week</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals Section -->
+                <div class="card mb-4" id="goals">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Monthly Goal Settings</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Children to Sponsor</span>
+                                    <input type="number" id="newGoal" class="form-control" value="100" min="1">
+                                    <button id="updateGoal" class="btn btn-primary">Update Goal</button>
+                                </div>
+                                <div class="alert alert-success d-none" id="goalAlert"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Goal Progress</h6>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Current: <strong id="currentSponsored">75</strong> children</span>
+                                    <span>Goal: <strong id="displayGoal">100</strong> children</span>
+                                </div>
+                                <div class="progress mb-3">
+                                    <div id="goalCompletionProgress" class="progress-bar bg-primary" role="progressbar" style="width: 75%"></div>
+                                </div>
+                                <div id="goalMessage" class="small text-muted">
+                                    25 more children needed to reach this month's goal
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Donations -->
+                <div class="card mb-4" id="donations">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Recent Donations</h5>
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="timeRangeDropdown" data-bs-toggle="dropdown">
+                                This Month
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Week</a></li>
+                                <li><a class="dropdown-item active" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive recent-donations">
+                            <table class="table table-hover mb-0">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Donor</th>
+                                        <th>Amount</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="donationsTable">
+                                    <!-- Dynamically populated -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goal History Chart -->
+                <div class="card mb-4" id="reports">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Goal Performance History</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="goalHistoryChart" height="250"></canvas>
+                    </div>
+                </div>
+
+                <div class="card mb-4" id="leaderboard">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                      <h5 class="mb-0">Top Donors</h5>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="offlineMode">
+                        <label class="form-check-label" for="offlineMode">Offline Mode</label>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Rank</th>
+                              <th>Donor</th>
+                              <th>Total Given</th>
+                              <th>Children Sponsored</th>
+                              <th>Since</th>
+                            </tr>
+                          </thead>
+                          <tbody id="leaderboardBody">
+                                        <!-- Offline fallback -->
+            <tr id="offlineRow" class="d-none">
+                <td colspan="5" class="text-center text-muted py-4">
+                  <i class="fas fa-cloud-off fa-2x mb-2"></i>
+                  <p>Currently offline - showing cached data</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Admin Scripts -->
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "dzikwa-trust.firebaseapp.com",
+            databaseURL: "https://dzikwa-trust.firebaseio.com",
+            projectId: "dzikwa-trust",
+            storageBucket: "dzikwa-trust.appspot.com",
+            messagingSenderId: "1234567890",
+            appId: "1:1234567890:web:abcdef1234567890"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        const auth = firebase.auth();
+
+        // Current month key (e.g. "2023-11")
+        const currentMonth = new Date().toISOString().slice(0, 7);
+
+        // DOM Elements
+        const currentDateEl = document.getElementById('currentDate');
+        const newGoalInput = document.getElementById('newGoal');
+        const updateGoalBtn = document.getElementById('updateGoal');
+        const goalAlert = document.getElementById('goalAlert');
+        const currentGoalEl = document.getElementById('currentGoal');
+        const displayGoalEl = document.getElementById('displayGoal');
+        const currentSponsoredEl = document.getElementById('currentSponsored');
+        const goalCompletionProgress = document.getElementById('goalCompletionProgress');
+        const goalMessageEl = document.getElementById('goalMessage');
+        const donationsTable = document.getElementById('donationsTable');
+
+        // Initialize date display
+        currentDateEl.textContent = new Date().toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+
+        // Authentication (simple version - in production use proper auth flow)
+        auth.signInWithEmailAndPassword('admin@dzikwatrust.org', 'your_secure_password')
+            .catch(error => {
+                console.error("Authentication error:", error);
+                // Redirect to login page in production
+            });
+
+        // Load current goal
+        database.ref('goals/current').on('value', (snapshot) => {
+            const goal = snapshot.val() || 100;
+            currentGoalEl.textContent = goal;
+            displayGoalEl.textContent = goal;
+            newGoalInput.value = goal;
+            updateGoalProgress();
+        });
+
+        // Load donations data
+        database.ref('donations').on('value', (snapshot) => {
+            const donationsData = snapshot.val() || {};
+            updateDonationsTable(donationsData);
+            updateGoalProgress();
+        });
+
+        // Update goal
+        updateGoalBtn.addEventListener('click', function() {
+            const newGoal = parseInt(newGoalInput.value);
+            if (newGoal > 0) {
+                database.ref('goals/current').set(newGoal)
+                    .then(() => {
+                        goalAlert.textContent = `Goal updated to ${newGoal} children!`;
+                        goalAlert.classList.remove('d-none');
+                        setTimeout(() => goalAlert.classList.add('d-none'), 3000);
+                        
+                        // Update goal history
+                        const monthKey = new Date().toISOString().slice(0, 7);
+                        database.ref(`goals/history/${monthKey}`).set(newGoal);
+                    });
+            }
+        });
+
+        // Update goal progress
+        function updateGoalProgress() {
+            const goal = parseInt(currentGoalEl.textContent);
+            database.ref(`donations/${currentMonth}`).once('value').then((snapshot) => {
+                const monthlyTotal = (snapshot.val() || 0) / 100; // Convert cents to dollars
+                const sponsored = Math.floor(monthlyTotal / 30); // $30 per child
+                const progress = Math.min(Math.round((sponsored / goal) * 100), 100);
+                
+                currentSponsoredEl.textContent = sponsored;
+                goalCompletionProgress.style.width = `${progress}%`;
+                
+                const remaining = goal - sponsored;
+                goalMessageEl.textContent = remaining > 0 
+                    ? `${remaining} more children needed to reach this month's goal`
+                    : "Monthly goal achieved!";
+                
+                // Update stats card
+                document.getElementById('goalProgressText').textContent = `${progress}%`;
+                document.getElementById('goalProgressBar').style.width = `${progress}%`;
+            });
+        }
+
+        // Update donations table
+        function updateDonationsTable(donationsData) {
+            // In production, you would have a separate donations log
+            // This is a simplified version
+            
+            // Clear table
+            donationsTable.innerHTML = '';
+            
+            // Get current month donations
+            const monthlyDonations = donationsData[currentMonth] || 0;
+            document.getElementById('monthlyDonations').textContent = 
+                `$${(monthlyDonations / 100).toLocaleString()}`;
+            
+            // Simulate recent donations (in real app, store each donation separately)
+            const sampleDonations = [
+                { date: new Date(), name: "Sarah Johnson", amount: 5000, type: "Monthly", status: "Completed" },
+                { date: new Date(Date.now() - 86400000), name: "Mark Williams", amount: 3000, type: "One-time", status: "Completed" },
+                // Add more sample data...
+            ];
+            
+            sampleDonations.forEach(donation => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${donation.date.toLocaleDateString()}</td>
+                    <td>${donation.name}</td>
+                    <td>$${(donation.amount / 100).toFixed(2)}</td>
+                    <td>${donation.type}</td>
+                    <td><span class="badge bg-success">${donation.status}</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary">View</button>
+                    </td>
+                `;
+                donationsTable.appendChild(row);
+            });
+        }
+
+        // Initialize chart
+        function initGoalHistoryChart() {
+            const ctx = document.getElementById('goalHistoryChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Sep', 'Oct', 'Nov'],
+                    datasets: [{
+                        label: 'Goal',
+                        data: [80, 90, 100],
+                        backgroundColor: 'rgba(0, 82, 155, 0.7)',
+                        borderColor: 'rgba(0, 82, 155, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Actual',
+                        data: [72, 85, 75],
+                        backgroundColor: 'rgba(40, 167, 69, 0.7)',
+                        borderColor: 'rgba(40, 167, 69, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Children'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // In production, load actual data from Firebase
+            database.ref('goals/history').on('value', (snapshot) => {
+                const history = snapshot.val() || {};
+                // Update chart data here
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initGoalHistoryChart();
+        });
+    </script>
+</body>
+</html>

@@ -31,7 +31,7 @@
     <link rel="icon" type="image/png" href="assets/images/logo.png">
 
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
 </head>
 <body>
     <!-- Top Bar -->
@@ -106,103 +106,152 @@
         </div>
     </nav>
 
-    <main class="about-page">
-        <!-- Hero Banner -->
-        <section class="about-hero py-5 bg-light">
+    <main class="volunteer-page">
+        <!-- Hero -->
+        <section class="volunteer-hero py-5 bg-light">
             <div class="container py-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h1 class="display-4 fw-bold mb-4">Our Story of Hope</h1>
-                        <p class="lead">Transforming lives in Dzivarasekwa since 2008 through education, nutrition, and community development.</p>
+                        <h1 class="display-4 fw-bold mb-4">Volunteer Your Skills</h1>
+                        <p class="lead mb-4">Join our team of changemakers and directly impact children's lives</p>
+                        <a href="#opportunities" class="btn btn-primary btn-lg">View Opportunities</a>
                     </div>
                     <div class="col-lg-6">
-                        <img src="assets/images/pic 1.jpg" alt="Dzikwa Trust children" class="img-fluid rounded shadow">
+                        <img src="assets/images/pic 1.jpg" alt="Volunteers with children" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mission Section -->
-        <section class="mission-section py-5">
+        <!-- Why Volunteer -->
+        <section class="why-volunteer py-5">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 order-lg-2">
-                        <img src="assets/images/pic 1.jpg" alt="Children learning" class="img-fluid rounded mb-4 mb-lg-0">
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
-                        <p>To break the cycle of poverty by providing comprehensive educational support, nutritional meals, and life skills development to vulnerable children in Dzivarasekwa.</p>
-                        <div class="mission-values mt-5">
-                            <h3 class="h4 mb-3">Our Core Values</h3>
-                            <ul class="list-unstyled">
-                                <li class="mb-3 d-flex">
-                                    <i class="fas fa-heart text-primary me-3 mt-1"></i>
-                                    <span><strong>Compassion:</strong> We treat every child with dignity and care</span>
-                                </li>
-                                <li class="mb-3 d-flex">
-                                    <i class="fas fa-shield-alt text-primary me-3 mt-1"></i>
-                                    <span><strong>Integrity:</strong> We maintain transparency in all our operations</span>
-                                </li>
-                                <li class="mb-3 d-flex">
-                                    <i class="fas fa-hand-holding-heart text-primary me-3 mt-1"></i>
-                                    <span><strong>Empowerment:</strong> We equip children with tools for lifelong success</span>
-                                </li>
-                            </ul>
+                <h2 class="display-5 fw-bold text-center mb-5">Why Volunteer With Us?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                            <div class="icon-box bg-primary text-white rounded-circle mx-auto mb-4">
+                                <i class="fas fa-hands-helping fs-3"></i>
+                            </div>
+                            <h3 class="h4">Direct Impact</h3>
+                            <p>See immediate results of your contribution in children's lives</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- History Timeline -->
-        <section class="timeline-section py-5 bg-light">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5">Our Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2008</div>
-                        <div class="timeline-content">
-                            <h3>Founded in Dzivarasekwa</h3>
-                            <p>Started with 15 children in a small community center</p>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                            <div class="icon-box bg-primary text-white rounded-circle mx-auto mb-4">
+                                <i class="fas fa-globe-africa fs-3"></i>
+                            </div>
+                            <h3 class="h4">Cultural Exchange</h3>
+                            <p>Experience Zimbabwean culture while making a difference</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2012</div>
-                        <div class="timeline-content">
-                            <h3>First Computer Lab</h3>
-                            <p>Established ICT program with 10 donated computers</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <div class="timeline-content">
-                            <h3>100th Graduate</h3>
-                            <p>Tinashe became our first graduate to work in tech</p>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                            <div class="icon-box bg-primary text-white rounded-circle mx-auto mb-4">
+                                <i class="fas fa-users fs-3"></i>
+                            </div>
+                            <h3 class="h4">Community</h3>
+                            <p>Join a network of passionate local and international volunteers</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Partners Section -->
-        <section class="partners-section py-5">
+        <!-- Opportunities -->
+        <section id="opportunities" class="opportunities py-5 bg-light">
             <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5">Our Trusted Partners</h2>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-6 col-md-3">
-                        <img src="assets/images/pic 1.jpg" alt="Partner 1" class="img-fluid">
+                <h2 class="display-5 fw-bold text-center mb-5">Current Opportunities</h2>
+                <div class="row g-4">
+                    <!-- Opportunity 1 -->
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h4">Teaching Assistants</h3>
+                                <p class="text-muted"><i class="fas fa-clock me-2"></i> 3-6 month commitment</p>
+                                <p>Support our teachers in English, Math, and Science classes for primary and secondary students.</p>
+                                <ul class="mb-4">
+                                    <li>Minimum 2 hours per day</li>
+                                    <li>Teaching experience preferred</li>
+                                    <li>Patience with children required</li>
+                                </ul>
+                                <a href="#apply" class="btn btn-outline-primary">Apply Now</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <img src="assets/images/pic 1.jpg" alt="Partner 2" class="img-fluid">
+                    
+                    <!-- Opportunity 2 -->
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h4">IT Mentors</h3>
+                                <p class="text-muted"><i class="fas fa-clock me-2"></i> Flexible hours</p>
+                                <p>Teach basic computer skills and coding to our Digital Skills Program students.</p>
+                                <ul class="mb-4">
+                                    <li>Basic computer knowledge required</li>
+                                    <li>Experience with Scratch/Python helpful</li>
+                                    <li>Weekend workshops available</li>
+                                </ul>
+                                <a href="#apply" class="btn btn-outline-primary">Apply Now</a>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Add more partners -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteer Form -->
+        <section id="apply" class="volunteer-form py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-5">
+                                <h2 class="display-5 fw-bold text-center mb-4">Apply to Volunteer</h2>
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="firstName" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lastName" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="interest" class="form-label">Area of Interest</label>
+                                            <select class="form-select" id="interest">
+                                                <option selected>Choose...</option>
+                                                <option>Teaching</option>
+                                                <option>IT Mentoring</option>
+                                                <option>Fundraising</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="message" class="form-label">Why do you want to volunteer with us?</label>
+                                            <textarea class="form-control" id="message" rows="3"></textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
      <!-- Footer -->
-    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+    <footer class="footer bg-dark text-white pt-5 pb-3">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 mb-4 mb-lg-0">
