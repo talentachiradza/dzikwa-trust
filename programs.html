@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Dzikwa Trust Fund</title>
+    <meta name="description" content="Explore Dzikwa Trust Fund's comprehensive programs supporting education, nutrition, and community development in Zimbabwe.">
+    
+     
+        <!-- Add this before your other meta tags -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Splide Slider CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <span class="me-3"><i class="fas fa-phone me-2"></i> +263 123 456 789</span>
+                <span><i class="fas fa-envelope me-2"></i> dzikwatrust@africaonline.co.zw</span>
+            </div>
+            <div class="social-links">
+                <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Our story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="programs.html">Our Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="get-involved.html">Get Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-lg-3">
+                    <a href="donate.html" class="btn btn-primary">Donate Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-5 fw-bold text-gradient-primary">Our Programs</h1>
+                    <p class="lead">Comprehensive initiatives addressing education, nutrition, and community development</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-lg-end mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Our Programs</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Navigation -->
+    <section class="py-3 bg-white sticky-top program-nav" style="top: 120px; z-index: 1020;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-pills justify-content-center" id="programsTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="education-tab" data-bs-toggle="pill" data-bs-target="#education" type="button" role="tab" aria-controls="education" aria-selected="true">
+                                <i class="fas fa-book me-2"></i> Education
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="ict-tab" data-bs-toggle="pill" data-bs-target="#ict" type="button" role="tab" aria-controls="ict" aria-selected="false">
+                                <i class="fas fa-laptop me-2"></i> ICT Skills
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="reforestation-tab" data-bs-toggle="pill" data-bs-target="#reforestation" type="button" role="tab" aria-controls="reforestation" aria-selected="false">
+                                <i class="fas fa-tree me-2"></i> Reforestation
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="sisterhood-tab" data-bs-toggle="pill" data-bs-target="#sisterhood" type="button" role="tab" aria-controls="sisterhood" aria-selected="false">
+                                <i class="fas fa-female me-2"></i> Sisterhood
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="feeding-tab" data-bs-toggle="pill" data-bs-target="#feeding" type="button" role="tab" aria-controls="feeding" aria-selected="false">
+                                <i class="fas fa-utensils me-2"></i> Nutrition
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="tab-content" id="programsTabContent">
+                <!-- Education Program -->
+                <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="education-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                            <img src="assets/images/edu3 (2).png" alt="Education Program" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-left">
+                            <h2 class="mb-4">Education Support Program</h2>
+                            <p>Our comprehensive education program ensures vulnerable children have access to quality learning opportunities from early childhood through vocational training.</p>
+                            
+                            <div class="program-features mt-4">
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-primary text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">School Fee Assistance</h5>
+                                            <p class="mb-0">Covering tuition and examination fees for primary, secondary, and vocational students</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-primary text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Learning Materials</h5>
+                                            <p class="mb-0">Providing uniforms, books, stationery, and other essential supplies</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-primary text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">After-School Tutoring</h5>
+                                            <p class="mb-0">Supplemental instruction in core subjects to boost academic performance</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-primary text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Career Guidance</h5>
+                                            <p class="mb-0">Helping students explore career paths and transition to higher education or employment</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-stats mt-5">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">350+</div>
+                                        <div class="stat-label">Students Supported</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">95%</div>
+                                        <div class="stat-label">Pass Rate</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">50+</div>
+                                        <div class="stat-label">Schools Partnered</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">120</div>
+                                        <div class="stat-label">Vocational Graduates</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="get-involved.html#volunteer" class="btn btn-primary me-2">Volunteer as Tutor</a>
+                                <a href="donate.html#education" class="btn btn-outline-primary">Support Education</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ICT Skills Program -->
+                <div class="tab-pane fade" id="ict" role="tabpanel" aria-labelledby="ict-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+                            <img src="assets/images/ict2.JPG" alt="ICT Skills Program" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                            <h2 class="mb-4">ICT Skills Development</h2>
+                            <p>Our digital literacy program equips youth with essential technology skills for academic and career success in the 21st century.</p>
+                            
+                            <div class="program-features mt-4">
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-info text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Computer Literacy</h5>
+                                            <p class="mb-0">Basic to advanced computer skills training for all ages</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-info text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Coding & Programming</h5>
+                                            <p class="mb-0">Introduction to web development, Python, and other programming languages</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-info text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Digital Citizenship</h5>
+                                            <p class="mb-0">Teaching safe and responsible use of technology and social media</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-info text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Career Pathways</h5>
+                                            <p class="mb-0">Connecting students with tech internships and job opportunities</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-stats mt-5">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">250+</div>
+                                        <div class="stat-label">Students Trained</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">30</div>
+                                        <div class="stat-label">Computers Available</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">15</div>
+                                        <div class="stat-label">Tech Internships</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">5</div>
+                                        <div class="stat-label">Coding Clubs</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="get-involved.html#volunteer" class="btn btn-info me-2">Teach ICT Skills</a>
+                                <a href="donate.html#ict" class="btn btn-outline-info">Donate Equipment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reforestation Program -->
+                <div class="tab-pane fade" id="reforestation" role="tabpanel" aria-labelledby="reforestation-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                            <img src="assets/images/refo2.JPG" alt="Reforestation Program" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-left">
+                            <h2 class="mb-4">Community Reforestation (ReFoSec)</h2>
+                            <p>Our environmental initiative combines tree planting with education to restore ecosystems while empowering youth as environmental stewards.</p>
+                            
+                            <div class="program-features mt-4">
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-success text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Tree Planting</h5>
+                                            <p class="mb-0">Growing and planting native tree species in deforested areas</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-success text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Environmental Education</h5>
+                                            <p class="mb-0">Teaching sustainable practices and conservation principles</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-success text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Nursery Management</h5>
+                                            <p class="mb-0">Operating community tree nurseries as sustainable enterprises</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-success text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Green Jobs</h5>
+                                            <p class="mb-0">Creating employment opportunities in environmental sectors</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-stats mt-5">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">5,000+</div>
+                                        <div class="stat-label">Trees Planted</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">3</div>
+                                        <div class="stat-label">Community Nurseries</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">200</div>
+                                        <div class="stat-label">Youth Trained</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">15</div>
+                                        <div class="stat-label">Green Jobs Created</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="get-involved.html#volunteer" class="btn btn-success me-2">Join Planting Day</a>
+                                <a href="donate.html#reforestation" class="btn btn-outline-success">Support Reforestation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sisterhood Program -->
+                <div class="tab-pane fade" id="sisterhood" role="tabpanel" aria-labelledby="sisterhood-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+                            <img src="assets/images/sister.jpg" alt="Sisterhood Program" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                            <h2 class="mb-4">Sisterhood Program</h2>
+                            <p>Empowering young girls through mentorship, life skills training, and creating safe spaces for personal growth and development.</p>
+                            
+                            <div class="program-features mt-4">
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-warning text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Mentorship</h5>
+                                            <p class="mb-0">Pairing girls with positive female role models</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-warning text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Life Skills</h5>
+                                            <p class="mb-0">Workshops on health, confidence, and decision-making</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-warning text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Academic Support</h5>
+                                            <p class="mb-0">Targeted tutoring and career guidance for girls</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-warning text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Safe Spaces</h5>
+                                            <p class="mb-0">Regular meetings for sharing, learning, and support</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-stats mt-5">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">120+</div>
+                                        <div class="stat-label">Girls Participating</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">25</div>
+                                        <div class="stat-label">Mentors</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">100%</div>
+                                        <div class="stat-label">School Retention</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">15</div>
+                                        <div class="stat-label">Alumni in College</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="get-involved.html#volunteer" class="btn btn-warning me-2">Become a Mentor</a>
+                                <a href="donate.html#sisterhood" class="btn btn-outline-warning">Support the Sisterhood</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nutrition Program -->
+                <div class="tab-pane fade" id="feeding" role="tabpanel" aria-labelledby="feeding-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                            <img src="assets/images/nutrition.JPG" alt="Nutrition Program" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-left">
+                            <h2 class="mb-4">Nutrition Program</h2>
+                            <p>Providing daily nutritious meals to ensure children have the energy to learn and grow, while educating families about healthy eating.</p>
+                            
+                            <div class="program-features mt-4">
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-danger text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Daily Meals</h5>
+                                            <p class="mb-0">Nutritious breakfast and lunch served Monday to Saturday</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-danger text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Nutrition Education</h5>
+                                            <p class="mb-0">Teaching children and families about balanced diets</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-danger text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Food Security</h5>
+                                            <p class="mb-0">Supporting families with gardening and food preservation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box bg-danger text-white rounded-circle">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Health Monitoring</h5>
+                                            <p class="mb-0">Tracking growth and addressing malnutrition</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-stats mt-5">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">36,500+</div>
+                                        <div class="stat-label">Meals Served Annually</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">200</div>
+                                        <div class="stat-label">Children Fed Daily</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">85%</div>
+                                        <div class="stat-label">Improved BMI</div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-number">50</div>
+                                        <div class="stat-label">Family Gardens</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="get-involved.html#volunteer" class="btn btn-danger me-2">Help in Kitchen</a>
+                                <a href="donate.html#feeding" class="btn btn-outline-danger">Sponsor Meals</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Success Stories -->
+       <section class="success-stories py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Success Stories</h2>
+                <p class="lead">Hear from the children and families we've impacted</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="testimonialSlider" class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="testimonial-card" data-aos="fade-up">
+                                        <div class="testimonial-image">
+                                            <img src="assets/images/test1.jpg" alt="Tendai's Story" class="img-fluid rounded-circle">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>"Thanks to Dzikwa Trust, I was able to complete my education and now I'm studying computer science at university. The ICT program gave me skills that set me apart."</p>
+                                            <div class="testimonial-author">
+                                                <h4>Tendai M.</h4>
+                                                <p>Former Student, ICT Graduate</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="testimonial-card" data-aos="fade-up">
+                                        <div class="testimonial-image">
+                                            <img src="assets/images/test2.JPG" alt="Rumbidzai's Story" class="img-fluid rounded-circle">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>"The Sisterhood Program taught me about self-worth and gave me mentors who guided me through difficult times. I'm now mentoring younger girls in my community."</p>
+                                            <div class="testimonial-author">
+                                                <h4>Talent K.</h4>
+                                                <p>Sisterhood Program Participant</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="testimonial-card" data-aos="fade-up">
+                                        <div class="testimonial-image">
+                                            <img src="assets/images/test3.JPG" alt="Family Story" class="img-fluid rounded-circle">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>"The feeding program ensures my children get at least one nutritious meal a day. This support allows me to focus on finding work knowing my children are cared for."</p>
+                                            <div class="testimonial-author">
+                                                <h4>Grace N.</h4>
+                                                <p>Parent</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5 text-white" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="mb-3">Ready to Make a Difference?</h2>
+                    <p class="lead mb-0">Support our programs and help transform children's lives through education and community development.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <a href="donate.html" class="btn btn-light btn-lg me-2">Donate Now</a>
+                    <a href="get-involved.html" class="btn btn-outline-light btn-lg">Volunteer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" class="footer-logo mb-3" height="100">
+                        <p>Dzikwa Trust Fund has been empowering vulnerable children in Zimbabwe through education, nutrition, and community development since 1995.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
+                        <li class="mb-2"><a href="get-involved.html" class="text-white">Get Involved</a></li>
+                        <li class="mb-2"><a href="donate.html" class="text-white">Donate</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Our Programs</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="programs.html#education" class="text-white">Education Support</a></li>
+                        <li class="mb-2"><a href="programs.html#ict" class="text-white">ICT Skills Development</a></li>
+                        <li class="mb-2"><a href="programs.html#reforestation" class="text-white">Community Reforestation</a></li>
+                        <li class="mb-2"><a href="programs.html#sisterhood" class="text-white">Sisterhood Program</a></li>
+                        <li class="mb-2"><a href="programs.html#feeding" class="text-white">Nutrition Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-heading mb-4">Contact Us</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            3147 Rujeko Street, Dzivarasekwa 1, Harare, Zimbabwe
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            +263 123 456 789
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            dzikwatrust@africaonline.co.zw
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Mon-Sat: 9:00 AM - 5:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Dzikwa Trust Fund. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+     <!-- JavaScript Libraries -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+     
+     <!-- Custom JS -->
+     <script src="assets/js/main.js"></script>
+</body>
+</html>

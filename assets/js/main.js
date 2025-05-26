@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize main hero slider
     if (document.getElementById('mainSlider')) {
         new Splide('#mainSlider', {
-            type: 'loop',
+            type: 'loop',         // default is 'slide', but use 'loop' to slide from both sides
             rewind: true,
             autoplay: true,
-            interval: 5000,
-            speed: 1000,
-            arrows: true,
-            pagination: true
+            interval: 5000,      // 15 seconds
+            speed: 1000,          // transition speed: 1 second
+            arrows: true,         // show navigation arrows
+            pagination: true      // optional, shows slide dots
         }).mount();
     }
     
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 counter.innerText = Math.ceil(count + increment);
                 setTimeout(animateCounters, 1);
             } else {
-                counter.innerText = target.toLocaleString();
+                counter.innerText = target.toLocaleString(); // Format number with commas
             }
         });
     };
@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.classList.contains('newsletter-form')) {
                 const emailInput = this.querySelector('input[type="email"]');
                 if (emailInput && emailInput.value) {
+                    // Here you would typically send the data to your server
                     alert('Thank you for subscribing to our newsletter!');
                     this.reset();
                 }
@@ -131,16 +132,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set current year in footer
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
-
-    // Service Worker registration
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js');
+    // Mobile menu dropdown fix
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', function() {
+            if (window.innerWidth >= 992) {
+                this.querySelector('.dropdown-menu').classList.add('show');
+            }
         });
-    }
+        
+        dropdown.addEventListener('mouseleave', function() {
+            if (window.innerWidth >= 992) {
+                this.querySelector('.dropdown-menu').classList.remove('show');
+            }
+        });
+    });
 });
+
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Form submission handler
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real implementation, you would process the payment here
+            alert('Thank you for your donation! In a real implementation, this would process your payment.');
+        });
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+            });
+          }
