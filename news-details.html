@@ -38,7 +38,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="contact-info">
                 <span class="me-3"><i class="fas fa-phone me-2"></i> +263 123 456 789</span>
-                <span><i class="fas fa-envelope me-2"></i> info@dzikwa.org</span>
+                <span><i class="fas fa-envelope me-2"></i> dzikwatrust@africaonline.co.zw</span>
             </div>
             <div class="social-links">
                 <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <!-- Navigation -->
+   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -79,84 +79,87 @@
         </div>
     </div>
 </nav>
-    <main class="gallery-page">
-        <!-- Hero -->
-        <section class="gallery-hero py-5 text-white" style="background-color: var(--primary-color);">
-            <div class="container py-5 text-center">
-                <h1 class="display-4 fw-bold mb-3">Transformation Stories</h1>
-                <p class="lead">Witness the power of education through our children's journeys</p>
-            </div>
-        </section>
 
-        <!-- Gallery Filters -->
-        <section class="gallery-filters py-4 bg-light">
-            <div class="container">
-                <div class="filter-buttons d-flex flex-wrap justify-content-center gap-2">
-                    <button class="btn btn-outline-primary active" data-filter="all">All</button>
-                    <button class="btn btn-outline-primary" data-filter="graduates">Graduates</button>
-                    <button class="btn btn-outline-primary" data-filter="school">School Life</button>
-                    <button class="btn btn-outline-primary" data-filter="events">Events</button>
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-5 fw-bold text-gradient-primary" id="news-title">News Title</h1>
+                    <p class="lead" id="news-date">Posted on: Loading date...</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-lg-end mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="news.html">News</a></li>
+                            <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-title">Article</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Photo Gallery -->
-        <section class="photo-gallery py-5">
-            <div class="container">
-                <div class="row g-3 gallery-grid">
-                    <!-- Image 1 -->
-                    <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="graduates">
-                        <a href="assets/images/pic 1.jpg" data-lightbox="gallery" data-title="Tinashe - Class of 2020">
-                            <img src="assets/images/pic 1.jpg" alt="Graduate" class="img-fluid rounded">
-                            <div class="gallery-caption">Tinashe - Class of 2020</div>
-                        </a>
-                    </div>
-                    <!-- More images -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Video Stories -->
-        <section class="video-stories bg-light py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5">Video Stories</h2>
-                <div class="row g-4">
-                    <!-- Video 1 -->
-                    <div class="col-md-6">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/example1" allowfullscreen></iframe>
+    <!-- News Detail Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="news-detail-card">
+                        <img src="" alt="News image" class="img-fluid rounded mb-4" id="news-detail-image">
+                        <div class="news-meta mb-4">
+                            <span class="badge bg-primary me-2" id="news-category">Category</span>
+                            <span class="text-muted" id="news-full-date">Posted on: Loading...</span>
                         </div>
-                        <h3 class="h5 mt-3">From Dzikwa to University</h3>
-                    </div>
-                    <!-- More videos -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Alumni Spotlights -->
-        <section class="alumni py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5">Where Are They Now?</h2>
-                <div class="row g-4">
-                    <!-- Alumni 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="alumni-card card h-100 border-0 shadow-sm">
-                            <img src="assets/images/pic 1.jpg" class="card-img-top" alt="Rudo">
-                            <div class="card-body">
-                                <h3 class="h5">Rudo K.</h3>
-                                <p class="text-muted">Class of 2019</p>
-                                <p class="card-text">Now studying medicine at University of Zimbabwe</p>
-                                <blockquote class="blockquote mt-3">
-                                    <p>"Dzikwa gave me the foundation to chase my dreams."</p>
-                                </blockquote>
+                        <div class="news-content" id="news-full-content">
+                            <!-- Content will be loaded here -->
+                        </div>
+                        
+                        <!-- Reactions Section -->
+                        <div class="reactions-section mt-5 pt-4 border-top">
+                            <h4 class="mb-4">React to this article</h4>
+                            <div class="reaction-buttons d-flex justify-content-around mb-4">
+                                <button class="btn btn-outline-primary reaction-btn" data-reaction="like">
+                                    <i class="fas fa-thumbs-up me-2"></i> Like <span class="count" id="like-count">0</span>
+                                </button>
+                                <button class="btn btn-outline-success reaction-btn" data-reaction="love">
+                                    <i class="fas fa-heart me-2"></i> Love <span class="count" id="love-count">0</span>
+                                </button>
+                                <button class="btn btn-outline-warning reaction-btn" data-reaction="celebrate">
+                                    <i class="fas fa-grin-stars me-2"></i> Celebrate <span class="count" id="celebrate-count">0</span>
+                                </button>
                             </div>
                         </div>
+                        
+                        <!-- Comments Section -->
+                        <div class="comments-section mt-5 pt-4 border-top">
+                            <h4 class="mb-4">Comments</h4>
+                            <div class="mb-4" id="comments-container">
+                                <!-- Comments will be loaded here -->
+                            </div>
+                            
+                            <form id="comment-form" class="mt-4">
+                                <div class="mb-3">
+                                    <label for="comment-name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="comment-name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="comment-email" class="form-label">Email (optional)</label>
+                                    <input type="email" class="form-control" id="comment-email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="comment-text" class="form-label">Your Comment</label>
+                                    <textarea class="form-control" id="comment-text" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post Comment</button>
+                            </form>
+                        </div>
                     </div>
-                    <!-- More alumni -->
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
@@ -247,5 +250,35 @@
     
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // JavaScript to load the specific news article
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const newsId = urlParams.get('id');
+            
+            if (newsId) {
+                loadNewsArticle(newsId);
+                loadComments(newsId);
+                loadReactions(newsId);
+                
+                // Set up reaction buttons
+                document.querySelectorAll('.reaction-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const reaction = this.getAttribute('data-reaction');
+                        submitReaction(newsId, reaction);
+                    });
+                });
+                
+                // Set up comment form
+                document.getElementById('comment-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    submitComment(newsId);
+                });
+            } else {
+                window.location.href = 'news.html';
+            }
+        });
+    </script>
 </body>
 </html>

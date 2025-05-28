@@ -375,6 +375,232 @@ section {
     margin-bottom: 0;
 }
 
+
+ /* Slick Slider Custom Styles */
+    .program-slider {
+        position: relative;
+        padding: 20px 0;
+    }
+    
+    .program-slider .slick-list {
+        margin: 0 -15px;
+        padding: 10px 0;
+    }
+    
+    .program-slider .slick-slide {
+        padding: 0 15px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Navigation Arrows */
+    .program-slider .slick-prev,
+    .program-slider .slick-next {
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .program-slider .slick-prev:hover,
+    .program-slider .slick-next:hover {
+        background: white;
+    }
+    
+    .program-slider .slick-prev {
+        left: -20px;
+    }
+    
+    .program-slider .slick-next {
+        right: -20px;
+    }
+    
+    .program-slider .slick-prev:before,
+    .program-slider .slick-next:before {
+        color: var(--primary-color);
+        font-size: 20px;
+        opacity: 1;
+    }
+    
+    /* Card Styles */
+    .program-card {
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 100%;
+    }
+    
+    .program-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Hover Effects */
+    .program-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+
+    /* Carousel Styles */
+.programs-carousel {
+    position: relative;
+    padding: 60px 0;
+}
+
+.programs-carousel .slick-list {
+    padding: 80px 0 !important;
+    overflow: visible !important;
+}
+
+.programs-carousel .slick-track {
+    display: flex;
+    align-items: center;
+    perspective: 2000px;
+}
+
+.programs-carousel .slick-slide {
+    transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: scale(0.85) perspective(1000px) rotateY(20deg);
+    opacity: 0.7;
+    z-index: 1;
+    filter: brightness(0.9);
+    margin: 0 -30px;
+}
+
+.programs-carousel .slick-slide.slick-center {
+    transform: scale(1) perspective(1000px) rotateY(0deg);
+    opacity: 1;
+    z-index: 2;
+    filter: brightness(1);
+    margin: 0 15px;
+}
+
+.programs-carousel .slick-slide[aria-hidden="true"] {
+    transform: scale(0.85) perspective(1000px) rotateY(-20deg);
+}
+
+/* Navigation Arrows */
+.programs-carousel .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d6efd;
+    border: none;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.programs-carousel .slick-prev {
+    left: -70px;
+}
+
+.programs-carousel .slick-next {
+    right: -70px;
+}
+
+.programs-carousel .slick-arrow:hover {
+    background: #0d6efd;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+}
+
+/* Card Styles */
+.program-card {
+    transition: all 0.5s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    background: white;
+}
+
+.slick-center .program-card {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
+}
+
+.program-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .programs-carousel .slick-slide {
+        transform: scale(0.9) !important;
+        margin: 0 -15px !important;
+    }
+    
+    .programs-carousel .slick-slide.slick-center {
+        transform: scale(1) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .programs-carousel .slick-slide {
+        transform: scale(1) !important;
+        margin: 0 !important;
+        opacity: 1 !important;
+    }
+    
+    .programs-carousel .slick-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .programs-carousel .slick-prev {
+        left: -15px;
+    }
+    
+    .programs-carousel .slick-next {
+        right: -15px;
+    }
+}
+
 /* ================ NEWS/LATEST UPDATES ================ */
 .news-card {
     border-radius: 10px;

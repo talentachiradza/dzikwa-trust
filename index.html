@@ -17,6 +17,13 @@
     
     <!-- Splide Slider CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+    <!-- Required CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -61,9 +68,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">Our story</a>
                 </li>
@@ -223,22 +230,23 @@
         </div>
     </section>
 
-    <!-- Our Programs Section -->
+ <!-- Our Programs Section -->
 <section class="programs-section py-5 bg-light">
     <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="display-5 fw-bold text-gradient-primary">Our Impactful Programs</h2>
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-primary">Our Impactful Programs</h2>
             <p class="lead text-muted">Empowering communities through sustainable initiatives</p>
             <div class="divider mx-auto bg-primary"></div>
         </div>
 
-        <div class="row g-4">
+        <!-- Carousel Container -->
+        <div class="programs-carousel">
             <!-- Education Support Card -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+            <div class="px-2">
+                <div class="card program-card h-100 border-0 shadow-sm">
                     <div class="card-img-top overflow-hidden">
-                        <img src="assets/images/edu3 (2).png" alt="Education Support" class="img-fluid zoom-effect">
-                        <div class="program-badge" style="background-color: var(--primary-color); color: white;">Academic Excellence</div>
+                        <img src="assets/images/edu3 (2).png" alt="Education Support" class="img-fluid">
+                        <div class="program-badge bg-primary text-white">Academic Excellence</div>
                     </div>
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
@@ -247,7 +255,7 @@
                             </div>
                             <h3 class="h5 mb-0">Education Support</h3>
                         </div>
-                        <p class="text-muted">Comprehensive educational programs from early childhood to vocational training, including scholarships, mentorship, and learning resources.</p>
+                        <p class="text-muted">Comprehensive educational programs from early childhood to vocational training.</p>
                         <ul class="program-features list-unstyled">
                             <li><i class="fas fa-check-circle text-success me-2"></i> School fee assistance</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i> Tutoring programs</li>
@@ -261,11 +269,11 @@
             </div>
 
             <!-- ICT Skills Card -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+            <div class="px-2">
+                <div class="card program-card h-100 border-0 shadow-sm">
                     <div class="card-img-top overflow-hidden">
-                        <img src="assets/images/ict2.JPG" alt="ICT Skills" class="img-fluid zoom-effect">
-                        <div class="program-badge" style="background-color: var(--primary-color); color: white;">Digital Future</div>
+                        <img src="assets/images/ict2.JPG" alt="ICT Skills" class="img-fluid">
+                        <div class="program-badge bg-primary text-white">Digital Future</div>
                     </div>
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
@@ -274,9 +282,9 @@
                             </div>
                             <h3 class="h5 mb-0">ICT Skills Development</h3>
                         </div>
-                        <p class="text-muted">Equipping youth with essential digital skills through hands-on training in coding, computer literacy, and emerging technologies.</p>
+                        <p class="text-muted">Equipping youth with essential digital skills through hands-on training.</p>
                         <ul class="program-features list-unstyled">
-                            <li><i class="fas fa-check-circle text-success me-2"></i> Coding <em>(programing skills)</em></li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Coding skills</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i> Digital literacy</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i> Tech mentorship</li>
                         </ul>
@@ -288,11 +296,11 @@
             </div>
 
             <!-- Reforestation Card -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+            <div class="px-2">
+                <div class="card program-card h-100 border-0 shadow-sm">
                     <div class="card-img-top overflow-hidden">
-                        <img src="assets/images/refo2.JPG" alt="Reforestation" class="img-fluid zoom-effect">
-                        <div class="program-badge" style="background-color: var(--primary-color); color: white;">Eco Initiative</div>
+                        <img src="assets/images/refo2.JPG" alt="Reforestation" class="img-fluid">
+                        <div class="program-badge bg-primary text-white">Eco Initiative</div>
                     </div>
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
@@ -301,10 +309,10 @@
                             </div>
                             <h3 class="h5 mb-0">Community Reforestation</h3>
                         </div>
-                        <p class="text-muted">Environmental conservation through tree planting initiatives that restore ecosystems while providing sustainable livelihoods.</p>
+                        <p class="text-muted">Environmental conservation through tree planting initiatives.</p>
                         <ul class="program-features list-unstyled">
-                            <li><i class="fas fa-check-circle text-success me-2"></i> Native species planting</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i> Youth environmental education</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Native species</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Environmental education</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i> Sustainable agriculture</li>
                         </ul>
                     </div>
@@ -314,68 +322,35 @@
                 </div>
             </div>
 
-        <!-- Add this to the Our Programs Section in index.html -->
-<div class="row g-4">
-    <!-- Existing program cards... -->
-    
-    <!-- Sports Program Card -->
-    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
-            <div class="card-img-top overflow-hidden">
-                <img src="assets/images/sports.jpg" alt="Sports Program" class="img-fluid zoom-effect">
-                <div class="program-badge" style="background-color: var(--primary-color); color: white;">Healthy Living</div>
-            </div>
-            <div class="card-body p-4">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="icon-box bg-danger-light text-danger rounded-circle me-3">
-                        <i class="fas fa-running fa-fw"></i>
+            <!-- Sports Program Card -->
+            <div class="px-2">
+                <div class="card program-card h-100 border-0 shadow-sm">
+                    <div class="card-img-top overflow-hidden">
+                        <img src="assets/images/sports.jpg" alt="Sports Program" class="img-fluid">
+                        <div class="program-badge bg-primary text-white">Healthy Living</div>
                     </div>
-                    <h3 class="h5 mb-0">Sports & Athletics</h3>
-                </div>
-                <p class="text-muted">Developing physical fitness, teamwork, and discipline through organized sports activities and competitions.</p>
-                <ul class="program-features list-unstyled">
-                    <li><i class="fas fa-check-circle text-success me-2"></i> Soccer teams</li>
-                    <li><i class="fas fa-check-circle text-success me-2"></i> Netball programs</li>
-                    <li><i class="fas fa-check-circle text-success me-2"></i> Athletics training</li>
-                </ul>
-            </div>
-            <div class="card-footer bg-transparent border-top-0 pb-4">
-                <a href="sports.html" class="btn btn-outline-danger stretched-link">Learn More</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Arts & Culture Program Card -->
-    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
-        <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
-            <div class="card-img-top overflow-hidden">
-                <img src="assets/images/arts.jpg" alt="Arts & Culture Program" class="img-fluid zoom-effect">
-                <div class="program-badge" style="background-color: var(--primary-color); color: white;">Creative Expression</div>
-            </div>
-            <div class="card-body p-4">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="icon-box bg-purple-light text-purple rounded-circle me-3">
-                        <i class="fas fa-paint-brush fa-fw"></i>
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-box bg-danger-light text-danger rounded-circle me-3">
+                                <i class="fas fa-running fa-fw"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Sports & Athletics</h3>
+                        </div>
+                        <p class="text-muted">Developing physical fitness, teamwork, and discipline.</p>
+                        <ul class="program-features list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Soccer teams</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Netball programs</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Athletics training</li>
+                        </ul>
                     </div>
-                    <h3 class="h5 mb-0">Arts & Culture</h3>
+                    <div class="card-footer bg-transparent border-top-0 pb-4">
+                        <a href="sports.html" class="btn btn-outline-danger stretched-link">Learn More</a>
+                    </div>
                 </div>
-                <p class="text-muted">Preserving cultural heritage and fostering creativity through visual arts, music, dance, and traditional crafts.</p>
-                <ul class="program-features list-unstyled">
-                    <li><i class="fas fa-check-circle text-success me-2"></i> Traditional dance</li>
-                    <li><i class="fas fa-check-circle text-success me-2"></i> Music education</li>
-                    <li><i class="fas fa-check-circle text-success me-2"></i> Visual arts</li>
-                </ul>
-            </div>
-            <div class="card-footer bg-transparent border-top-0 pb-4">
-                <a href="arts-culture.html" class="btn btn-outline-purple stretched-link">Explore Program</a>
             </div>
         </div>
-    </div>
-</div>
 
-        </div>
-
-        <div class="text-center mt-5" data-aos="fade-up">
+        <div class="text-center mt-5">
             <a href="programs.html" class="btn btn-primary px-4 py-3 rounded-pill shadow">
                 Explore All Programs <i class="fas fa-chevron-right ms-2"></i>
             </a>
@@ -632,5 +607,53 @@
     
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+    <!-- Required JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.programs-carousel').slick({
+            centerMode: true,
+            centerPadding: '0',
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: false,
+            focusOnSelect: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2,
+                        centerMode: false,
+                        variableWidth: false
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        centerMode: false,
+                        arrows: true,
+                        variableWidth: false
+                    }
+                }
+            ]
+        });
+        
+        // Pause autoplay when hovering
+        $('.programs-carousel').hover(
+            function() {
+                $(this).slick('slickPause');
+            },
+            function() {
+                $(this).slick('slickPlay');
+            }
+        );
+    });
+</script>
 </body>
 </html>

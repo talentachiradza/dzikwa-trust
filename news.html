@@ -38,7 +38,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="contact-info">
                 <span class="me-3"><i class="fas fa-phone me-2"></i> +263 123 456 789</span>
-                <span><i class="fas fa-envelope me-2"></i> info@dzikwa.org</span>
+                <span><i class="fas fa-envelope me-2"></i> dzikwatrust@africaonline.co.zw</span>
             </div>
             <div class="social-links">
                 <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <!-- Navigation -->
+   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -79,87 +79,40 @@
         </div>
     </div>
 </nav>
-    <main class="gallery-page">
-        <!-- Hero -->
-        <section class="gallery-hero py-5 text-white" style="background-color: var(--primary-color);">
-            <div class="container py-5 text-center">
-                <h1 class="display-4 fw-bold mb-3">Transformation Stories</h1>
-                <p class="lead">Witness the power of education through our children's journeys</p>
-            </div>
-        </section>
-
-        <!-- Gallery Filters -->
-        <section class="gallery-filters py-4 bg-light">
-            <div class="container">
-                <div class="filter-buttons d-flex flex-wrap justify-content-center gap-2">
-                    <button class="btn btn-outline-primary active" data-filter="all">All</button>
-                    <button class="btn btn-outline-primary" data-filter="graduates">Graduates</button>
-                    <button class="btn btn-outline-primary" data-filter="school">School Life</button>
-                    <button class="btn btn-outline-primary" data-filter="events">Events</button>
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-5 fw-bold text-gradient-primary">News & Updates</h1>
+                    <p class="lead">Stay updated with our latest activities and achievements</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-lg-end mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">News</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Photo Gallery -->
-        <section class="photo-gallery py-5">
-            <div class="container">
-                <div class="row g-3 gallery-grid">
-                    <!-- Image 1 -->
-                    <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="graduates">
-                        <a href="assets/images/pic 1.jpg" data-lightbox="gallery" data-title="Tinashe - Class of 2020">
-                            <img src="assets/images/pic 1.jpg" alt="Graduate" class="img-fluid rounded">
-                            <div class="gallery-caption">Tinashe - Class of 2020</div>
-                        </a>
-                    </div>
-                    <!-- More images -->
-                </div>
+    <!-- All News Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4" id="all-news-container">
+                <!-- News articles will be loaded dynamically from database -->
             </div>
-        </section>
-
-        <!-- Video Stories -->
-        <section class="video-stories bg-light py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5">Video Stories</h2>
-                <div class="row g-4">
-                    <!-- Video 1 -->
-                    <div class="col-md-6">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/example1" allowfullscreen></iframe>
-                        </div>
-                        <h3 class="h5 mt-3">From Dzikwa to University</h3>
-                    </div>
-                    <!-- More videos -->
-                </div>
+            <div class="text-center mt-5">
+                <button id="load-more-news" class="btn btn-primary">Load More News</button>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Alumni Spotlights -->
-        <section class="alumni py-5">
-            <div class="container">
-                <h2 class="display-5 fw-bold text-center mb-5">Where Are They Now?</h2>
-                <div class="row g-4">
-                    <!-- Alumni 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="alumni-card card h-100 border-0 shadow-sm">
-                            <img src="assets/images/pic 1.jpg" class="card-img-top" alt="Rudo">
-                            <div class="card-body">
-                                <h3 class="h5">Rudo K.</h3>
-                                <p class="text-muted">Class of 2019</p>
-                                <p class="card-text">Now studying medicine at University of Zimbabwe</p>
-                                <blockquote class="blockquote mt-3">
-                                    <p>"Dzikwa gave me the foundation to chase my dreams."</p>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- More alumni -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+     <!-- Footer -->
+     <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -247,5 +200,16 @@
     
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // JavaScript to load news articles
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNewsArticles('all-news-container', 6); // Load first 6 articles
+            
+            document.getElementById('load-more-news').addEventListener('click', function() {
+                loadMoreNews('all-news-container');
+            });
+        });
+    </script>
 </body>
 </html>

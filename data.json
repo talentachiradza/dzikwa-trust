@@ -1,0 +1,35 @@
+{
+    "news": {
+      "-Nabc123": {
+        "title": "Annual School Supplies Distribution",
+        "category": "Event",
+        "date": "2023-06-15",
+        "summary": "350 children received school kits...",
+        "content": "Full article details...",
+        "imageUrl": "https://example.com/image.jpg",
+        "createdAt": 1686844800,
+        "updatedAt": 1686844800,
+        "status": "published"
+      }
+    },
+    "newsReactions": {
+      "-Nabc123": {
+        "like": 15,
+        "love": 8,
+        "celebrate": 3
+      }
+    },
+    "newsComments": {
+      "-Nabc123": {
+        "-Ndef456": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "comment": "Great initiative!",
+          "timestamp": 1686931200,
+          "approved": true
+        }
+      }
+    }
+  }
+
+ 

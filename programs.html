@@ -61,9 +61,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">Our story</a>
                     </li>
@@ -135,11 +135,49 @@
                                 <i class="fas fa-utensils me-2"></i> Nutrition
                             </button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="sports-tab" data-bs-toggle="pill" data-bs-target="#sports" type="button" role="tab" aria-controls="sports" aria-selected="false">
+                                <i class="fas fa-running me-2"></i> Sports
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="arts-tab" data-bs-toggle="pill" data-bs-target="#arts" type="button" role="tab" aria-controls="arts" aria-selected="false">
+                                <i class="fas fa-paint-brush me-2"></i> Arts & Culture
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="tab-content" id="programsTabContent">
+        <!-- Existing tab panes... -->
+        
+       
+    </div>
+
+
+
+
+
+
+
+
+
+
 
     <!-- Programs Content -->
     <section class="py-5">
@@ -614,6 +652,151 @@
                         </div>
                     </div>
                 </div>
+                 <!-- Sports Program -->
+        <div class="tab-pane fade" id="sports" role="tabpanel" aria-labelledby="sports-tab">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="assets/images/sports-full.jpg" alt="Sports Program" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="mb-4">Sports & Athletics Program</h2>
+                    <p>Developing physical fitness, teamwork, and discipline through organized sports activities.</p>
+                    
+                    <div class="program-features mt-4">
+                        <div class="feature mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box bg-danger text-white rounded-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Team Sports</h5>
+                                    <p class="mb-0">Soccer, netball, and volleyball teams for different age groups</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box bg-danger text-white rounded-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Athletics</h5>
+                                    <p class="mb-0">Track and field training and competitions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box bg-danger text-white rounded-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Life Skills</h5>
+                                    <p class="mb-0">Leadership and teamwork development</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box bg-danger text-white rounded-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Community Events</h5>
+                                    <p class="mb-0">Annual sports days and tournaments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="sports.html" class="btn btn-danger me-2">Learn More</a>
+                        <a href="get-involved.html#volunteer" class="btn btn-outline-danger">Coach Volunteers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Arts & Culture Program -->
+        <div class="tab-pane fade" id="arts" role="tabpanel" aria-labelledby="arts-tab">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+                    <img src="assets/images/arts-full.jpg" alt="Arts & Culture Program" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <h2 class="mb-4">Arts & Culture Program</h2>
+                    <p>Preserving cultural heritage and fostering creative expression through various art forms.</p>
+                    
+                    <div class="program-features mt-4">
+                        <div class="feature mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box bg-purple text-white rounded-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Performing Arts</h5>
+                                    <p class="mb-0">Traditional dance, music, and drama performances</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box bg-purple text-white rounded-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Visual Arts</h5>
+                                    <p class="mb-0">Painting, sculpture, and crafts workshops</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box bg-purple text-white rounded-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Cultural Education</h5>
+                                    <p class="mb-0">Learning about Zimbabwe's diverse traditions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box bg-purple text-white rounded-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Exhibitions</h5>
+                                    <p class="mb-0">Showcasing student work in community events</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="arts-culture.html" class="btn btn-purple me-2">Explore Program</a>
+                        <a href="donate.html#arts" class="btn btn-outline-purple">Support the Arts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
             </div>
         </div>
     </section>
