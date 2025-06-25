@@ -3,14 +3,15 @@
 
 :root {
     --primary-color: #05636d;
-    --secondary-color: #e74c3c;
-    --accent-color: #3498db;
+    --secondary-color: #f0f0f0;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --link-color: #05636d;
+    --link-hover-color: #034f5f;
     --light-color: #ecf0f1;
     --dark-color: #2c3e50;
-    --success-color: #27ae60;
     --info-color: #2980b9;
-    --warning-color: #f39c12;
-    --danger-color: #e74c3c;
 }
 
 body {
@@ -218,9 +219,6 @@ h5 { color: var(--light-color) !important; }
 }
 
 /* ================ SECTION STYLES ================ */
-section {
-    padding: 5rem 0;
-}
 
 .section-header {
     margin-bottom: 3rem;
@@ -313,66 +311,144 @@ section {
     }
 }
 
-/* ================ TESTIMONIALS/SUCCESS STORIES ================ */
-.testimonial-card {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+/* Success Stories Section */
+#success-stories {
+    position: relative;
+    overflow: hidden;
 }
 
-.testimonial-image {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1.5rem;
+/* Card Styling */
+#success-stories .card {
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.testimonial-image img {
+#success-stories .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.story-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,255,255,0.9);
+    color: #12263f;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.testimonial-content p {
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    position: relative;
+.card:hover .card-overlay {
+    opacity: 1;
 }
 
-.testimonial-content p::before,
-.testimonial-content p::after {
-    content: '"';
-    font-size: 2rem;
-    color: var(--primary-color);
-    opacity: 0.3;
+.play-btn {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border: none;
+    color: #2c7be5;
 }
 
-.testimonial-content p::before {
-    top: -20px;
-    left: -10px;
+.play-btn i {
+    font-size: 20px;
+    margin-left: 3px;
 }
 
-.testimonial-content p::after {
-    bottom: -30px;
-    right: -10px;
+.card:hover .play-btn {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
-.testimonial-author h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.25rem;
+/* Splide Customization */
+.splide__arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
-.testimonial-author p {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0;
+.splide__arrow {
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    color: #2c7be5;
+}
+
+.splide__arrow:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.splide__arrow--prev {
+    left: -20px;
+}
+
+.splide__arrow--next {
+    right: -20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .splide__arrow--prev {
+        left: -10px;
+    }
+    
+    .splide__arrow--next {
+        right: -10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 180px;
+    }
+    
+    .splide__arrow {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 

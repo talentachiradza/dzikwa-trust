@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories | Dzikwa Trust</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        
+    :root {
+        --primary: #05636d;
+        --secondary: #6e84a3;
+        --dark: #12263f;
+        --light: #f9fbfd;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8fafc;
+        overflow-x: hidden;
+    }
+    
+    /* Hero Section */
+    .story-hero {
+        background: linear-gradient(135deg, rgba(44,123,229,0.9) 0%, rgba(18,38,63,0.95) 100%), 
+                    url('assets/images/success-bg.jpg') center/cover no-repeat;
+        padding: 8rem 0 6rem;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        margin-bottom: -5rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .story-hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 3.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .hero-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px);
+        background-size: 30px 30px;
+        z-index: -1;
+    }
+    
+    /* Filter Section */
+    .filter-section {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(18,38,63,0.1);
+        padding: 2rem;
+        margin-top: -3rem;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .search-box {
+        position: relative;
+    }
+    
+    .search-box input {
+        padding-left: 3rem;
+        border-radius: 50px;
+        border: 2px solid #e3ebf6;
+    }
+    
+    .search-box i {
+        position: absolute;
+        left: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--secondary);
+    }
+    
+    .filter-tabs .nav-link {
+        color: var(--secondary);
+        font-weight: 500;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        margin: 0 0.25rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .filter-tabs .nav-link.active {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(44,123,229,0.3);
+    }
+    
+    /* Story Cards */
+    .story-card {
+        border: none;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(18,38,63,0.1);
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-bottom: 2rem;
+        background: white;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+    
+    .story-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .story-card:hover {
+        transform: translateY(-10px) rotateX(5deg) rotateY(0deg) scale(1.03);
+        box-shadow: 0 20px 40px rgba(18,38,63,0.2);
+    }
+    
+    .story-card:hover::before {
+        opacity: 1;
+    }
+    
+    .story-card .card-img-top {
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .story-card:hover .card-img-top {
+        transform: scale(1.1);
+    }
+    
+    .story-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255,255,255,0.9);
+        color: var(--dark);
+        font-weight: 600;
+        padding: 0.35rem 1rem;
+        border-radius: 50px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        z-index: 2;
+    }
+    
+    .play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        width: 60px;
+        height: 60px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .play-btn i {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-left: 3px;
+    }
+    
+    .story-card:hover .play-btn {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .card-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 0.75rem;
+        transition: color 0.3s ease;
+    }
+    
+    .story-card:hover .card-title {
+        color: var(--primary);
+    }
+    
+    .card-text {
+        color: var(--secondary);
+        margin-bottom: 1.5rem;
+    }
+    
+    .story-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--secondary);
+        font-size: 0.85rem;
+    }
+    
+    .read-more-btn {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        padding: 0.375rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .story-card:hover .read-more-btn {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(44,123,229,0.3);
+    }
+    
+    /* Floating Elements */
+    .floating-elements {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: -1;
+    }
+    
+    .floating-element {
+        position: absolute;
+        background: rgba(44,123,229,0.1);
+        border-radius: 50%;
+        animation: float 15s infinite ease-in-out;
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-20px) rotate(5deg);
+        }
+    }
+    
+    /* Pagination */
+    .pagination .page-item .page-link {
+        border: none;
+        color: var(--secondary);
+        margin: 0 0.25rem;
+        border-radius: 50% !important;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .pagination .page-item.active .page-link {
+        background: var(--primary);
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(44,123,229,0.3);
+    }
+    
+    .pagination .page-item:not(.active):hover .page-link {
+        background: rgba(44,123,229,0.1);
+        color: var(--primary);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .story-hero {
+            padding: 5rem 0 4rem;
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+        
+        .story-hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .filter-section {
+            padding: 1.5rem;
+        }
+    }
+    </style>
+</head>
+<body>
+
+   <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">Our story</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get-involved.html">Get Involved</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="news.html">Newsletters</a>
+                </li>
+            </ul>
+            <div class="d-flex ms-lg-3">
+                <a href="donate.html" class="btn btn-primary">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Floating Background Elements -->
+<div class="floating-elements">
+    <div class="floating-element" style="width: 100px; height: 100px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="floating-element" style="width: 150px; height: 150px; top: 70%; left: 80%; animation-delay: 2s;"></div>
+    <div class="floating-element" style="width: 200px; height: 200px; top: 30%; left: 60%; animation-delay: 4s;"></div>
+</div>
+
+<!-- Hero Section -->
+<section class="story-hero text-white text-center">
+    <div class="hero-pattern"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="animate__animated animate__fadeInDown">Success Stories</h1>
+                <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Discover how Dzikwa Trust is transforming lives through education and empowerment</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section class="filter-section animate__animated animate__fadeIn animate__delay-1s">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="form-control form-control-lg" id="storySearch" placeholder="Search stories...">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav filter-tabs justify-content-md-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-filter="all">All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="ict">ICT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="sisterhood">Sisterhood</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="feeding">Feeding</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stories Grid -->
+<section class="py-5">
+    <div class="container">
+        <div class="row" id="storiesGrid">
+            <!-- Story 1 -->
+            <div class="col-lg-4 col-md-6 story-item" data-category="ict" data-aos="fade-up">
+                <div class="story-card h-100">
+                    <div class="position-relative overflow-hidden">
+                        <img src="assets/images/test1.jpg" class="card-img-top" alt="Tendai's Success Story">
+                        <span class="story-badge">ICT Program</span>
+                        <button class="play-btn" data-video="https://youtu.be/EXAMPLE1">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Tendai M.</h3>
+                        <p class="card-text">From struggling student to software developer, Tendai's journey shows the power of technology education.</p>
+                        <div class="story-meta">
+                            <span><i class="far fa-calendar-alt me-1"></i> 2023 Graduate</span>
+                            <button class="read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Story 2 -->
+            <div class="col-lg-4 col-md-6 story-item" data-category="sisterhood" data-aos="fade-up" data-aos-delay="100">
+                <div class="story-card h-100">
+                    <div class="position-relative overflow-hidden">
+                        <img src="assets/images/test2.JPG" class="card-img-top" alt="Farai's Success Story">
+                        <span class="story-badge">Sisterhood</span>
+                        <button class="play-btn" data-video="https://youtu.be/EXAMPLE2">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Farai Chaleka</h3>
+                        <p class="card-text">Empowered through mentorship, Farai now leads workshops for young girls in her community.</p>
+                        <div class="story-meta">
+                            <span><i class="far fa-calendar-alt me-1"></i> 2022 Graduate</span>
+                            <button class="read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Story 3 -->
+            <div class="col-lg-4 col-md-6 story-item" data-category="feeding" data-aos="fade-up" data-aos-delay="200">
+                <div class="story-card h-100">
+                    <div class="position-relative overflow-hidden">
+                        <img src="assets/images/test3.JPG" class="card-img-top" alt="Grace's Success Story">
+                        <span class="story-badge">Feeding Program</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Grace N.</h3>
+                        <p class="card-text">The feeding program helped Grace's children thrive in school while she gained vocational skills.</p>
+                        <div class="story-meta">
+                            <span><i class="far fa-calendar-alt me-1"></i> 2021 Beneficiary</span>
+                            <button class="read-more-btn">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add 3-6 more story cards with different aos delays -->
+        </div>
+        
+        <!-- Pagination -->
+        <nav class="mt-5" data-aos="fade-up">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0">
+            <div class="modal-body p-0 ratio ratio-16x9">
+                <iframe id="videoFrame" src="" allowfullscreen></iframe>
+            </div>
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white rounded-circle p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<!-- Story Detail Modal -->
+<div class="modal fade" id="storyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-body p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="position-relative h-100">
+                            <img id="modalStoryImage" src="" class="img-fluid h-100 w-100 object-fit-cover" alt="">
+                            <button class="btn-play position-absolute top-50 start-50 translate-middle" id="modalPlayBtn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-lg-5">
+                        <h3 id="modalStoryTitle" class="mb-3"></h3>
+                        <div class="d-flex mb-4">
+                            <span id="modalStoryBadge" class="badge bg-primary me-2"></span>
+                            <span id="modalStoryYear" class="text-muted small"></span>
+                        </div>
+                        <div id="modalStoryContent"></div>
+                        <div class="mt-4 pt-3 border-top">
+                            <button class="btn btn-primary px-4">
+                                <i class="fas fa-share-alt me-2"></i> Share Story
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" class="footer-logo mb-3" height="100">
+                        <p>Dzikwa Trust Fund has been empowering vulnerable children in Zimbabwe through education, nutrition, and community development since 1995.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
+                        <li class="mb-2"><a href="get-involved.html" class="text-white">Get Involved</a></li>
+                        <li class="mb-2"><a href="donate.html" class="text-white">Donate</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Our Programs</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="programs.html#education" class="text-white">Education</a></li>
+                        <li class="mb-2"><a href="programs.html#ict" class="text-white">ICT Department</a></li>
+                        <li class="mb-2"><a href="programs.html#reforestation" class="text-white">Reforestation</a></li>
+                        <li class="mb-2"><a href="programs.html#sisterhood" class="text-white">Sisterhood Program</a></li>
+                        <li class="mb-2"><a href="programs.html#arts-sports" class="text-white">Arts & Sports</a></li>
+                        <li><a href="programs.html#feeding" class="text-white">Feeding Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-heading mb-4">Contact Us</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                             3147 Rujeko Street, Dzivarasekwa 1, Harare, Zimbabwe
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            +263 123 456 789
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            dzikwatrust@africaonline.co.zw
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Mon-Sat: 9:00 AM - 5:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Dzikwa Trust Fund. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+// Initialize AOS animation
+AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+});
+
+$(document).ready(function() {
+    // Filter stories
+    $('.filter-tabs .nav-link').click(function(e) {
+        e.preventDefault();
+        $('.filter-tabs .nav-link').removeClass('active');
+        $(this).addClass('active');
+        
+        const filter = $(this).data('filter');
+        $('.story-item').hide().filter(function() {
+            return filter === 'all' || $(this).data('category') === filter;
+        }).fadeIn();
+    });
+    
+    // Search functionality
+    $('#storySearch').keyup(function() {
+        const searchTerm = $(this).val().toLowerCase();
+        $('.story-item').each(function() {
+            const text = $(this).text().toLowerCase();
+            $(this).toggle(text.includes(searchTerm));
+        });
+    });
+    
+    // Video modal
+    $('.play-btn').click(function() {
+        const videoUrl = $(this).data('video').replace('youtu.be/', 'youtube.com/embed/');
+        $('#videoFrame').attr('src', videoUrl);
+        $('#videoModal').modal('show');
+    });
+    
+    $('#videoModal').on('hidden.bs.modal', function() {
+        $('#videoFrame').attr('src', '');
+    });
+    
+    // Story modal (would be populated via AJAX in real implementation)
+    $('.read-more-btn').click(function() {
+        const card = $(this).closest('.story-card');
+        const title = card.find('.card-title').text();
+        const badge = card.find('.story-badge').text();
+        const year = card.find('.story-meta span').text();
+        const imgSrc = card.find('img').attr('src');
+        
+        $('#modalStoryTitle').text(title);
+        $('#modalStoryBadge').text(badge);
+        $('#modalStoryYear').text(year);
+        $('#modalStoryImage').attr('src', imgSrc);
+        
+        // In a real implementation, you would load the full content via AJAX
+        $('#modalStoryContent').html(`
+            <p>This is where the full success story would appear. In a real implementation, 
+            this content would be loaded dynamically from your database or CMS.</p>
+            <p>The story would include details about:</p>
+            <ul>
+                <li>The individual's background</li>
+                <li>How Dzikwa Trust helped them</li>
+                <li>Their current achievements</li>
+                <li>Future goals</li>
+            </ul>
+            <p>It might also include quotes, statistics, and multimedia elements.</p>
+        `);
+        
+        $('#storyModal').modal('show');
+    });
+    
+    // Hover animations
+    $('.story-card').hover(
+        function() {
+            $(this).addClass('animate__animated animate__pulse');
+        },
+        function() {
+            $(this).removeClass('animate__animated animate__pulse');
+        }
+    );
+    
+    // Floating elements animation
+    function animateFloatingElements() {
+        $('.floating-element').each(function() {
+            const randomDelay = Math.random() * 5;
+            const randomDuration = 10 + Math.random() * 20;
+            $(this).css({
+                'animation-delay': randomDelay + 's',
+                'animation-duration': randomDuration + 's'
+            });
+        });
+    }
+    animateFloatingElements();
+});
+</script>
+</body>
+</html>

@@ -26,6 +26,20 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
+
+<script>
+// Debug tool - alerts if Bootstrap is loaded
+if (!window.bootstrap) {
+  alert("ERROR: Bootstrap JS not loaded!");
+} else {
+  document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      console.log("Dropdown triggered");
+      this.nextElementSibling.classList.toggle('show');
+    });
+  });
+}
+</script>
 <body>
     <!-- Top Bar -->
     <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
@@ -35,10 +49,9 @@
                 <span><i class="fas fa-envelope me-2"></i> dzikwatrust@africaonline.co.zw</span>
             </div>
             <div class="social-links">
-                <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -82,14 +95,14 @@
                     <h1 class="display-5 fw-bold text-gradient-primary">Get Involved</h1>
                     <p class="lead">Join our mission to empower vulnerable children through education and community development</p>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
+                <!-- <div class="col-lg-6" data-aos="fade-left">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-lg-end mb-0">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Get Involved</li>
                         </ol>
                     </nav>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -146,115 +159,150 @@
         </div>
     </section>
 
-    <!-- Donation Section -->
-    <section class="py-5 bg-light" id="donate">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <img src="assets/images/donate.jpg" alt="Make a Donation" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="mb-4">Your Donation Makes an Impact</h2>
-                    <p>Every contribution, no matter the size, helps us provide education, nutrition, and support to vulnerable children in Zimbabwe. Here's what your donation can provide:</p>
-                    <div class="donation-impact mt-4">
-                        <div class="impact-item mb-3">
-                            <div class="impact-icon text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 30px !important; height:30px; background-color: var(--primary-color);">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <div class="impact-content">
-                                <h5 class="mb-1 text-secondary">$50</h5>
-                                <p class="mb-0">School supplies for one child for a year</p>
-                            </div>
-                        </div>
-                        <div class="impact-item mb-3">
-                            <div class="impact-icon text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 30px !important; height:30px; background-color: var(--primary-color);">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <div class="impact-content">
-                                <h5 class="mb-1 text-secondary">$100</h5>
-                                <p class="mb-0">Nutritious meals for 10 children for a month</p>
-                            </div>
-                        </div>
-                        <div class="impact-item">
-                            <div class="impact-icon text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 30px !important; height:30px; background-color: var(--primary-color);">
-                                <i class="fas fa-laptop"></i>
-                            </div>
-                            <div class="impact-content">
-                                <h5 class="mb-1 text-secondary">$500</h5>
-                                <p class="mb-0">ICT equipment to train 5 students in digital skills</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <a href="donate.html" class="btn btn-primary me-2">Donate Now</a>
-                        <a href="#" class="btn btn-outline-primary">Other Ways to Give</a>
-                    </div>
-                </div>
+   <!-- Donation Section -->
+<section class="py-5 bg-light" id="donate">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <img src="assets/images/donate.jpg" alt="Make a Donation" class="img-fluid rounded shadow">
             </div>
-        </div>
-    </section>
+            <div class="col-lg-6" data-aos="fade-left">
+                <h2 class="mb-4">Your Donation Makes an Impact</h2>
+                <p>Every contribution, no matter the size, helps us provide education, nutrition, and support to vulnerable children in Zimbabwe. Here's what your donation can provide:</p>
+                
+                <div class="donation-impact mt-4">
+                    <div class="impact-item mb-3">
+                        <div class="impact-icon text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 40px; height:40px; background-color: var(--primary-color);">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="impact-content">
+                            <h5 class="mb-1 text-secondary">$50</h5>
+                            <p class="mb-0">School supplies for one child for a year</p>
+                        </div>
+                    </div>
+                    <div class="impact-item mb-3">
+                        <div class="impact-icon text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 40px; height:40px; background-color: var(--primary-color);">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="impact-content">
+                            <h5 class="mb-1 text-secondary">$100</h5>
+                            <p class="mb-0">Nutritious meals for 10 children for a month</p>
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 40px; height:40px; background-color: var(--primary-color);">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="impact-content">
+                            <h5 class="mb-1 text-secondary">$500</h5>
+                            <p class="mb-0">ICT equipment to train 5 students in digital skills</p>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Volunteer Section -->
-    <section class="py-5" id="volunteer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
-                    <img src="assets/images/volunteer.png" alt="Volunteer Opportunities" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
-                    <h2 class="mb-4">Volunteer Your Time & Skills</h2>
-                    <p>We welcome volunteers in various capacities, both locally and internationally. Share your expertise and make a direct impact in children's lives.</p>
+                <div class="mt-4 d-flex flex-wrap gap-2">
+                    <a href="donate.html" class="btn btn-primary me-2">Donate Now</a>
                     
-                    <div class="volunteer-opportunities mt-4">
-                        <div class="opportunity mb-3">
-                            <div class="d-flex">
-                                <div class="me-3">
-                                    <div class="icon-box text-white rounded-circle"  style="width: 30px !important; height:30px; background-color: var(--primary-color);">
-                                        <i class="fas fa-chalkboard-teacher p-1 pt-2"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5 class="mb-1 text-secondary">Teaching & Tutoring</h5>
-                                    <p class="mb-0">Help children with academic subjects or specialized skills</p>
+                   <!-- Enhanced Dropdown with z-index fixes -->
+   <div class="dropup position-static">
+  <button class="btn btn-outline-primary dropdown-toggle" 
+          type="button"
+          id="otherWaysDropdown"
+          data-bs-toggle="dropdown"
+          data-bs-display="static"
+          aria-expanded="false">
+    Other Ways to Give
+  </button>
+  <ul class="dropdown-menu show" 
+      style="z-index: 99999; position: absolute; bottom: 100%; margin-bottom: 5px;">
+    <li><h6 class="dropdown-header text-primary fw-bold">Donation Methods</h6></li>
+    <li><a class="dropdown-item py-2" href="#">
+        <i class="fas fa-university me-2"></i> Bank Transfer</a></li>
+    <li><a class="dropdown-item py-2" href="#">
+        <i class="fas fa-gift me-2"></i> In-Kind Donations</a></li>
+  </ul>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="py-5" id="volunteer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+                <img src="assets/images/volunteer.jpg" alt="Volunteer Opportunities" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                <h2 class="mb-4">Volunteer Your Time & Skills</h2>
+                <p>We welcome volunteers in various capacities, both locally and internationally. Share your expertise and make a direct impact in children's lives.</p>
+                
+                <div class="volunteer-opportunities mt-4">
+                    <div class="opportunity mb-3">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <div class="icon-box text-white rounded-circle" style="width: 40px; height:40px; background-color: var(--primary-color);">
+                                    <i class="fas fa-chalkboard-teacher p-1 pt-2"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="opportunity mb-3">
-                            <div class="d-flex">
-                                <div class="me-3">
-                                    <div class="icon-box text-white rounded-circle"  style="width: 30px !important; height:30px; background-color: var(--primary-color);">
-                                        <i class="fas fa-laptop-code p-1 pt-2"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5 class="mb-1 text-secondary">ICT Training</h5>
-                                    <p class="mb-0">Teach computer skills and digital literacy</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="opportunity">
-                            <div class="d-flex">
-                                <div class="me-3">
-                                    <div class="icon-box text-white rounded-circle"  style="width: 30px !important; height:30px; background-color: var(--primary-color);">
-                                        <i class="fas fa-tree p-2"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5 class="mb-1 text-secondary">Environmental Projects</h5>
-                                    <p class="mb-0">Lead reforestation and sustainability initiatives</p>
-                                </div>
+                            <div>
+                                <h5 class="mb-1 text-secondary">Teaching & Tutoring</h5>
+                                <p class="mb-0">Help children with academic subjects or specialized skills</p>
                             </div>
                         </div>
                     </div>
+                    <div class="opportunity mb-3">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <div class="icon-box text-white rounded-circle" style="width: 40px; height:40px; background-color: var(--primary-color);">
+                                    <i class="fas fa-laptop-code p-1 pt-2"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="mb-1 text-secondary">ICT Training</h5>
+                                <p class="mb-0">Teach computer skills and digital literacy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="opportunity">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <div class="icon-box text-white rounded-circle" style="width: 40px; height:40px; background-color: var(--primary-color);">
+                                    <i class="fas fa-tree p-2"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="mb-1 text-secondary">Environmental Projects</h5>
+                                <p class="mb-0">Lead reforestation and sustainability initiatives</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 d-flex flex-wrap gap-2">
+                    <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#volunteerModal">Apply to Volunteer</button>
                     
-                    <div class="mt-4">
-                        <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#volunteerModal">Apply to Volunteer</button>
-                        <a href="#" class="btn btn-outline-primary">Virtual Opportunities</a>
+                    <!-- Enhanced Virtual Opportunities Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="virtualOpportunitiesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Virtual Opportunities
+                        </button>
+                        <ul class="dropdown-menu shadow-sm" aria-labelledby="virtualOpportunitiesDropdown">
+                            <li><h6 class="dropdown-header text-primary fw-bold">Remote Volunteering</h6></li>
+                            <li><a class="dropdown-item py-2" href="online-mentoring.html"><i class="fas fa-globe me-2 text-muted"></i> Online Mentoring</a></li>
+                            <li><a class="dropdown-item py-2" href="virtual-ict.html"><i class="fas fa-laptop-code me-2 text-muted"></i> Virtual ICT Training</a></li>
+                            <li><a class="dropdown-item py-2" href="content-creation.html"><i class="fas fa-pencil-alt me-2 text-muted"></i> Content Creation</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item py-2" href="fundraising.html"><i class="fas fa-hands-helping me-2 text-muted"></i> Fundraising Support</a></li>
+                            <li><a class="dropdown-item py-2" href="translation.html"><i class="fas fa-language me-2 text-muted"></i> Translation Services</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Volunteer Modal -->
     <div class="modal fade" id="volunteerModal" tabindex="-1" aria-labelledby="volunteerModalLabel" aria-hidden="true">
@@ -356,7 +404,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <img src="assets/images/partnership.png" alt="Partnership Opportunities" class="img-fluid rounded shadow">
+                    <img src="assets/images/partnership.jpg" alt="Partnership Opportunities" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <h2 class="mb-4">Corporate & Community Partnerships</h2>
@@ -366,7 +414,7 @@
                         <div class="option mb-3">
                             <div class="d-flex">
                                 <div class="me-3">
-                                    <div class="icon-box text-white rounded-circle" style="width: 30px !important; height:30px; background-color: var(--primary-color);">
+                                    <div class="icon-box text-white rounded-circle" style="width: 40px !important; height:40px; background-color: var(--primary-color);">
                                         <i class="fas fa-handshake p-2"></i>
                                     </div>
                                 </div>
@@ -379,7 +427,7 @@
                         <div class="option mb-3">
                             <div class="d-flex">
                                 <div class="me-3">
-                                    <div class="icon-box text-white rounded-circle" style="width: 30px !important; height:30px; background-color: var(--primary-color);">
+                                    <div class="icon-box text-white rounded-circle" style="width: 40px !important; height:40px; background-color: var(--primary-color);">
                                         <i class="fas fa-users p-1"></i>
                                     </div>
                                 </div>
@@ -392,7 +440,7 @@
                         <div class="option">
                             <div class="d-flex">
                                 <div class="me-3">
-                                    <div class="icon-box text-white rounded-circle" style="width: 30px !important; height:30px; background-color: var(--primary-color);">
+                                    <div class="icon-box text-white rounded-circle" style="width: 40px !important; height:40px; background-color: var(--primary-color);">
                                         <i class="fas fa-gift p-2"></i>
                                     </div>
                                 </div>
@@ -519,10 +567,9 @@
                         <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" class="footer-logo mb-3" height="100">
                         <p>Dzikwa Trust Fund has been empowering vulnerable children in Zimbabwe through education, nutrition, and community development since 1995.</p>
                         <div class="social-links mt-4">
-                            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                             <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -599,6 +646,7 @@
     <script src="assets/js/main.js"></script>
     <script>
         AOS.init();
-    </script>
+
+</script>
 </body>
 </html>

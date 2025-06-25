@@ -20,19 +20,132 @@ document.addEventListener('DOMContentLoaded', function() {
         }).mount();
     }
     
-    // Initialize testimonial slider
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Splide slider
     if (document.getElementById('testimonialSlider')) {
         new Splide('#testimonialSlider', {
             type: 'loop',
             perPage: 1,
             autoplay: true,
-            interval: 6000,
-            speed: 800,
-            arrows: false,
+            interval: 8000,
+            speed: 1000,
+            arrows: true,
             pagination: true,
-            pauseOnHover: false
+            pauseOnHover: true,
+            pauseOnFocus: true,
+            drag: true,
+            easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+            classes: {
+                arrows: 'splide__arrows',
+                arrow : 'splide__arrow',
+                prev  : 'splide__arrow--prev',
+                next  : 'splide__arrow--next',
+            }
         }).mount();
     }
+
+    // Read More functionality
+    document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.testimonial-card');
+            const excerpt = card.querySelector('.excerpt');
+            const fullStory = card.querySelector('.full-story');
+            
+            if (excerpt.style.display === 'none') {
+                excerpt.style.display = 'block';
+                fullStory.style.display = 'none';
+                this.textContent = 'Read Full Story';
+            } else {
+                excerpt.style.display = 'none';
+                fullStory.style.display = 'block';
+                this.textContent = 'Show Less';
+                
+                // Animate the appearance
+                fullStory.style.animation = 'fadeInUp 0.5s ease-out';
+            }
+        });
+    });
+
+    // Share button functionality
+    document.querySelectorAll('.share-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const storyId = this.getAttribute('data-story');
+            const storyTitle = this.closest('.testimonial-card').querySelector('h4').textContent;
+            const shareUrl = window.location.href.split('#')[0] + '?story=' + storyId;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: `${storyTitle}'s Success Story`,
+                    text: `Read ${storyTitle}'s inspiring journey with Dzikwa Trust`,
+                    url: shareUrl
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                    fallbackShare(shareUrl);
+                });
+            } else {
+                fallbackShare(shareUrl);
+            }
+        });
+    });
+
+    function fallbackShare(url) {
+        // Copy to clipboard as fallback
+        navigator.clipboard.writeText(url).then(() => {
+            alert('Link copied to clipboard!');
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+            window.open(`https://twitter.com/intent/tweet?text=Check out this inspiring story from Dzikwa Trust&url=${encodeURIComponent(url)}`, '_blank');
+        });
+    }
+
+    // Video modal functionality (if you add videos later)
+    document.querySelectorAll('[data-video]').forEach(button => {
+        button.addEventListener('click', function() {
+            const videoUrl = this.getAttribute('data-video').replace('youtu.be/', 'youtube.com/embed/');
+            document.getElementById('storyVideoFrame').src = videoUrl;
+            const modal = new bootstrap.Modal(document.getElementById('storyVideoModal'));
+            modal.show();
+        });
+    });
+
+    document.getElementById('storyVideoModal').addEventListener('hidden.bs.modal', function () {
+        document.getElementById('storyVideoFrame').src = '';
+    });
+
+    // Add animation to cards when they come into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.testimonial-card').forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
+    });
+});
+
+// Additional animation for when full story is shown
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
 
     // Counter animation for stats
     const animateCounters = () => {
