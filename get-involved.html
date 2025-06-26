@@ -6,7 +6,7 @@
     <title>Get Involved - Dzikwa Trust Fund</title>
     <meta name="description" content="Discover ways to support Dzikwa Trust Fund through donations, volunteering, partnerships, and more.">
     
-    <!-- Add this before your other meta tags -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,19 +27,6 @@
     <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
-<script>
-// Debug tool - alerts if Bootstrap is loaded
-if (!window.bootstrap) {
-  alert("ERROR: Bootstrap JS not loaded!");
-} else {
-  document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(btn => {
-    btn.addEventListener('click', function() {
-      console.log("Dropdown triggered");
-      this.nextElementSibling.classList.toggle('show');
-    });
-  });
-}
-</script>
 <body>
     <!-- Top Bar -->
     <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
@@ -67,9 +54,6 @@ if (!window.bootstrap) {
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">Our story</a>
                     </li>
@@ -95,14 +79,6 @@ if (!window.bootstrap) {
                     <h1 class="display-5 fw-bold text-gradient-primary">Get Involved</h1>
                     <p class="lead">Join our mission to empower vulnerable children through education and community development</p>
                 </div>
-                <!-- <div class="col-lg-6" data-aos="fade-left">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-lg-end mb-0">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Get Involved</li>
-                        </ol>
-                    </nav>
-                </div> -->
             </div>
         </div>
     </section>
@@ -203,25 +179,21 @@ if (!window.bootstrap) {
                 <div class="mt-4 d-flex flex-wrap gap-2">
                     <a href="donate.html" class="btn btn-primary me-2">Donate Now</a>
                     
-                   <!-- Enhanced Dropdown with z-index fixes -->
-   <div class="dropup position-static">
-  <button class="btn btn-outline-primary dropdown-toggle" 
-          type="button"
-          id="otherWaysDropdown"
-          data-bs-toggle="dropdown"
-          data-bs-display="static"
-          aria-expanded="false">
-    Other Ways to Give
-  </button>
-  <ul class="dropdown-menu show" 
-      style="z-index: 99999; position: absolute; bottom: 100%; margin-bottom: 5px;">
-    <li><h6 class="dropdown-header text-primary fw-bold">Donation Methods</h6></li>
-    <li><a class="dropdown-item py-2" href="#">
-        <i class="fas fa-university me-2"></i> Bank Transfer</a></li>
-    <li><a class="dropdown-item py-2" href="#">
-        <i class="fas fa-gift me-2"></i> In-Kind Donations</a></li>
-  </ul>
-</div>
+                    <!-- Corrected Dropdown -->
+                    <div class="dropup">
+                        <button class="btn btn-outline-primary dropdown-toggle" 
+                                type="button"
+                                id="otherWaysDropdown"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Other Ways to Give
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="otherWaysDropdown">
+                            <li><h6 class="dropdown-header text-primary fw-bold">Donation Methods</h6></li>
+                            <li><a class="dropdown-item py-2" href="#"><i class="fas fa-university me-2"></i> Bank Transfer</a></li>
+                            <li><a class="dropdown-item py-2" href="#"><i class="fas fa-gift me-2"></i> In-Kind Donations</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -283,9 +255,13 @@ if (!window.bootstrap) {
                 <div class="mt-4 d-flex flex-wrap gap-2">
                     <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#volunteerModal">Apply to Volunteer</button>
                     
-                    <!-- Enhanced Virtual Opportunities Dropdown -->
+                    <!-- Corrected Virtual Opportunities Dropdown -->
                     <div class="dropdown">
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="virtualOpportunitiesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-primary dropdown-toggle" 
+                                type="button" 
+                                id="virtualOpportunitiesDropdown" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false">
                             Virtual Opportunities
                         </button>
                         <ul class="dropdown-menu shadow-sm" aria-labelledby="virtualOpportunitiesDropdown">
@@ -645,8 +621,27 @@ if (!window.bootstrap) {
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
     <script>
-        AOS.init();
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
 
-</script>
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
 </body>
 </html>
