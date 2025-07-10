@@ -1,0 +1,17 @@
+{
+    "rules": {
+      "donations": {
+        ".read": true,
+        ".write": "auth != null",
+        "$month": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        }
+      },
+      "goals": {
+        ".read": true,
+        ".write": "auth != null"
+      }
+    }
+  }
+
+  

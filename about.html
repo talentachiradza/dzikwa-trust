@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzikwa Trust Fund - Empowering Children Through Education</title>
+    <meta name="description" content="Dzikwa Trust Fund provides education, nutrition, and support to vulnerable children in Zimbabwe.">
+    
+        <!-- Add this before your other meta tags -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Splide Slider CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <span class="me-3"><i class="fas fa-phone me-2"></i> +263 24 2217455</span>
+                <span><i class="fas fa-envelope me-2"></i>dzikwatrust@africaonline.co.zw</span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Our story</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li><a class="dropdown-item" href="programs.html#education">Education</a></li>
+                            <li><a class="dropdown-item" href="programs.html#ict">ICT Department</a></li>
+                            <li><a class="dropdown-item" href="programs.html#reforestation">Reforestation</a></li>
+                            <li><a class="dropdown-item" href="programs.html#sisterhood">Sisterhood Program</a></li>
+                            <li><a class="dropdown-item" href="programs.html#arts-sports">Arts & Sports</a></li>
+                            <li><a class="dropdown-item" href="programs.html#feeding">Feeding Program</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="get-involved.html">Get Involved</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="donate.html">Donate</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="sponsor.html">Sponsor a Child</a></li>
+                            <li><a class="dropdown-item" href="gallery.html">Success Stories</a></li>
+                            <li><a class="dropdown-item" href="volunteer.html">Volunteer</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <a href="donate.html" class="btn btn-primary ms-lg-3">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="about-page">
+        <!-- Hero Banner -->
+        <section class="about-hero py-5 bg-light">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">Our Story of Hope</h1>
+                        <p class="lead">Dzikwa Trust Fund (Trust Deed M.A. 957/2002) operates in one of Harare's poorest townships Dzivarasekwa with a population 
+                            of about <strong>250,000</strong>. Dzikwa Activity Center at <strong>#3147 Rujeko Street, Dzivarasekwa 1,</strong> is a beacon of hope for the entire community</p>
+                            <div class="hero-buttons">
+                                <a href="our-story.html" class="btn btn-primary btn-lg me-2">Read More</a>
+                            </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <img src="assets/images/pic 1.jpg" alt="Dzikwa Trust children" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 order-lg-2">
+                        <img src="assets/images/mission.JPG" alt="Children learning" class="img-fluid rounded mb-4 mb-lg-0">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
+                        <p>To empower gifted orphans and vulnerable children in Zimbabwe through education & general wellbeing, boosted by <strong>digital skills
+                            e-learning, performance arts, sports, pyscho-social support & environmental activities</strong></p>
+                        <div class="mission-values mt-5">
+                            <h3 class="h4 mb-3">Our Core Values</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-heart text-secondary me-3 mt-1"></i>
+                                    <span><strong>Compassion:</strong> We treat every child with dignity and care</span>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-shield-alt text-secondary me-3 mt-1"></i>
+                                    <span><strong>Integrity:</strong> We maintain transparency in all our operations</span>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-hand-holding-heart text-secondary me-3 mt-1"></i>
+                                    <span><strong>Empowerment:</strong> We equip children with tools for lifelong success</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="vision.html" class="btn btn-primary btn-lg me-2">Read More</a>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Timeline -->
+        <section class="timeline-section py-5 bg-light">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2002</div>
+                        <div class="timeline-content">
+                            <h3>Founded in Dzivarasekwa 1, Harare</h3>
+                            <p>Started with 15 children in a small community center</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2012</div>
+                        <div class="timeline-content">
+                            <h3>First Computer Lab</h3>
+                            <p>Established ICT program with 10 donated computers</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h3>100th Graduate</h3>
+                            <p>Tinashe became our first graduate to work in tech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners-section py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5">Our Trusted Partners</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-6 col-md-3">
+                        <img src="assets/images/pic 1.jpg" alt="Partner 1" class="img-fluid rounded">
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="assets/images/pic 1.jpg" alt="Partner 2" class="img-fluid rounded">
+                    </div>
+                    <!-- Add more partners -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" class="footer-logo mb-3" height="100">
+                        <p>Dzikwa Trust Fund has been empowering vulnerable children in Zimbabwe through education, nutrition, and community development since 1995.</p>
+                        <div class="social-links mt-4">
+                             <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
+                        <li class="mb-2"><a href="get-involved.html" class="text-white">Get Involved</a></li>
+                        <li class="mb-2"><a href="donate.html" class="text-white">Donate</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Our Programs</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="programs.html#education" class="text-white">Education</a></li>
+                        <li class="mb-2"><a href="programs.html#ict" class="text-white">ICT Department</a></li>
+                        <li class="mb-2"><a href="programs.html#reforestation" class="text-white">Reforestation</a></li>
+                        <li class="mb-2"><a href="programs.html#sisterhood" class="text-white">Sisterhood Program</a></li>
+                        <li class="mb-2"><a href="programs.html#arts-sports" class="text-white">Arts & Sports</a></li>
+                        <li><a href="programs.html#feeding" class="text-white">Feeding Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-heading mb-4">Contact Us</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                             3147 Rujeko Street, Dzivarasekwa 1, Harare, Zimbabwe
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            +263 24 2217455
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            dzikwatrust@africaonline.co.zw
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Mon-Sat: 9:00 AM - 5:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Dzikwa Trust Fund. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

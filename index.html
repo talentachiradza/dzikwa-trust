@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzikwa Trust Fund - Empowering Children Through Education</title>
+    <meta name="description" content="Dzikwa Trust Fund provides education, nutrition, and support to vulnerable children in Zimbabwe.">
+    
+        <!-- Add this before your other meta tags -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Splide Slider CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+    <!-- Required CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <span class="me-3"><i class="fas fa-phone me-2"></i> +263 24 2217455</span>
+                <span><i class="fas fa-envelope me-2"></i> dzikwatrust@africaonline.co.zw</span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2" title="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2" title="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white" title="Visit our LinkedIn page"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+   <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">Our story</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get-involved.html">Get Involved</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="news.html">Newsletters</a>
+                </li>
+            </ul>
+            <div class="d-flex ms-lg-3">
+                <a href="donate.html" class="btn btn-primary">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div id="mainSlider" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="hero-slide" style="background-image: url('assets/images/pic 1.jpg');">
+                            <div class="container">
+                                <div class="hero-content" data-aos="fade-up">
+                                    <h1>Empowering Children Through Education, overall wellbeing.</h1>
+                                    <p class="lead">Providing quality education & support to vulnerable children in Zimbabwe since 2002.</p>
+                                    <div class="hero-buttons">
+                                        <a href="donate.html" class="btn btn-primary btn-lg me-2">Donate Now</a>
+                                        <a href="programs.html" class="btn btn-outline-light btn-lg">Our Programs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="hero-slide" style="background-image: url('assets/images/edu\ g.JPG');">
+                            <div class="container">
+                                <div class="hero-content" data-aos="fade-up">
+                                    <h1>Primary, Secondary Advanced & higher Education</h1>
+                                    <p class="lead">Education & developing comprehensive life skills are the key drivers for unlocking talent....</p>
+                                    <div class="hero-buttons">
+                                        <a href="programs.html#sisterhood" class="btn btn-primary btn-lg me-2">Learn More</a>
+                                        <a href="get-involved.html" class="btn btn-outline-light btn-lg">Volunteer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="hero-slide" style="background-image: url('assets/images/sister.jpg');">
+                            <div class="container">
+                                <div class="hero-content" data-aos="fade-up">
+                                    <h1>Girls Empowerment <em>(Sisterhood Club)</em></h1>
+                                    <p class="lead">Empowering young girls through mentorship and life skills training.</p>
+                                    <div class="hero-buttons">
+                                        <a href="programs.html#sisterhood" class="btn btn-primary btn-lg me-2">Learn More</a>
+                                        <a href="get-involved.html" class="btn btn-outline-light btn-lg">Volunteer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="hero-slide" style="background-image: url('assets/images/ict.JPG');">
+                            <div class="container">
+                                <div class="hero-content" data-aos="fade-up">
+                                    <h1>ICT Skills, Digital literacy & E-learning</h1>
+                                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                                    <div class="hero-buttons">
+                                        <a href="programs.html#sisterhood" class="btn btn-primary btn-lg me-2">Learn More</a>
+                                        <a href="get-involved.html" class="btn btn-outline-light btn-lg">Volunteer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="hero-slide" style="background-image: url('assets/images/refo.JPG');">
+                            <div class="container">
+                                <div class="hero-content" data-aos="fade-up">
+                                    <h1>ReFoSec <em>(Reforestation)</em></h1>
+                                    <p class="lead">Empowering young girls through mentorship and life skills training.</p>
+                                    <div class="hero-buttons">
+                                        <a href="programs.html#sisterhood" class="btn btn-primary btn-lg me-2">Learn More</a>
+                                        <a href="get-involved.html" class="btn btn-outline-light btn-lg">Volunteer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="hero-slide" style="background-image: url('assets/images/nutrition.JPG');">
+                            <div class="container">
+                                <div class="hero-content" data-aos="fade-up">
+                                    <h1>Nutrition</h1>
+                                    <p class="lead">Providing nutritious meals Monday to Saturday as a critical wellbeing services.</p>
+                                    <div class="hero-buttons">
+                                        <a href="programs.html#feeding" class="btn btn-primary btn-lg me-2">Our Impact</a>
+                                        <a href="donate.html" class="btn btn-outline-light btn-lg">Sponsor a Child</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="impact-stats py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Our Impact in Numbers</h2>
+                <p class="lead">Transforming lives through education, overall wellbeing and community development</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card p-4 bg-white rounded shadow-sm">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="stat-number" data-count="1250">0</h3>
+                        <p class="stat-label">Children Educated</p>
+                        <p class="stat-label">2006 - 2024</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card p-4 bg-white rounded shadow-sm">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-utensils fa-3x text-danger"></i>
+                        </div>
+                        <h3 class="stat-number" data-count="1861663">0</h3>
+                        <p class="stat-label">Nutrition</p>
+                        <p class="stat-label">2008 - 2024</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card p-4 bg-white rounded shadow-sm">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-tree fa-3x text-success"></i>
+                        </div>
+                        <h3 class="stat-number" data-count="136000">0</h3>
+                        <p class="stat-label">Trees Planted</p>
+                        <p class="stat-label">2008 - 2024</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card p-4 bg-white rounded shadow-sm">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-laptop fa-3x text-info"></i>
+                        </div>
+                        <h3 class="stat-number" data-count="83">0</h3>
+                        <p class="stat-label">ICDL Graduates</p>
+                        <p class="stat-label">2024 - 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Our Programs Section -->
+<section class="programs-section py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="display-5 fw-bold text-gradient-primary">Our Impactful Programs</h2>
+            <p class="lead text-muted">Empowering communities through sustainable initiatives</p>
+            <div class="divider mx-auto bg-primary"></div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Education Support Card -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+                    <div class="card-img-top overflow-hidden">
+                        <img src="assets/images/edu3 (2).jpg" alt="Education Support" class="img-fluid zoom-effect">
+                        <div class="program-badge" style="background-color: var(--primary-color); color: white;">Academic Excellence</div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-box bg-info-light text-info rounded-circle me-3">
+                                <i class="fas fa-book-open fa-fw"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Education Support</h3>
+                        </div>
+                        <p class="text-muted">Comprehensive educational programs from early childhood to vocational training, including scholarships, mentorship, and learning resources.</p>
+                        <ul class="program-features list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> School fee assistance</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Tutoring programs</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Career guidance</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0 pb-4">
+                        <a href="programs.html#education" class="btn btn-outline-primary stretched-link">Discover More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ICT Skills Card -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+                    <div class="card-img-top overflow-hidden">
+                        <img src="assets/images/ict2.JPG" alt="ICT Skills" class="img-fluid zoom-effect">
+                        <div class="program-badge" style="background-color: var(--primary-color); color: white;">Digital Future</div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-box bg-purple-light text-purple rounded-circle me-3">
+                                <i class="fas fa-laptop-code fa-fw"></i>
+                            </div>
+                            <h3 class="h5 mb-0">ICT Skills Development</h3>
+                        </div>
+                        <p class="text-muted">Equipping youth with essential digital skills through hands-on training in coding, computer literacy, and emerging technologies.</p>
+                        <ul class="program-features list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Coding <em>(programing skills)</em></li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Digital literacy</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Tech mentorship</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0 pb-4">
+                        <a href="programs.html#ict" class="btn btn-outline-primary stretched-link">Explore Program</a>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- Reforestation Card -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+                    <div class="card-img-top overflow-hidden">
+                        <img src="assets/images/refo2.JPG" alt="Reforestation" class="img-fluid zoom-effect">
+                        <div class="program-badge" style="background-color: var(--primary-color); color: white;">Eco Initiative</div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-box bg-success-light text-success rounded-circle me-3">
+                                <i class="fas fa-tree fa-fw"></i>
+                            </div>
+                            <h3 class="h5 mb-0">Community Reforestation</h3>
+                        </div>
+                        <p class="text-muted">Environmental conservation through tree planting initiatives that restore ecosystems while providing sustainable livelihoods.</p>
+                        <ul class="program-features list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Native species planting</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Youth environmental education</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Sustainable agriculture</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0 pb-4">
+                        <a href="programs.html#reforestation" class="btn btn-outline-primary stretched-link">Get Involved</a>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Add this to the Our Programs Section in index.html -->
+<div class="row g-4"> 
+    <!-- Sports Program Card -->
+    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+            <div class="card-img-top overflow-hidden">
+                <img src="assets/images/sports.jpg" alt="Sports Program" class="img-fluid zoom-effect">
+                <div class="program-badge" style="background-color: var(--primary-color); color: white;">Healthy Living</div>
+            </div>
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="icon-box bg-danger-light text-danger rounded-circle me-3">
+                        <i class="fas fa-running fa-fw"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Sports & Athletics</h3>
+                </div>
+                <p class="text-muted">Developing physical fitness, teamwork, and discipline through organized sports activities and competitions.</p>
+                <ul class="program-features list-unstyled">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Soccer teams</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Netball programs</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Athletics training</li>
+                </ul>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 pb-4">
+                <a href="sports.html" class="btn btn-outline-primary stretched-link">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Arts & Culture Program Card -->
+    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+            <div class="card-img-top overflow-hidden">
+                <img src="assets/images/arts.jpg" alt="Arts & Culture Program" class="img-fluid zoom-effect">
+                <div class="program-badge" style="background-color: var(--primary-color); color: white;">Creative Expression</div>
+            </div>
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="icon-box bg-purple-light text-purple rounded-circle me-3">
+                        <i class="fas fa-paint-brush fa-fw"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Arts & Culture</h3>
+                </div>
+                <p class="text-muted">Preserving cultural heritage and fostering creativity through visual arts, music, dance, and traditional crafts.</p>
+                <ul class="program-features list-unstyled">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Traditional dance</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Music education</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Visual arts</li>
+                </ul>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 pb-4">
+                <a href="arts-culture.html" class="btn btn-outline-primary stretched-link">Explore Program</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nutrition Program Card -->
+
+    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+    <div class="card program-card h-100 border-0 shadow-sm hover-shadow transition-all">
+        <div class="card-img-top overflow-hidden">
+            <img src="assets/images/nutrition.JPG" alt="Nutrition Program" class="img-fluid zoom-effect">
+            <div class="program-badge" style="background-color: var(--primary-color); color: white;">Healthy Living</div>
+        </div>
+        <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+                <div class="icon-box bg-green-light text-green rounded-circle me-3">
+                    <i class="fas fa-utensils fa-fw"></i>
+                </div>
+                <h3 class="h5 mb-0">Nutrition & Wellness</h3>
+            </div>
+            <p class="text-muted">Promoting healthy lifestyles through nutrition education, meal planning, and community food security initiatives.</p>
+            <ul class="program-features list-unstyled">
+                <li><i class="fas fa-check-circle text-success me-2"></i> Balanced diet education</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Food preparation skills</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Community gardens</li>
+            </ul>
+        </div>
+        <div class="card-footer bg-transparent border-top-0 pb-4">
+            <a href="programs.html#nutrition" class="btn btn-outline-primary stretched-link">Explore Program</a>
+        </div>
+    </div>
+</div>
+</div>
+
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="programs.html" class="btn btn-primary px-4 py-3 rounded-pill shadow">
+                Explore All Programs <i class="fas fa-chevron-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section> 
+
+   <!-- Success Stories Carousel -->
+<section class="success-stories py-5 bg-light" id="success-stories">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <h2 class="display-5 fw-bold">Transformative Journeys</h2>
+            <p class="lead">Witness the real impact of Dzikwa Trust</p>
+        </div>
+
+        <div class="slick-carousel">
+            <!-- Story 1 -->
+            <div class="slick-slide p-3">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden hover-zoom">
+                    <div class="card-img-top position-relative">
+                        <img src="assets/images/test1.jpg" alt="Tendai" class="img-fluid">
+                        <div class="card-overlay"></div>
+                        <div class="play-btn" data-video="https://youtu.be/EXAMPLE1">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">ICT Program</span>
+                        <h3 class="h5">Tendai M.</h3>
+                        <p class="excerpt">"The computer skills changed my life..."</p>
+                        <a href="success-stories/tendai" class="stretched-link" aria-label="Read Tendai M. Success Story"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Story 2 -->
+            <div class="slick-slide p-3">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden hover-zoom">
+                    <div class="card-img-top position-relative">
+                        <img src="assets/images/test2.JPG" alt="Farai" class="img-fluid">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Sisterhood</span>
+                        <h3 class="h5">Farai Chaleka</h3>
+                        <p class="excerpt">"Found my voice through mentorship..."</p>
+                        <a href="success-stories/farai" class="stretched-link" aria-label="Read Farai Chaleka Success Story"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add 3-5 more story slides -->
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="success-stories.html" class="btn btn-primary px-4">
+                <i class="fas fa-book-open me-2"></i> Explore All Stories
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark">
+            <div class="modal-body p-0 ratio ratio-16x9">
+                <iframe id="videoFrame" src="" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+// Initialize Slick Carousel
+$(document).ready(function(){
+    $('.slick-carousel').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+    
+    // Video Modal
+    $('.play-btn').click(function(){
+        const videoUrl = $(this).data('video').replace('youtu.be/', 'youtube.com/embed/');
+        $('#videoFrame').attr('src', videoUrl);
+        $('#videoModal').modal('show');
+    });
+    
+    $('#videoModal').on('hidden.bs.modal', function(){
+        $('#videoFrame').attr('src', '');
+    });
+});
+</script>
+
+<style>
+/* Slick Carousel Customization */
+.slick-carousel {
+    margin: 0 -15px;
+}
+.slick-slide {
+    padding: 0 15px;
+}
+.slick-arrow {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+}
+.slick-prev { left: -50px; }
+.slick-next { right: -50px; }
+.slick-dots li button:before {
+    font-size: 12px;
+}
+
+/* Card Hover Effects */
+.hover-zoom {
+    transition: transform 0.3s;
+}
+.hover-zoom:hover {
+    transform: translateY(-10px);
+}
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.card:hover .card-overlay {
+    opacity: 1;
+}
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.play-btn i {
+    color: white;
+    font-size: 24px;
+    margin-left: 5px;
+}
+.card:hover .play-btn {
+    opacity: 1;
+    background: rgba(255,255,255,0.3);
+}
+</style>
+    <!-- Call to Action -->
+    <section class="cta-section py-5 text-white" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="mb-3 text-white !important">Join Us in Making a Difference</h2>
+                    <p class="lead mb-0">Your support can transform a child's life through education, nutrition, and community development.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <a href="donate.html" class="btn btn-light btn-lg me-2">Donate Now</a>
+                    <a href="get-involved.html" class="btn btn-outline-light btn-lg">Volunteer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="latest-news py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Latest News & Updates</h2>
+                <p class="lead">Stay informed about our work and impact</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-card h-100">
+                        <div class="news-image">
+                            <img src="assets/images/news1.jpg" alt="News 1" class="img-fluid">
+                            <div class="news-date">
+                                <span class="day">15</span>
+                                <span class="month">Jun</span>
+                            </div>
+                        </div>
+                        <div class="news-content p-4">
+                            <h3><a href="#">Annual School Supplies Distribution</a></h3>
+                            <p>This year we provided 350 children with complete school kits including uniforms, books, and stationery.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-card h-100">
+                        <div class="news-image">
+                            <img src="assets/images/new2.JPG" alt="News 2" class="img-fluid">
+                            <div class="news-date">
+                                <span class="day">02</span>
+                                <span class="month">May</span>
+                            </div>
+                        </div>
+                        <div class="news-content p-4">
+                            <h3><a href="#">Digital Literacy Program Expansion</a></h3>
+                            <p>Thanks to a generous grant, we're adding 10 new computers to our ICT lab to serve more students.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-card h-100">
+                        <div class="news-image">
+                            <img src="assets/images/refonew.JPG" alt="News 3" class="img-fluid">
+                            <div class="news-date">
+                                <span class="day">20</span>
+                                <span class="month">Apr</span>
+                            </div>
+                        </div>
+                        <div class="news-content p-4">
+                            <h3><a href="#">Community Tree Planting Day</a></h3>
+                            <p>Over 200 volunteers joined us to plant 1,000 native trees in our annual environmental initiative.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="#" class="btn btn-outline-primary btn-lg">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="mb-3">Stay Connected</h2>
+                    <p class="lead mb-4">Subscribe to our newsletter to receive updates on our programs, success stories, and how you can help.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-lg" placeholder="Your email address" required>
+                            <button class="btn btn-primary btn-lg" type="submit">Subscribe</button>
+                        </div>
+                        <div class="form-text mt-2">We respect your privacy. Unsubscribe at any time.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" class="footer-logo mb-3" height="100">
+                        <p>Dzikwa Trust Fund has been empowering vulnerable children in Zimbabwe through education, nutrition, and community development since 1995.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-3" title="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white me-3" title="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white me-3" title="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white" title="Visit our LinkedIn page"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
+                        <li class="mb-2"><a href="get-involved.html" class="text-white">Get Involved</a></li>
+                        <li class="mb-2"><a href="donate.html" class="text-white">Donate</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Our Programs</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="programs.html#education" class="text-white">Education</a></li>
+                        <li class="mb-2"><a href="programs.html#ict" class="text-white">ICT Department</a></li>
+                        <li class="mb-2"><a href="programs.html#reforestation" class="text-white">Reforestation</a></li>
+                        <li class="mb-2"><a href="programs.html#sisterhood" class="text-white">Sisterhood Program</a></li>
+                        <li class="mb-2"><a href="programs.html#arts-sports" class="text-white">Arts & Sports</a></li>
+                        <li><a href="programs.html#feeding" class="text-white">Feeding Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-heading mb-4">Contact Us</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                             3147 Rujeko Street, Dzivarasekwa 1, Harare, Zimbabwe
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            +263 123 456 789
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            dzikwatrust@africaonline.co.zw
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Mon-Sat: 9:00 AM - 5:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Dzikwa Trust Fund. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- Required JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>

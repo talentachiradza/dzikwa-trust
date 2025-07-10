@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzikwa Trust Fund - Empowering Children Through Education</title>
+    <meta name="description" content="Dzikwa Trust Fund provides education, nutrition, and support to vulnerable children in Zimbabwe.">
+    
+        <!-- Add this before your other meta tags -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Splide Slider CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <span class="me-3"><i class="fas fa-phone me-2"></i> +263 24 2217455</span>
+                <span><i class="fas fa-envelope me-2"></i> info@dzikwa.org</span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+     <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">Our story</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get-involved.html">Get Involved</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <div class="d-flex ms-lg-3">
+                <a href="donate.html" class="btn btn-primary">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="sponsor-page">
+        <!-- Hero Section -->
+        <section class="sponsor-hero py-5 text-white" style="background-color: var(--primary-color);">
+            <div class="container py-5 text-center">
+                <h1 class="display-4 fw-bold mb-3">Sponsor a Child's Future</h1>
+                <p class="lead mx-auto" style="max-width: 700px;">Your $30/month provides education, meals, and hope to a vulnerable child in Dzivarasekwa</p>
+                <a href="#children" class="btn btn-light btn-lg mt-4">Meet Children Waiting for Sponsors</a>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5">How Sponsorship Works</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="step-card text-center p-4 h-100">
+                            <div class="step-number bg-primary text-white rounded-circle mx-auto mb-4">1</div>
+                            <h3 class="h4">Choose a Child</h3>
+                            <p>Select a child to sponsor based on their profile and needs</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="step-card text-center p-4 h-100">
+                            <div class="step-number bg-primary text-white rounded-circle mx-auto mb-4">2</div>
+                            <h3 class="h4">Monthly Support</h3>
+                            <p>Your $30/month covers school fees, uniform, meals, and supplies</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="step-card text-center p-4 h-100">
+                            <div class="step-number bg-primary text-white rounded-circle mx-auto mb-4">3</div>
+                            <h3 class="h4">Stay Connected</h3>
+                            <p>Receive updates, photos, and letters from your sponsored child</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Visualization -->
+        <section class="impact-viz py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-5 fw-bold mb-4">Your Sponsorship Provides</h2>
+                        <div class="impact-list">
+                            <div class="impact-item d-flex mb-4">
+                                <div class="impact-icon bg-primary text-white rounded-circle flex-shrink-0 me-4">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5">Quality Education</h3>
+                                    <p class="mb-0">School fees, books, and tutoring support</p>
+                                </div>
+                            </div>
+                            <!-- More impact items -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="impact-image position-relative">
+                            <img src="assets/images/pic 1.jpg" alt="Sponsored child" class="img-fluid rounded shadow">
+                            <div class="impact-badge bg-success text-white p-3 rounded shadow position-absolute top-0 start-0">
+                                <div class="h2 mb-0">95%</div>
+                                <div class="small">Graduation Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Children Waiting -->
+        <section id="children" class="children-waiting py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5">Children Waiting for Sponsors</h2>
+                <div class="row g-4">
+                    <!-- Child 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="child-card card h-100">
+                            <img src="assets/images/pic 1.jpg" class="card-img-top" alt="Tendai">
+                            <div class="card-body">
+                                <h3 class="h5">Tendai, 8</h3>
+                                <p class="text-muted">Grade 3 | Orphaned</p>
+                                <p class="card-text">Loves math and dreams of becoming a teacher</p>
+                                <div class="child-meta d-flex justify-content-between mb-3">
+                                    <div>
+                                        <i class="fas fa-utensils text-primary me-2"></i>
+                                        <span>Needs meals</span>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book text-primary me-2"></i>
+                                        <span>Needs books</span>
+                                    </div>
+                                </div>
+                                <a href="sponsor-form.html?child=tendai" class="btn btn-primary w-100">Sponsor Tendai</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More children -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq py-5 bg-light">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5">Sponsorship FAQs</h2>
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                How long does sponsorship last?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We ask for a minimum 1-year commitment, but most sponsors continue until their child graduates high school (average 5-7 years).
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More FAQ items -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer -->
+     <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" class="footer-logo mb-3" height="100">
+                        <p>Dzikwa Trust Fund has been empowering vulnerable children in Zimbabwe through education, nutrition, and community development since 1995.</p>
+                        <div class="social-links mt-4">
+                            <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
+                        <li class="mb-2"><a href="get-involved.html" class="text-white">Get Involved</a></li>
+                        <li class="mb-2"><a href="donate.html" class="text-white">Donate</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Our Programs</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="programs.html#education" class="text-white">Education</a></li>
+                        <li class="mb-2"><a href="programs.html#ict" class="text-white">ICT Department</a></li>
+                        <li class="mb-2"><a href="programs.html#reforestation" class="text-white">Reforestation</a></li>
+                        <li class="mb-2"><a href="programs.html#sisterhood" class="text-white">Sisterhood Program</a></li>
+                        <li class="mb-2"><a href="programs.html#arts-sports" class="text-white">Arts & Sports</a></li>
+                        <li><a href="programs.html#feeding" class="text-white">Feeding Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-heading mb-4">Contact Us</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                             3147 Rujeko Street, Dzivarasekwa 1, Harare, Zimbabwe
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            +263 24 2217455
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            dzikwatrust@africaonline.co.zw
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Mon-Sat: 9:00 AM - 5:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Dzikwa Trust Fund. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

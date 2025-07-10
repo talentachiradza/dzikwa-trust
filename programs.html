@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Dzikwa Trust Fund</title>
+    <meta name="description" content="Explore Dzikwa Trust Fund's comprehensive programs supporting education, nutrition, and community development in Zimbabwe.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Splide Slider CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <style>
+        /* Custom styles for enhanced program tabs */
+        .program-nav {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .nav-pills .nav-link {
+            border-radius: 50px;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .nav-pills .nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+        
+        /* Dropdown styles for program components */
+        .program-component {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .program-component:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+        .component-header {
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .component-header h5 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        .component-header .arrow {
+            transition: transform 0.3s ease;
+        }
+        .component-header.collapsed .arrow {
+            transform: rotate(-90deg);
+        }
+        .component-content {
+            padding: 20px;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Enhanced testimonial section */
+        .testimonial-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/pattern.png') repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        .testimonial-card .quote-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        /* Animated stats */
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            transition: all 0.5s ease;
+        }
+        .stat-card:hover .stat-number {
+            transform: scale(1.1);
+        }
+        
+        /* Pulse animation for CTA */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <span class="me-3"><i class="fas fa-phone me-2"></i> +263 24 2217455</span>
+                <span><i class="fas fa-envelope me-2"></i> dzikwatrust@africaonline.co.zw</span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Our story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="programs.html">Our Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="get-involved.html">Get Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-lg-3">
+                    <a href="donate.html" class="btn btn-primary">Donate Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-5 fw-bold text-gradient-secondary">Our Comprehensive Programs</h1>
+                    <p class="lead">Holistic initiatives transforming lives through education, skills development, environmental restoration, and wellbeing support</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="d-flex justify-content-lg-end">
+                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="stat-number" style="color: var(--primary-color);">30+</div>
+                            <div class="stat-label">Years of Impact</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Navigation -->
+    <section class="py-3 bg-white sticky-top program-nav" style="top: 120px; z-index: 1020;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-pills justify-content-center" id="programsTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="education-tab" data-bs-toggle="pill" data-bs-target="#education" type="button" role="tab" aria-controls="education" aria-selected="true">
+                                <i class="fas fa-book me-2"></i> Education
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="edu4talent-tab" data-bs-toggle="pill" data-bs-target="#edu4talent" type="button" role="tab" aria-controls="edu4talent" aria-selected="false">
+                                <i class="fas fa-graduation-cap me-2"></i> Edu4Talent
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="restoration-tab" data-bs-toggle="pill" data-bs-target="#restoration" type="button" role="tab" aria-controls="restoration" aria-selected="false">
+                                <i class="fas fa-leaf me-2"></i> Restoration
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="wellbeing-tab" data-bs-toggle="pill" data-bs-target="#wellbeing" type="button" role="tab" aria-controls="wellbeing" aria-selected="false">
+                                <i class="fas fa-heart me-2"></i> Wellbeing
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="tab-content" id="programsTabContent">
+                <!-- Education Program -->
+                <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="education-tab">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                            <img src="assets/images/edu3 (2).jpg" alt="Education Program" class="img-fluid rounded shadow-lg">
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-left">
+                            <h2 class="mb-4 text-secondary">Comprehensive Education Support</h2>
+                            <p class="lead">Our education program provides a continuum of learning opportunities from early childhood through vocational training, ensuring no child is left behind in their educational journey.</p>
+                            <p>We address all aspects of academic development, from foundational literacy and numeracy to digital skills, preparing students for success in school and beyond.</p>
+                            
+                            <div class="program-stats mt-4">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">350+</div>
+                                            <div class="stat-label">Students Supported</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">95%</div>
+                                            <div class="stat-label">Pass Rate</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">50+</div>
+                                            <div class="stat-label">Schools Partnered</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">120</div>
+                                            <div class="stat-label">Vocational Graduates</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Components -->
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <h3 class="text-center mb-5 text-secondary" data-aos="fade-up">Our Education Components</h3>
+
+                            <div class="program-component" data-aos="fade-up">
+                                <div class="component-header" data-bs-toggle="collapse" data-bs-target="#primaryEd">
+                                    <h5 class="text-secondary"><i class="fas fa-school me-2"></i> Primary Education</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="primaryEd" class="component-content collapse show">
+                                    <p>Our primary education support ensures children build strong foundational skills in literacy, numeracy, and critical thinking. We provide:</p>
+                                    <ul>
+                                        <li>Full tuition and examination fee coverage</li>
+                                        <li>School uniforms and essential learning materials</li>
+                                        <li>After-school homework assistance</li>
+                                        <li>Extracurricular activities for holistic development</li>
+                                        <li>Regular progress monitoring and parent-teacher engagement</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Volunteer as Tutor</a>
+                                        <a href="donate.html#education" class="btn btn-sm btn-primary">Sponsor a Child</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="100">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#secondaryEd">
+                                    <h5 class="text-secondary"><i class="fas fa-chalkboard-teacher me-2 text-secondary"></i> Secondary Education</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="secondaryEd" class="component-content collapse">
+                                    <p>We support adolescents through the critical secondary education phase with comprehensive academic and personal development programs:</p>
+                                    <ul>
+                                        <li>Full coverage of tuition, examination, and practical fees</li>
+                                        <li>Subject-specific tutoring in sciences, mathematics, and languages</li>
+                                        <li>Leadership and life skills workshops</li>
+                                        <li>Career exploration and subject selection guidance</li>
+                                        <li>STEM enrichment programs for girls</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Mentor a Student</a>
+                                        <a href="donate.html#education" class="btn btn-sm btn-primary">Fund Secondary Education</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="200">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#higherEd">
+                                    <h5 class="text-secondary"><i class="fas fa-university me-2 text-secondary"></i> Higher Education</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="higherEd" class="component-content collapse">
+                                    <p>Our higher education initiative bridges the gap between secondary school and professional careers through:</p>
+                                    <ul>
+                                        <li>University and college scholarship programs</li>
+                                        <li>Technical and vocational education sponsorship</li>
+                                        <li>Internship placement and career readiness training</li>
+                                        <li>Alumni mentorship network</li>
+                                        <li>Professional development workshops</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Become a Mentor</a>
+                                        <a href="donate.html#education" class="btn btn-sm btn-primary">Support Higher Education</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="300">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#remedial">
+                                    <h5 class="text-secondary"><i class="fas fa-book-reader me-2 text-secondary"></i> Remedial Lessons</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="remedial" class="component-content collapse">
+                                    <p>Our remedial education program provides targeted support for students who need extra help to succeed academically:</p>
+                                    <ul>
+                                        <li>Diagnostic assessments to identify learning gaps</li>
+                                        <li>Individualized learning plans</li>
+                                        <li>Small group tutoring sessions</li>
+                                        <li>Literacy and numeracy catch-up programs</li>
+                                        <li>Specialized support for students with learning differences</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Teach Remedial Classes</a>
+                                        <a href="donate.html#education" class="btn btn-sm btn-primary">Fund Learning Materials</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="400">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#elearning">
+                                    <h5 class="text-secondary"><i class="fas fa-laptop-code me-2 text-secondary"></i> E-Learning & Basic ICT</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="elearning" class="component-content collapse">
+                                    <p>Our digital literacy initiative prepares students for the technology-driven world through:</p>
+                                    <ul>
+                                        <li>Computer lab with internet access</li>
+                                        <li>Basic computer skills training for all ages</li>
+                                        <li>E-learning platforms and digital resources</li>
+                                        <li>Coding and programming workshops</li>
+                                        <li>Digital citizenship and online safety education</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Teach ICT Skills</a>
+                                        <a href="donate.html#ict" class="btn btn-sm btn-primary">Donate Equipment</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Testimonials -->
+                    <div class="testimonial-section mt-5">
+                        <div class="container">
+                            <div class="section-header text-center mb-5" data-aos="fade-up">
+                                <h3>Education Success Stories</h3>
+                                <p class="lead">Hear from students and educators transformed by our programs</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 mx-auto">
+                                    <div id="educationTestimonialSlider" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"Dzikwa Trust paid my school fees from primary through university. Today I'm an accountant, able to support my family and give back to my community. Education truly changes lives."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test1.jpg" alt="Tendai's Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Tendai M.</h5>
+                                                                <p class="mb-0 text-muted">University Graduate & Alumni</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"The remedial classes helped me improve my mathematics from a D to an A. Now I'm studying engineering, something I never thought possible before Dzikwa's support."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test2.JPG" alt="Rumbidzai's Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Rumbidzai C.</h5>
+                                                                <p class="mb-0 text-muted">Engineering Student</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"As a teacher at a partner school, I've seen firsthand how Dzikwa's support transforms students. The additional learning materials and tutoring make all the difference in their performance."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test3.JPG" alt="Teacher's Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Mr. Chikomo</h5>
+                                                                <p class="mb-0 text-muted">School Teacher</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Edu4Talent Program -->
+                <div class="tab-pane fade" id="edu4talent" role="tabpanel" aria-labelledby="edu4talent-tab">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+                            <img src="assets/images/edu4talent.jpg" alt="Edu4Talent Program" class="img-fluid rounded shadow-lg">
+                        </div>
+                        <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                            <h2 class="mb-4 text-secondary">Edu4Talent Program</h2>
+                            <p class="lead">Bridging the gap between education and employment through comprehensive career development initiatives.</p>
+                            <p>Our Edu4Talent program focuses on equipping youth with the skills, guidance, and opportunities they need to transition successfully from school to meaningful careers or entrepreneurship.</p>
+                            
+                            <div class="program-stats mt-4">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">85%</div>
+                                            <div class="stat-label">Employment Rate</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">200+</div>
+                                            <div class="stat-label">Mentors</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">50</div>
+                                            <div class="stat-label">Partner Employers</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">30</div>
+                                            <div class="stat-label">Startups Launched</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Edu4Talent Components -->
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <h3 class="text-center mb-5" data-aos="fade-up">Program Components</h3>
+                            
+                            <div class="program-component" data-aos="fade-up">
+                                <div class="component-header" data-bs-toggle="collapse" data-bs-target="#aimObjectives">
+                                    <h5 class="text-secondary"><i class="fas fa-bullseye me-2"></i> Aim and Objectives</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="aimObjectives" class="component-content collapse show">
+                                    <p>The Edu4Talent program has three core objectives that guide all our activities:</p>
+                                    <ol>
+                                        <li><strong>Empowerment:</strong> Equip youth with market-relevant skills and knowledge</li>
+                                        <li><strong>Connection:</strong> Bridge the gap between education and employment</li>
+                                        <li><strong>Sustainability:</strong> Create pathways for long-term career success</li>
+                                    </ol>
+                                    <p>Our approach combines practical training with mentorship and real-world experience to prepare youth for the workforce.</p>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Join Our Mission</a>
+                                        <a href="donate.html#edu4talent" class="btn btn-sm btn-primary">Support Talent Development</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="100">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#careerGuidance">
+                                    <h5 class="text-secondary"><i class="fas fa-user-tie me-2"></i> Career Guidance & Mentoring</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="careerGuidance" class="component-content collapse">
+                                    <p>Our career guidance program helps students make informed decisions about their future through:</p>
+                                    <ul>
+                                        <li>One-on-one career counseling sessions</li>
+                                        <li>Industry professional mentorship program</li>
+                                        <li>Career exploration workshops</li>
+                                        <li>University and college application assistance</li>
+                                        <li>Alumni career panels and networking events</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Become a Mentor</a>
+                                        <a href="donate.html#edu4talent" class="btn btn-sm btn-primary">Fund Career Programs</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="200">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#employability">
+                                    <h5 class="text-secondary"><i class="fas fa-briefcase me-2"></i> Employability & Entrepreneurship</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="employability" class="component-content collapse">
+                                    <p>We prepare youth for the world of work through practical skills development:</p>
+                                    <ul>
+                                        <li>Resume writing and interview preparation workshops</li>
+                                        <li>Internship placement with partner organizations</li>
+                                        <li>Entrepreneurship training and startup incubation</li>
+                                        <li>Financial literacy and business management courses</li>
+                                        <li>Job shadowing and workplace readiness programs</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Offer Internship</a>
+                                        <a href="donate.html#edu4talent" class="btn btn-sm btn-primary">Support Job Training</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="300">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#sponsorship">
+                                    <h5 class="text-secondary"><i class="fas fa-hand-holding-heart me-2 text-secondary"></i> Sponsorship Framework</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="sponsorship" class="component-content collapse">
+                                    <p>Our transparent sponsorship process ensures donor funds create maximum impact:</p>
+                                    <ul>
+                                        <li>Needs-based student selection criteria</li>
+                                        <li>Comprehensive sponsorship packages (full or partial)</li>
+                                        <li>Regular progress reports to sponsors</li>
+                                        <li>Sponsor-student communication opportunities</li>
+                                        <li>Impact measurement and evaluation</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Review Applications</a>
+                                        <a href="donate.html#edu4talent" class="btn btn-sm btn-primary">Become a Sponsor</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="400">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#governance">
+                                    <h5 class="text-secondary"><i class="fas fa-users-cog me-2"></i> Organization & Governance</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="governance" class="component-content collapse">
+                                    <p>The Edu4Talent program operates with strong governance structures:</p>
+                                    <ul>
+                                        <li>Program Advisory Board with industry experts</li>
+                                        <li>Alumni participation in program design</li>
+                                        <li>Partnerships with educational institutions and employers</li>
+                                        <li>Transparent financial management</li>
+                                        <li>Regular program evaluation and improvement</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Join Advisory Board</a>
+                                        <a href="donate.html#edu4talent" class="btn btn-sm btn-primary">Support Governance</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Edu4Talent Testimonials -->
+                    <div class="testimonial-section mt-5">
+                        <div class="container">
+                            <div class="section-header text-center mb-5" data-aos="fade-up">
+                                <h3>Edu4Talent Success Stories</h3>
+                                <p class="lead">Hear from participants who have transformed their careers</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 mx-auto">
+                                    <div id="edu4talentTestimonialSlider" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"The entrepreneurship training gave me the confidence to start my catering business. Today I employ three other youth from my community, and we're expanding our services."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test4.jpg" alt="Entrepreneur Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Sarah T.</h5>
+                                                                <p class="mb-0 text-muted">Small Business Owner</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"My mentor through the Edu4Talent program helped me navigate my career path in IT. Now I'm working at a tech company and mentoring younger students myself."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test5.jpg" alt="IT Professional Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Tinashe M.</h5>
+                                                                <p class="mb-0 text-muted">IT Specialist</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"As an employer partner, we've hired several Edu4Talent graduates. Their workplace readiness and professionalism stand out, making them valuable team members from day one."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test6.jpg" alt="Employer Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Mrs. Ndlovu</h5>
+                                                                <p class="mb-0 text-muted">HR Manager, Partner Company</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Restoration Program -->
+                <div class="tab-pane fade" id="restoration" role="tabpanel" aria-labelledby="restoration-tab">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                            <img src="assets/images/refo2.JPG" alt="Restoration Program" class="img-fluid rounded shadow-lg">
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-left">
+                            <h2 class="mb-4 text-secondary">Restoration & Food Security</h2>
+                            <p class="lead">Combining environmental conservation with sustainable agriculture to create resilient communities.</p>
+                            <p>Our restoration initiative addresses both ecological and nutritional needs through practical, hands-on programs that empower participants while healing the environment.</p>
+                            
+                            <div class="program-stats mt-4">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">5,000+</div>
+                                            <div class="stat-label">Trees Planted</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">3</div>
+                                            <div class="stat-label">Community Nurseries</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">200</div>
+                                            <div class="stat-label">Youth Trained</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">15</div>
+                                            <div class="stat-label">Green Jobs Created</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Restoration Components -->
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <h3 class="text-center mb-5" data-aos="fade-up">Program Components</h3>
+                            
+                            <div class="program-component" data-aos="fade-up">
+                                <div class="component-header" data-bs-toggle="collapse" data-bs-target="#nursery">
+                                    <h5 class="text-secondary"><i class="fas fa-seedling me-2"></i> Nursery & Restoration</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="nursery" class="component-content collapse show">
+                                    <p>Our tree nursery and restoration program focuses on ecosystem rehabilitation:</p>
+                                    <ul>
+                                        <li>Community tree nurseries growing indigenous species</li>
+                                        <li>Reforestation projects in degraded areas</li>
+                                        <li>Environmental education for youth and community members</li>
+                                        <li>Watershed protection initiatives</li>
+                                        <li>Biodiversity conservation efforts</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Join Planting Day</a>
+                                        <a href="donate.html#restoration" class="btn btn-sm btn-primary">Support Reforestation</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="100">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#animalHusbandry">
+                                    <h5 class="text-secondary"><i class="fas fa-paw me-2"></i> Animal Husbandry</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="animalHusbandry" class="component-content collapse">
+                                    <p>Our sustainable livestock program provides nutrition and income opportunities:</p>
+                                    <ul>
+                                        <li>Poultry projects for eggs and meat production</li>
+                                        <li>Goat rearing for milk and breeding programs</li>
+                                        <li>Rabbit keeping as a sustainable protein source</li>
+                                        <li>Beekeeping for honey production and pollination</li>
+                                        <li>Veterinary care training for participants</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Teach Animal Care</a>
+                                        <a href="donate.html#restoration" class="btn btn-sm btn-primary">Fund Livestock Projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="200">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#horticulture">
+                                    <h5 class="text-secondary"><i class="fas fa-carrot me-2"></i> Horticulture</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="horticulture" class="component-content collapse">
+                                    <p>Our horticulture program promotes sustainable food production:</p>
+                                    <ul>
+                                        <li>Vegetable gardens for nutrition and income</li>
+                                        <li>Permaculture and organic farming techniques</li>
+                                        <li>Drip irrigation and water conservation methods</li>
+                                        <li>Seed saving and propagation training</li>
+                                        <li>Farmers' market connections for produce sales</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Volunteer in Gardens</a>
+                                        <a href="donate.html#restoration" class="btn btn-sm btn-primary">Support Food Security</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="300">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#orchard">
+                                    <h5 class="text-secondary"><i class="fas fa-apple-alt me-2"></i> Orchard</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="orchard" class="component-content collapse">
+                                    <p>Our fruit orchard provides long-term food security and environmental benefits:</p>
+                                    <ul>
+                                        <li>Diverse fruit tree varieties adapted to local conditions</li>
+                                        <li>Agroforestry techniques combining trees with crops</li>
+                                        <li>Fruit processing and preservation training</li>
+                                        <li>Orchard management skills development</li>
+                                        <li>Value-added product creation (jams, juices, dried fruits)</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Help Plant Trees</a>
+                                        <a href="donate.html#restoration" class="btn btn-sm btn-primary">Sponsor an Orchard</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="400">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#apiary">
+                                    <h5 class="text-secondary"><i class="fas fa-honeybee me-2"></i> Apiary</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="apiary" class="component-content collapse">
+                                    <p>Our beekeeping initiative supports both ecology and livelihoods:</p>
+                                    <ul>
+                                        <li>Beehive installation and management</li>
+                                        <li>Honey harvesting and processing</li>
+                                        <li>Pollination benefits for crops and wild plants</li>
+                                        <li>Bee product marketing training</li>
+                                        <li>Environmental education about pollinator importance</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Teach Beekeeping</a>
+                                        <a href="donate.html#restoration" class="btn btn-sm btn-primary">Fund Apiary Expansion</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="500">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#communityOutreach">
+                                    <h5 class="text-secondary"><i class="fas fa-hands-helping me-2"></i> Community Outreach</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="communityOutreach" class="component-content collapse">
+                                    <p>We extend our restoration efforts through community engagement:</p>
+                                    <ul>
+                                        <li>Training workshops for local farmers</li>
+                                        <li>School environmental clubs and education</li>
+                                        <li>Community clean-up and conservation days</li>
+                                        <li>Collaboration with traditional leaders on land management</li>
+                                        <li>Demonstration plots showcasing sustainable techniques</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Lead a Workshop</a>
+                                        <a href="donate.html#restoration" class="btn btn-sm btn-primary">Support Outreach</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Restoration Testimonials -->
+                    <div class="testimonial-section mt-5">
+                        <div class="container">
+                            <div class="section-header text-center mb-5" data-aos="fade-up">
+                                <h3>Restoration Success Stories</h3>
+                                <p class="lead">Hear from participants transforming their environment and livelihoods</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 mx-auto">
+                                    <div id="restorationTestimonialSlider" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"Through the horticulture program, I learned organic farming techniques that doubled my vegetable yields. Now I supply fresh produce to local schools and restaurants."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test7.jpg" alt="Farmer Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">James T.</h5>
+                                                                <p class="mb-0 text-muted">Small-Scale Farmer</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"The beekeeping training gave me a sustainable livelihood. I now manage 15 hives and sell honey at the local market, earning enough to send my children to school."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test8.jpg" alt="Beekeeper Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Memory K.</h5>
+                                                                <p class="mb-0 text-muted">Beekeeper</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"As a teacher, I've seen how the school environmental club has changed students' attitudes. They're now leading tree planting and conservation projects in our community."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test9.jpg" alt="Teacher Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Mrs. Sibanda</h5>
+                                                                <p class="mb-0 text-muted">School Teacher</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wellbeing Program -->
+                <div class="tab-pane fade" id="wellbeing" role="tabpanel" aria-labelledby="wellbeing-tab">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+                            <img src="assets/images/wellbeing.jpg" alt="Wellbeing Program" class="img-fluid rounded shadow-lg">
+                        </div>
+                        <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                            <h2 class="mb-4 text-secondary">Holistic Wellbeing Program</h2>
+                            <p class="lead">Supporting the physical, emotional, and social development of children and youth.</p>
+                            <p>Our wellbeing initiatives address fundamental needs and create opportunities for personal growth, health, and happiness.</p>
+                            
+                            <div class="program-stats mt-4">
+                                <div class="row text-center">
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">36,500+</div>
+                                            <div class="stat-label">Meals Served</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">200+</div>
+                                            <div class="stat-label">Birth Certificates</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">85%</div>
+                                            <div class="stat-label">Improved Health</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3 mb-3">
+                                        <div class="stat-card">
+                                            <div class="stat-number">120</div>
+                                            <div class="stat-label">Girls Empowered</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wellbeing Components -->
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <h3 class="text-center mb-5" data-aos="fade-up">Program Components</h3>
+                            
+                            <div class="program-component" data-aos="fade-up">
+                                <div class="component-header" data-bs-toggle="collapse" data-bs-target="#nutrition">
+                                    <h5 class="text-secondary"><i class="fas fa-utensils me-2"></i> Nutrition Program</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="nutrition" class="component-content collapse show">
+                                    <p>Our nutrition initiative ensures children have the nourishment they need to learn and grow:</p>
+                                    <ul>
+                                        <li>Daily nutritious meals for program participants</li>
+                                        <li>Nutrition education for children and families</li>
+                                        <li>School gardens providing fresh produce</li>
+                                        <li>Growth monitoring and health assessments</li>
+                                        <li>Supplemental feeding for malnourished children</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Help in Kitchen</a>
+                                        <a href="donate.html#feeding" class="btn btn-sm btn-primary">Sponsor Meals</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="100">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#healthcare">
+                                    <h5 class="text-secondary"><i class="fas fa-heartbeat me-2"></i> Healthcare Support</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="healthcare" class="component-content collapse">
+                                    <p>We address health barriers to children's wellbeing and education:</p>
+                                    <ul>
+                                        <li>Basic health screenings and referrals</li>
+                                        <li>Partnerships with local clinics and hospitals</li>
+                                        <li>Health education workshops</li>
+                                        <li>Hygiene and sanitation supplies</li>
+                                        <li>Mental health support and counseling</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Medical Volunteers</a>
+                                        <a href="donate.html#wellbeing" class="btn btn-sm btn-primary">Fund Healthcare</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="200">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#birthCerts">
+                                    <h5 class="text-secondary"><i class="fas fa-id-card me-2"></i> Birth Certificates & IDs</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="birthCerts" class="component-content collapse">
+                                    <p>We help children access essential documentation for their rights and opportunities:</p>
+                                    <ul>
+                                        <li>Assistance with birth registration processes</li>
+                                        <li>National ID application support for youth</li>
+                                        <li>Legal aid for documentation challenges</li>
+                                        <li>Community education about documentation importance</li>
+                                        <li>Advocacy for policy improvements</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Legal Volunteers</a>
+                                        <a href="donate.html#wellbeing" class="btn btn-sm btn-primary">Fund Documentation</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="300">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#performingArts">
+                                    <h5 class="text-secondary"><i class="fas fa-theater-masks me-2"></i> Performing Arts</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="performingArts" class="component-content collapse">
+                                    <p>Our arts program fosters creativity, confidence, and cultural connection:</p>
+                                    <ul>
+                                        <li>Traditional dance and music groups</li>
+                                        <li>Drama and theater productions</li>
+                                        <li>Cultural festivals and performances</li>
+                                        <li>Creative writing and poetry workshops</li>
+                                        <li>Inter-school arts competitions</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Arts Volunteers</a>
+                                        <a href="donate.html#wellbeing" class="btn btn-sm btn-primary">Support the Arts</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="400">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#sports">
+                                    <h5 class="text-secondary"><i class="fas fa-running me-2"></i> Ball Games & Athletics</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="sports" class="component-content collapse">
+                                    <p>Our sports program promotes physical health and teamwork:</p>
+                                    <ul>
+                                        <li>Soccer, netball, and volleyball teams</li>
+                                        <li>Track and field athletics program</li>
+                                        <li>Annual sports day and competitions</li>
+                                        <li>Coaching and leadership development</li>
+                                        <li>Sports equipment lending library</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Coach Volunteers</a>
+                                        <a href="donate.html#wellbeing" class="btn btn-sm btn-primary">Fund Sports</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="program-component" data-aos="fade-up" data-aos-delay="500">
+                                <div class="component-header collapsed" data-bs-toggle="collapse" data-bs-target="#girlsEmpowerment">
+                                    <h5 class="text-secondary"><i class="fas fa-female me-2"></i> Girls Empowerment</h5>
+                                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+                                <div id="girlsEmpowerment" class="component-content collapse">
+                                    <p>Our sisterhood program supports girls' development and rights:</p>
+                                    <ul>
+                                        <li>Life skills and leadership workshops</li>
+                                        <li>Mentorship by professional women</li>
+                                        <li>Reproductive health education</li>
+                                        <li>Academic support and career guidance</li>
+                                        <li>Safe spaces for sharing and support</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <a href="get-involved.html#volunteer" class="btn btn-sm btn-outline-primary me-2">Become a Mentor</a>
+                                        <a href="donate.html#wellbeing" class="btn btn-sm btn-primary">Support Girls</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wellbeing Testimonials -->
+                    <div class="testimonial-section mt-5">
+                        <div class="container">
+                            <div class="section-header text-center mb-5" data-aos="fade-up">
+                                <h3>Wellbeing Success Stories</h3>
+                                <p class="lead">Hear how our holistic approach transforms lives</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 mx-auto">
+                                    <div id="wellbeingTestimonialSlider" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"The nutrition program saved my children from malnutrition. Now they're healthy, doing well in school, and I've learned how to prepare balanced meals with local ingredients."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test10.jpg" alt="Parent Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Grace N.</h5>
+                                                                <p class="mb-0 text-muted">Parent</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"Through the girls empowerment program, I gained confidence to pursue my dreams. I'm now studying medicine and want to help other girls in my community."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test11.jpg" alt="Student Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Tariro M.</h5>
+                                                                <p class="mb-0 text-muted">Medical Student</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="testimonial-card">
+                                                        <i class="fas fa-quote-right quote-icon"></i>
+                                                        <p class="mb-4">"Getting my birth certificate through Dzikwa Trust allowed me to write my exams and apply for college. Without it, my future would have been very different."</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/test12.jpg" alt="Youth Story" class="rounded me-3" width="60">
+                                                            <div>
+                                                                <h5 class="mb-1 text-secondary">Tinashe K.</h5>
+                                                                <p class="mb-0 text-muted">College Student</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="py-5 bg-light text-black">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Our Collective Impact</h2>
+                <p class="lead">Transforming lives through comprehensive programs</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number display-4 fw-bold">1,200+</div>
+                    <div class="stat-label">Children Supported</div>
+                </div>
+                <div class="col-6 col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number display-4 fw-bold">85%</div>
+                    <div class="stat-label">Graduation Rate</div>
+                </div>
+                <div class="col-6 col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number display-4 fw-bold">50+</div>
+                    <div class="stat-label">Community Projects</div>
+                </div>
+                <div class="col-6 col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-number display-4 fw-bold">27</div>
+                    <div class="stat-label">Years of Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5 text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="mb-3">Ready to Make a Difference?</h2>
+                    <p class="lead mb-0">Support our programs and help transform children's lives through education and community development.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <a href="donate.html" class="btn btn-primary btn-lg me-2 pulse-animation">Donate Now</a>
+                    <a href="get-involved.html" class="btn btn-outline-primary btn-lg">Volunteer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" class="footer-logo mb-3" height="100">
+                        <p>Dzikwa Trust Fund has been empowering vulnerable children in Zimbabwe through education, nutrition, and community development since 1995.</p>
+                        <div class="social-links mt-4">
+                            <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
+                        <li class="mb-2"><a href="get-involved.html" class="text-white">Get Involved</a></li>
+                        <li class="mb-2"><a href="donate.html" class="text-white">Donate</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Our Programs</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="programs.html#education" class="text-white">Education Support</a></li>
+                        <li class="mb-2"><a href="programs.html#edu4talent" class="text-white">Edu4Talent</a></li>
+                        <li class="mb-2"><a href="programs.html#restoration" class="text-white">Restoration</a></li>
+                        <li class="mb-2"><a href="programs.html#wellbeing" class="text-white">Wellbeing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-heading mb-4">Contact Us</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            3147 Rujeko Street, Dzivarasekwa 1, Harare, Zimbabwe
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            +263 24 2217455
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            dzikwatrust@africaonline.co.zw
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Mon-Sat: 9:00 AM - 5:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Dzikwa Trust Fund. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Initialize testimonial sliders
+        document.addEventListener('DOMContentLoaded', function() {
+            // Education testimonials
+            new Splide('#educationTestimonialSlider', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 5000,
+                pauseOnHover: true,
+                arrows: false,
+                pagination: true
+            }).mount();
+            
+            // Edu4Talent testimonials
+            new Splide('#edu4talentTestimonialSlider', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 5000,
+                pauseOnHover: true,
+                arrows: false,
+                pagination: true
+            }).mount();
+            
+            // Restoration testimonials
+            new Splide('#restorationTestimonialSlider', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 5000,
+                pauseOnHover: true,
+                arrows: false,
+                pagination: true
+            }).mount();
+            
+            // Wellbeing testimonials
+            new Splide('#wellbeingTestimonialSlider', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 5000,
+                pauseOnHover: true,
+                arrows: false,
+                pagination: true
+            }).mount();
+            
+            // Animate stats when they come into view
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const stat = entry.target;
+                        const targetNumber = parseInt(stat.textContent.replace(/[^0-9]/g, ''));
+                        const suffix = stat.textContent.replace(/[0-9]/g, '');
+                        let current = 0;
+                        const increment = targetNumber / 30;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= targetNumber) {
+                                clearInterval(timer);
+                                current = targetNumber;
+                            }
+                            stat.textContent = Math.floor(current) + suffix;
+                        }, 50);
+                        
+                        observer.unobserve(stat);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statNumbers.forEach(stat => {
+                if (!isNaN(parseInt(stat.textContent.replace(/[^0-9]/g, '')))) {
+                    observer.observe(stat);
+                }
+            });
+            
+            // Smooth scroll for program tabs when coming from another page
+            if (window.location.hash) {
+                const hash = window.location.hash;
+                const tabTrigger = document.querySelector(`[data-bs-target="${hash}"]`);
+                if (tabTrigger) {
+                    setTimeout(() => {
+                        tabTrigger.click();
+                        document.querySelector(hash).scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+    "rules": {
+      "admins": {
+        ".read": "auth != null && root.child('admins').child(auth.uid).exists()",
+        ".write": "auth != null && root.child('admins').child(auth.uid).child('role').val() == 'superadmin'",
+        "$adminId": {
+          "email": {
+            ".validate": "newData.isString() && newData.val().matches(/^[^@]+@[^@]+\\.[^@]+$/)"
+          },
+          "role": {
+            ".validate": "newData.isString() && ['superadmin', 'admin', 'editor'].includes(newData.val())"
+          },
+          "createdAt": {
+            ".validate": "newData.isNumber() && (!data.exists() || data.val() == newData.val())"
+          }
+        }
+      },
+      "donations": {
+        "$month": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() % 1 == 0 && newData.val() <= 100000000"
+        }
+      },
+      "donors": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "$donorId": {
+          "name": { ".validate": "newData.isString()" },
+          "email": { 
+            ".validate": "newData.isString() && newData.val().contains('@')" 
+          },
+          "total_given": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 100000000"
+          }
+        }
+      },
+      "content": {
+        ".read": "auth != null",
+        ".write": "root.child('admins').child(auth.uid).child('role').val() in ['superadmin', 'admin']"
+      },
+      "financial_data": {
+        ".read": "root.child('admins').child(auth.uid).child('role').val() == 'superadmin'",
+        ".write": "root.child('admins').child(auth.uid).child('role').val() == 'superadmin'"
+      }
+    }
+  }

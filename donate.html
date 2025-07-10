@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Dzikwa Trust Fund</title>
+    <meta name="description" content="Support Dzikwa Trust Fund's mission to empower children through education in Zimbabwe. Make a donation today.">
+    
+    <!-- Add this before your other meta tags -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <span class="me-3"><i class="fas fa-phone me-2"></i> +263 24 2217455</span>
+                <span><i class="fas fa-envelope me-2"></i> dzikwatrust@africaonline.co.zw</span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Our story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="get-involved.html">Get Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-lg-3">
+                    <a href="donate.html" class="btn btn-primary">Donate Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center text-gradient-primary">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-5 fw-bold">Support Our Mission</h1>
+                    <p class="lead">Your donation helps provide education, nutrition, and opportunities to vulnerable children in Zimbabwe</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-lg-end mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Donate</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Ways to Give</h2>
+                <p class="lead">Choose the donation option that works best for you</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="donation-option card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                                <i class="fas fa-hand-holding-heart fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">One-Time Donation</h3>
+                            <p class="mb-4">Make a single donation to support our general programs and operations.</p>
+                            <a href="#oneTimeDonation" class="btn btn-outline-primary stretched-link">Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="donation-option card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                                <i class="fas fa-calendar-check fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Monthly Giving</h3>
+                            <p class="mb-4">Become a sustaining donor with automatic monthly contributions.</p>
+                            <a href="#monthlyDonation" class="btn btn-outline-primary stretched-link">Set Up Monthly Gift</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mx-md-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="donation-option card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                                <i class="fas fa-child fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Child Sponsorship</h3>
+                            <p class="mb-4">Sponsor a specific child's education and wellbeing.</p>
+                            <a href="#sponsor" class="btn btn-outline-primary stretched-link">Sponsor a Child</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Impact -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="assets/images/donation-impact.jpg" alt="Donation Impact" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="mb-4">Your Donation at Work</h2>
+                    <p>Every contribution, no matter the size, makes a real difference in the lives of vulnerable children. Here's how your support helps:</p>
+                    
+                    <div class="impact-stats mt-4">
+                        <div class="impact-item mb-3">
+                            <div class="d-flex">
+                                <div class="impact-icon text-white rounded-circle me-3" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                    <i class="fas fa-book" style="padding-left: 13px; padding-top: 12px !important;"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1 text-secondary">Education Support</h5>
+                                    <p class="mb-0">$50 provides school supplies for one child for a year</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="impact-item mb-3">
+                            <div class="d-flex">
+                                <div class="impact-icon text-white rounded-circle me-3" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                    <i class="fas fa-utensils"  style="padding-left: 13px; padding-top: 12px !important;"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1 text-secondary">Nutrition Program</h5>
+                                    <p class="mb-0">$100 feeds 10 children nutritious meals for a month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="d-flex">
+                                <div class="impact-icon text-white rounded-circle me-3" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                    <i class="fas fa-laptop"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1 text-secondary">ICT Training</h5>
+                                    <p class="mb-0">$500 provides equipment to train 5 students in digital skills</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="#oneTimeDonation" class="btn btn-primary me-2">Make a Donation</a>
+                        <a href="#" class="btn btn-outline-primary">See Full Impact Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- One-Time Donation Form -->
+    <section class="py-5" id="oneTimeDonation">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-lg-5">
+                            <h2 class="text-center mb-4">Make a One-Time Donation</h2>
+                            <form id="donationForm">
+                                <div class="mb-4">
+                                    <label class="form-label">Donation Amount (USD)</label>
+                                    <div class="donation-amounts">
+                                        <div class="btn-group d-flex flex-wrap" role="group">
+                                            <input type="radio" class="btn-check" name="donationAmount" id="amount25" autocomplete="off" value="25">
+                                            <label class="btn btn-outline-primary mb-2" for="amount25">$25</label>
+                                            
+                                            <input type="radio" class="btn-check" name="donationAmount" id="amount50" autocomplete="off" value="50">
+                                            <label class="btn btn-outline-primary mb-2" for="amount50">$50</label>
+                                            
+                                            <input type="radio" class="btn-check" name="donationAmount" id="amount100" autocomplete="off" value="100">
+                                            <label class="btn btn-outline-primary mb-2" for="amount100">$100</label>
+                                            
+                                            <input type="radio" class="btn-check" name="donationAmount" id="amount250" autocomplete="off" value="250">
+                                            <label class="btn btn-outline-primary mb-2" for="amount250">$250</label>
+                                            
+                                            <input type="radio" class="btn-check" name="donationAmount" id="amountCustom" autocomplete="off">
+                                            <label class="btn btn-outline-primary mb-2" for="amountCustom">Other</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2" id="customAmountContainer" style="display: none;">
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" class="form-control" id="customAmount" placeholder="Enter custom amount">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label">Designation (Optional)</label>
+                                    <select class="form-select" id="donationDesignation">
+                                        <option value="general">Where most needed (General Fund)</option>
+                                        <option value="education">Education Program</option>
+                                        <option value="feeding">Nutrition Program</option>
+                                        <option value="ict">ICT Skills Development</option>
+                                        <option value="reforestation">Community Reforestation</option>
+                                        <option value="sisterhood">Sisterhood Program</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label">Personal Information</label>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="First Name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="Last Name" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="email" class="form-control" placeholder="Email Address" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="tel" class="form-control" placeholder="Phone Number (Optional)">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label">Payment Information</label>
+                                    <div class="card p-3 bg-light">
+                                        <div class="mb-3">
+                                            <label for="cardNumber" class="form-label">Card Number</label>
+                                            <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                        </div>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="expiryDate" class="form-label">Expiry Date</label>
+                                                <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="cvv" class="form-label">CVV</label>
+                                                <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="newsletterSignup" checked>
+                                    <label class="form-check-label" for="newsletterSignup">
+                                        Sign me up for the Dzikwa Trust newsletter
+                                    </label>
+                                </div>
+                                
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Donate Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Donation Section -->
+    <section class="py-5 bg-light" id="monthlyDonation">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="mb-4">Become a Monthly Donor</h2>
+                    <p>Sustaining monthly donations provide reliable support that allows us to plan ahead and make long-term commitments to the children we serve.</p>
+                    <p>As a monthly donor, you'll receive:</p>
+                    <ul class="mb-4">
+                        <li>Exclusive updates on our programs</li>
+                        <li>Impact reports showing how your donations are used</li>
+                        <li>Invitations to special events</li>
+                        <li>The satisfaction of knowing you're making a consistent difference</li>
+                    </ul>
+                    <a href="#monthlyDonationForm" class="btn btn-primary">Set Up Monthly Giving</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="text-center mb-4">
+                                <div class="icon-box text-white rounded-circle mx-auto mb-3" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                                    <i class="fas fa-calendar-check fa-2x"></i>
+                                </div>
+                                <h3>Monthly Giving Impact</h3>
+                            </div>
+                            <div class="monthly-impact">
+                                <div class="impact-item mb-3">
+                                    <div class="d-flex">
+                                        <div class="impact-icon text-white rounded-circle me-3" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                            <i class="fas fa-child"   style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1 text-secondary">$20/month</h5>
+                                            <p class="mb-0">Provides school supplies for one child</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="impact-item mb-3">
+                                    <div class="d-flex">
+                                        <div class="impact-icon text-white rounded-circle me-3" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                            <i class="fas fa-utensils"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1 text-secondary">$50/month</h5>
+                                            <p class="mb-0">Feeds 5 children nutritious meals</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="impact-item">
+                                    <div class="d-flex">
+                                        <div class="impact-icon text-white rounded-circle me-3" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                            <i class="fas fa-laptop"   style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1 text-secondary">$100/month</h5>
+                                            <p class="mb-0">Supports ICT training for 2 students</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Donation Form -->
+    <section class="py-5" id="monthlyDonationForm">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-lg-5">
+                            <h2 class="text-center mb-4">Set Up Monthly Giving</h2>
+                            <form id="monthlyDonationForm">
+                                <div class="mb-4">
+                                    <label class="form-label">Monthly Donation Amount (USD)</label>
+                                    <div class="donation-amounts">
+                                        <div class="btn-group d-flex flex-wrap" role="group">
+                                            <input type="radio" class="btn-check" name="monthlyAmount" id="monthly20" autocomplete="off" value="20">
+                                            <label class="btn btn-outline-success mb-2" for="monthly20">$20</label>
+                                            
+                                            <input type="radio" class="btn-check" name="monthlyAmount" id="monthly50" autocomplete="off" value="50">
+                                            <label class="btn btn-outline-success mb-2" for="monthly50">$50</label>
+                                            
+                                            <input type="radio" class="btn-check" name="monthlyAmount" id="monthly100" autocomplete="off" value="100">
+                                            <label class="btn btn-outline-success mb-2" for="monthly100">$100</label>
+                                            
+                                            <input type="radio" class="btn-check" name="monthlyAmount" id="monthlyCustom" autocomplete="off">
+                                            <label class="btn btn-outline-success mb-2" for="monthlyCustom">Other</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2" id="customMonthlyAmountContainer" style="display: none;">
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" class="form-control" id="customMonthlyAmount" placeholder="Enter custom amount">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label">Designation (Optional)</label>
+                                    <select class="form-select" id="monthlyDesignation">
+                                        <option value="general">Where most needed (General Fund)</option>
+                                        <option value="education">Education Program</option>
+                                        <option value="feeding">Nutrition Program</option>
+                                        <option value="ict">ICT Skills Development</option>
+                                        <option value="reforestation">Community Reforestation</option>
+                                        <option value="sisterhood">Sisterhood Program</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label">Personal Information</label>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="First Name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="Last Name" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="email" class="form-control" placeholder="Email Address" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="tel" class="form-control" placeholder="Phone Number (Optional)">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label">Payment Information</label>
+                                    <div class="card p-3 bg-light">
+                                        <div class="mb-3">
+                                            <label for="monthlyCardNumber" class="form-label">Card Number</label>
+                                            <input type="text" class="form-control" id="monthlyCardNumber" placeholder="1234 5678 9012 3456" required>
+                                        </div>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="monthlyExpiryDate" class="form-label">Expiry Date</label>
+                                                <input type="text" class="form-control" id="monthlyExpiryDate" placeholder="MM/YY" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="monthlyCvv" class="form-label">CVV</label>
+                                                <input type="text" class="form-control" id="monthlyCvv" placeholder="123" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="monthlyNewsletter" checked>
+                                    <label class="form-check-label" for="monthlyNewsletter">
+                                        Sign me up for the Dzikwa Trust newsletter
+                                    </label>
+                                </div>
+                                
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Start Monthly Giving</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Child Sponsorship -->
+    <section class="py-5 bg-light" id="sponsor">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Child Sponsorship Program</h2>
+                <p class="lead">Change a child's life through education and comprehensive support</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="text-center mb-4">
+                                <div class="icon-box text-white rounded-circle mx-auto mb-3" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                                    <i class="fas fa-child fa-2x"></i>
+                                </div>
+                                <h3>What Sponsorship Provides</h3>
+                            </div>
+                            <ul class="sponsorship-benefits">
+                                <li class="mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box-sm text-white rounded-circle" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                                <i class="fas fa-check"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1 text-secondary">Quality Education</h5>
+                                            <p class="mb-0">School fees, uniforms, books, and supplies</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box-sm text-white rounded-circle" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                                <i class="fas fa-check"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1 text-secondary">Nutrition</h5>
+                                            <p class="mb-0">Daily nutritious meals at our center</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box-sm text-white rounded-circle" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                                <i class="fas fa-check"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1 text-secondary">Healthcare</h5>
+                                            <p class="mb-0">Basic medical care and health education</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box-sm text-white rounded-circle" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                                <i class="fas fa-check"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1 text-secondary">Mentorship</h5>
+                                            <p class="mb-0">Guidance and support from caring adults</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <div class="icon-box-sm text-white rounded-circle" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                                <i class="fas fa-check"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1 text-secondary">Extracurricular Activities</h5>
+                                            <p class="mb-0">Access to sports, arts, and life skills programs</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="mb-4">Sponsor a Child Today</h2>
+                    <p>For just $50 per month, you can sponsor a child and provide them with the resources they need to thrive. As a sponsor, you'll receive:</p>
+                    
+                    <div class="sponsor-perks mb-4">
+                        <div class="perk-item mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box-sm text-white rounded-circle" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                        <i class="fas fa-envelope"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1 text-secondary">Personal Connection</h5>
+                                    <p class="mb-0">A profile of your sponsored child and annual updates</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="perk-item mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box-sm text-white rounded-circle" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                        <i class="fas fa-star"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1 text-secondary">Exclusive Updates</h5>
+                                    <p class="mb-0">Newsletters highlighting our programs' impact</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="perk-item">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <div class="icon-box-sm text-white rounded-circle" style="height: 40px; width: 40px; background-color: var(--primary-color);">
+                                        <i class="fas fa-heart"  style="padding-left: 12px; padding-top: 12px !important;"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1 text-secondary">The Joy of Giving</h5>
+                                    <p class="mb-0">Knowing you're transforming a child's future</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <button class="btn me-2" data-bs-toggle="modal" data-bs-target="#sponsorModal" style="background-color: var(--primary-color); color: white;">Sponsor a Child</button>
+                        <a href="#" class="btn btn-outline-primary">Meet Our Children</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Modal -->
+    <div class="modal fade" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sponsorModalLabel">Child Sponsorship Application</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="sponsorFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="sponsorFirstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="sponsorLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="sponsorLastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="sponsorEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="sponsorEmail" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="sponsorPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="sponsorPhone">
+                            </div>
+                            <div class="col-12">
+                                <label for="sponsorAddress" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="sponsorAddress">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="sponsorCountry" class="form-label">Country</label>
+                                <select class="form-select" id="sponsorCountry">
+                                    <option selected>Select country</option>
+                                    <option>Zimbabwe</option>
+                                    <option>South Africa</option>
+                                    <option>United States</option>
+                                    <option>United Kingdom</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Sponsorship Level</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sponsorLevel" id="level50" value="50" checked>
+                                    <label class="form-check-label" for="level50">
+                                        $50/month - Full Sponsorship
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sponsorLevel" id="level100" value="100">
+                                    <label class="form-check-label" for="level100">
+                                        $100/month - Premium Sponsorship
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Child Preferences (Optional)</label>
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <label for="childGender" class="form-label">Gender</label>
+                                        <select class="form-select" id="childGender">
+                                            <option selected>No preference</option>
+                                            <option>Girl</option>
+                                            <option>Boy</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="childAge" class="form-label">Age Range</label>
+                                        <select class="form-select" id="childAge">
+                                            <option selected>No preference</option>
+                                            <option>5-8 years</option>
+                                            <option>9-12 years</option>
+                                            <option>13-17 years</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="sponsorNotes" class="form-label">Additional Notes</label>
+                                <textarea class="form-control" id="sponsorNotes" rows="3"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Payment Information</label>
+                                <div class="card p-3 bg-light">
+                                    <div class="mb-3">
+                                        <label for="sponsorCardNumber" class="form-label">Card Number</label>
+                                        <input type="text" class="form-control" id="sponsorCardNumber" placeholder="1234 5678 9012 3456" required>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="sponsorExpiryDate" class="form-label">Expiry Date</label>
+                                            <input type="text" class="form-control" id="sponsorExpiryDate" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="sponsorCvv" class="form-label">CVV</label>
+                                            <input type="text" class="form-control" id="sponsorCvv" placeholder="123" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sponsorAgreement" required>
+                                    <label class="form-check-label" for="sponsorAgreement">
+                                        I agree to the monthly sponsorship commitment and understand I can cancel at any time
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning">Complete Sponsorship</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Ways to Give -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Other Ways to Support</h2>
+                <p class="lead">Additional options for contributing to our mission</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="support-option text-center p-4 h-100">
+                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                            <i class="fas fa-gift fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3">In-Kind Donations</h4>
+                        <p class="mb-3">We accept donations of school supplies, books, computers, and other items that support our programs.</p>
+                        <a href="#" class="btn btn-outline-primary">View Needs List</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="support-option text-center p-4 h-100">
+                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                            <i class="fas fa-bullhorn fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3">Fundraise for Us</h4>
+                        <p class="mb-3">Organize a fundraiser in your community, workplace, or online to support our work.</p>
+                        <a href="#" class="btn btn-outline-primary">Fundraising Ideas</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="support-option text-center p-4 h-100">
+                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                            <i class="fas fa-briefcase fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3">Corporate Giving</h4>
+                        <p class="mb-3">Explore matching gifts, employee engagement, and corporate sponsorship opportunities.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="support-option text-center p-4 h-100">
+                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
+                            <i class="fas fa-hand-holding-heart fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3">Legacy Giving</h4>
+                        <p class="mb-3">Include Dzikwa Trust in your will or estate plans to create lasting impact.</p>
+                        <a href="#" class="btn btn-outline-primary">Plan Your Legacy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5 text-white" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="mb-3">Questions About Giving?</h2>
+                    <p class="lead mb-0">Our team is happy to help you find the best way to support our mission.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <a href="contact.html" class="btn btn-light btn-lg me-2">Contact Us</a>
+                    <a href="tel:+263123456789" class="btn btn-outline-light btn-lg">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" class="footer-logo mb-3" height="100">
+                        <p>Dzikwa Trust Fund has been empowering vulnerable children in Zimbabwe through education, nutrition, and community development since 1995.</p>
+                        <div class="social-links mt-4">
+                             <a href="https://www.facebook.com/dzikwatrustfund" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dzikwa_trust_fund/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/102135222/admin/dashboard/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
+                        <li class="mb-2"><a href="get-involved.html" class="text-white">Get Involved</a></li>
+                        <li class="mb-2"><a href="donate.html" class="text-white">Donate</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-4">Our Programs</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="programs.html#education" class="text-white">Education Support</a></li>
+                        <li class="mb-2"><a href="programs.html#ict" class="text-white">ICT Skills Development</a></li>
+                        <li class="mb-2"><a href="programs.html#reforestation" class="text-white">Community Reforestation</a></li>
+                        <li class="mb-2"><a href="programs.html#sisterhood" class="text-white">Sisterhood Program</a></li>
+                        <li class="mb-2"><a href="programs.html#feeding" class="text-white">Nutrition Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-heading mb-4">Contact Us</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            3147 Rujeko Street, Dzivarasekwa 1, Harare, Zimbabwe
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            +263 24 2217455
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            dzikwatrust@africaonline.co.zw
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Mon-Sat: 9:00 AM - 5:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Dzikwa Trust Fund. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        AOS.init();
+        
+        // Show custom amount field when "Other" is selected
+        document.getElementById('amountCustom').addEventListener('change', function() {
+            document.getElementById('customAmountContainer').style.display = this.checked ? 'block' : 'none';
+        });
+        
+        document.getElementById('monthlyCustom').addEventListener('change', function() {
+            document.getElementById('customMonthlyAmountContainer').style.display = this.checked ? 'block' : 'none';
+        });
+        
+        // Simple form submission handlers
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your donation! A receipt will be sent to your email.');
+            this.reset();
+        });
+        
+        document.getElementById('monthlyDonationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for setting up monthly giving! You will receive a confirmation email shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
