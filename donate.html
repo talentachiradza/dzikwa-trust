@@ -21,14 +21,85 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #05636d; 
+            --secondary-color: #f39c12;
+        }
+        
+        .top-bar, .footer {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .payment-method {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .payment-method.active {
+            border-color: var(--primary-color);
+            background-color: rgba(26, 82, 118, 0.05);
+        }
+        
+        .payment-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+    </style>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 <body>
     <!-- Top Bar -->
-    <div class="top-bar text-white py-2" style="background-color: var(--primary-color);">
+    <div class="top-bar text-white py-2">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="contact-info">
                 <span class="me-3"><i class="fas fa-phone me-2"></i> +263 24 2217455</span>
@@ -46,16 +117,13 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="60">
+                <img src="assets/images/logo.png" alt="Dzikwa Trust Fund" height="100">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">Our story</a>
                     </li>
@@ -104,8 +172,8 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="donation-option card h-100 border-0 shadow-sm">
                         <div class="card-body p-4 text-center">
-                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                                <i class="fas fa-hand-holding-heart fa-2x"></i>
+                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                                <i class="fas fa-hand-holding-heart fa-2x pt-3"></i>
                             </div>
                             <h3 class="h4 mb-3">One-Time Donation</h3>
                             <p class="mb-4">Make a single donation to support our general programs and operations.</p>
@@ -116,8 +184,8 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="donation-option card h-100 border-0 shadow-sm">
                         <div class="card-body p-4 text-center">
-                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                                <i class="fas fa-calendar-check fa-2x"></i>
+                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                                <i class="fas fa-calendar-check fa-2x pt-3"></i>
                             </div>
                             <h3 class="h4 mb-3">Monthly Giving</h3>
                             <p class="mb-4">Become a sustaining donor with automatic monthly contributions.</p>
@@ -128,8 +196,8 @@
                 <div class="col-md-6 col-lg-4 mx-md-auto" data-aos="fade-up" data-aos-delay="300">
                     <div class="donation-option card h-100 border-0 shadow-sm">
                         <div class="card-body p-4 text-center">
-                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                                <i class="fas fa-child fa-2x"></i>
+                            <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                                <i class="fas fa-child fa-2x pt-3"></i>
                             </div>
                             <h3 class="h4 mb-3">Child Sponsorship</h3>
                             <p class="mb-4">Sponsor a specific child's education and wellbeing.</p>
@@ -146,7 +214,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <img src="assets/images/donation-impact.jpg" alt="Donation Impact" class="img-fluid rounded shadow">
+                    <img src="assets/images/donate.jpg" alt="Donation Impact" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <h2 class="mb-4">Your Donation at Work</h2>
@@ -202,7 +270,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm">
+                    <div class="card border-0 shadow-lg">
                         <div class="card-body p-4 p-lg-5">
                             <h2 class="text-center mb-4">Make a One-Time Donation</h2>
                             <form id="donationForm">
@@ -235,7 +303,7 @@
                                 </div>
                                 
                                 <div class="mb-4">
-                                    <label class="form-label">Designation (Optional)</label>
+                                    <label class="form-label" for="donationDesignation">Designation (Optional)</label>
                                     <select class="form-select" id="donationDesignation">
                                         <option value="general">Where most needed (General Fund)</option>
                                         <option value="education">Education Program</option>
@@ -250,36 +318,141 @@
                                     <label class="form-label">Personal Information</label>
                                     <div class="row g-3">
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="First Name" required>
+                                            <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="Last Name" required>
+                                            <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
                                         </div>
                                         <div class="col-12">
-                                            <input type="email" class="form-control" placeholder="Email Address" required>
+                                            <input type="email" class="form-control" id="email" placeholder="Email Address" required>
                                         </div>
                                         <div class="col-12">
-                                            <input type="tel" class="form-control" placeholder="Phone Number (Optional)">
+                                            <input type="tel" class="form-control" id="phone" placeholder="Phone Number (Optional)">
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="mb-4">
-                                    <label class="form-label">Payment Information</label>
-                                    <div class="card p-3 bg-light">
-                                        <div class="mb-3">
-                                            <label for="cardNumber" class="form-label">Card Number</label>
-                                            <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                    <label class="form-label">Payment Method</label>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="payment-method" onclick="selectPaymentMethod('bank')" id="bankMethod">
+                                                <div class="payment-icon">
+                                                    <i class="fas fa-university"></i>
+                                                </div>
+                                                <h5>Bank Transfer</h5>
+                                                <p class="small">Direct transfer to our bank account</p>
+                                                <input type="radio" name="paymentMethod" id="bankTransfer" style="display: none;" value="bank">
+                                            </div>
                                         </div>
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="expiryDate" class="form-label">Expiry Date</label>
-                                                <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                        <div class="col-md-6">
+                                            <div class="payment-method" onclick="selectPaymentMethod('paynow')" id="paynowMethod">
+                                                <div class="payment-icon">
+                                                    <i class="fas fa-mobile-alt"></i>
+                                                </div>
+                                                <h5>PayNow</h5>
+                                                <p class="small">Instant mobile payment</p>
+                                                <input type="radio" name="paymentMethod" id="payNow" style="display: none;" value="paynow">
                                             </div>
-                                            <div class="col-md-6">
-                                                <label for="cvv" class="form-label">CVV</label>
-                                                <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="payment-method" onclick="selectPaymentMethod('ecocash')" id="ecocashMethod">
+                                                <div class="payment-icon">
+                                                    <i class="fas fa-wallet"></i>
+                                                </div>
+                                                <h5>EcoCash</h5>
+                                                <p class="small">Mobile money transfer</p>
+                                                <input type="radio" name="paymentMethod" id="ecocash" style="display: none;" value="ecocash">
                                             </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="payment-method" onclick="selectPaymentMethod('cash')" id="cashMethod">
+                                                <div class="payment-icon">
+                                                    <i class="fas fa-money-bill-wave"></i>
+                                                </div>
+                                                <h5>Cash</h5>
+                                                <p class="small">In-person donation</p>
+                                                <input type="radio" name="paymentMethod" id="cash" style="display: none;" value="cash">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Payment Details - Shown based on selection -->
+                                <div class="mb-4" id="bankDetails" style="display: none;">
+                                    <div class="card p-3 bg-light">
+                                        <h5 class="mb-3">Bank Transfer Details</h5>
+                                        <div class="mb-2">
+                                            <strong>Bank Name:</strong> CBZ Bank
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Account Name:</strong> Dzikwa Trust Fund
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Account Number:</strong> 1234567890
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Branch:</strong> Harare Main Branch
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Swift Code:</strong> COBZZWHA
+                                        </div>
+                                        <div class="alert alert-info mt-3">
+                                            Please use your name as reference when making the transfer.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4" id="paynowDetails" style="display: none;">
+                                    <div class="card p-3 bg-light">
+                                        <h5 class="mb-3">PayNow Instructions</h5>
+                                        <ol>
+                                            <li class="mb-2">Open your mobile banking app</li>
+                                            <li class="mb-2">Select "PayNow" option</li>
+                                            <li class="mb-2">Enter our PayNow ID: <strong>DZIKWA-TRUST</strong></li>
+                                            <li class="mb-2">Enter the donation amount</li>
+                                            <li class="mb-2">Use your name as reference</li>
+                                            <li>Complete the transaction</li>
+                                        </ol>
+                                        <div class="alert alert-info mt-3">
+                                            You will receive a confirmation SMS once payment is received.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4" id="ecocashDetails" style="display: none;">
+                                    <div class="card p-3 bg-light">
+                                        <h5 class="mb-3">EcoCash Instructions</h5>
+                                        <div class="mb-3">
+                                            <strong>Merchant Code:</strong> *151*2*1*123456#
+                                        </div>
+                                        <div class="mb-3">
+                                            <strong>OR Send to:</strong> 0771234567 (Dzikwa Trust)
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ecocashNumber" class="form-label">Your EcoCash Number</label>
+                                            <input type="tel" class="form-control" id="ecocashNumber" placeholder="077xxxxxxx">
+                                        </div>
+                                        <div class="alert alert-info mt-3">
+                                            Please send proof of payment to dzikwatrust@africaonline.co.zw
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4" id="cashDetails" style="display: none;">
+                                    <div class="card p-3 bg-light">
+                                        <h5 class="mb-3">Cash Donation Instructions</h5>
+                                        <div class="mb-2">
+                                            <strong>Office Address:</strong> 3147 Rujeko Street, Dzivarasekwa 1, Harare
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Office Hours:</strong> Monday to Friday, 9:00 AM - 5:00 PM
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Contact:</strong> +263 24 2217455
+                                        </div>
+                                        <div class="alert alert-info mt-3">
+                                            Please call ahead to arrange your visit.
                                         </div>
                                     </div>
                                 </div>
@@ -292,7 +465,7 @@
                                 </div>
                                 
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary btn-lg">Donate Now</button>
+                                    <button type="submit" class="btn btn-primary btn-lg">Complete Donation</button>
                                 </div>
                             </form>
                         </div>
@@ -319,11 +492,11 @@
                     <a href="#monthlyDonationForm" class="btn btn-primary">Set Up Monthly Giving</a>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <div class="card border-0 shadow-sm h-100">
+                    <div class="card border-0 shadow-lg h-100">
                         <div class="card-body p-4 p-lg-5">
                             <div class="text-center mb-4">
-                                <div class="icon-box text-white rounded-circle mx-auto mb-3" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                                    <i class="fas fa-calendar-check fa-2x"></i>
+                                <div class="icon-box text-white rounded-circle mx-auto mb-3" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                                    <i class="fas fa-calendar-check fa-2x pt-3"></i>
                                 </div>
                                 <h3>Monthly Giving Impact</h3>
                             </div>
@@ -374,7 +547,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm">
+                    <div class="card border-0 shadow-lg">
                         <div class="card-body p-4 p-lg-5">
                             <h2 class="text-center mb-4">Set Up Monthly Giving</h2>
                             <form id="monthlyDonationForm">
@@ -383,16 +556,16 @@
                                     <div class="donation-amounts">
                                         <div class="btn-group d-flex flex-wrap" role="group">
                                             <input type="radio" class="btn-check" name="monthlyAmount" id="monthly20" autocomplete="off" value="20">
-                                            <label class="btn btn-outline-success mb-2" for="monthly20">$20</label>
+                                            <label class="btn btn-outline-primary mb-2" for="monthly20">$20</label>
                                             
                                             <input type="radio" class="btn-check" name="monthlyAmount" id="monthly50" autocomplete="off" value="50">
-                                            <label class="btn btn-outline-success mb-2" for="monthly50">$50</label>
+                                            <label class="btn btn-outline-primary mb-2" for="monthly50">$50</label>
                                             
                                             <input type="radio" class="btn-check" name="monthlyAmount" id="monthly100" autocomplete="off" value="100">
-                                            <label class="btn btn-outline-success mb-2" for="monthly100">$100</label>
+                                            <label class="btn btn-outline-primary mb-2" for="monthly100">$100</label>
                                             
                                             <input type="radio" class="btn-check" name="monthlyAmount" id="monthlyCustom" autocomplete="off">
-                                            <label class="btn btn-outline-success mb-2" for="monthlyCustom">Other</label>
+                                            <label class="btn btn-outline-primary mb-2" for="monthlyCustom">Other</label>
                                         </div>
                                     </div>
                                     <div class="mt-2" id="customMonthlyAmountContainer" style="display: none;">
@@ -404,7 +577,7 @@
                                 </div>
                                 
                                 <div class="mb-4">
-                                    <label class="form-label">Designation (Optional)</label>
+                                    <label class="form-label" for="monthlyDesignation">Designation (Optional)</label>
                                     <select class="form-select" id="monthlyDesignation">
                                         <option value="general">Where most needed (General Fund)</option>
                                         <option value="education">Education Program</option>
@@ -434,29 +607,76 @@
                                 </div>
                                 
                                 <div class="mb-4">
-                                    <label class="form-label">Payment Information</label>
-                                    <div class="card p-3 bg-light">
-                                        <div class="mb-3">
-                                            <label for="monthlyCardNumber" class="form-label">Card Number</label>
-                                            <input type="text" class="form-control" id="monthlyCardNumber" placeholder="1234 5678 9012 3456" required>
-                                        </div>
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="monthlyExpiryDate" class="form-label">Expiry Date</label>
-                                                <input type="text" class="form-control" id="monthlyExpiryDate" placeholder="MM/YY" required>
+                                    <label class="form-label">Payment Method</label>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="payment-method" onclick="selectPaymentMethod('bank', true)">
+                                                <div class="payment-icon">
+                                                    <i class="fas fa-university"></i>
+                                                </div>
+                                                <h5>Bank Transfer</h5>
+                                                <p class="small">Monthly standing order</p>
+                                                <input type="radio" name="monthlyPaymentMethod" id="monthlyBankTransfer" style="display: none;" value="bank">
                                             </div>
-                                            <div class="col-md-6">
-                                                <label for="monthlyCvv" class="form-label">CVV</label>
-                                                <input type="text" class="form-control" id="monthlyCvv" placeholder="123" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="payment-method" onclick="selectPaymentMethod('paynow', true)">
+                                                <div class="payment-icon">
+                                                    <i class="fas fa-mobile-alt"></i>
+                                                </div>
+                                                <h5>PayNow</h5>
+                                                <p class="small">Monthly mobile payment</p>
+                                                <input type="radio" name="monthlyPaymentMethod" id="monthlyPayNow" style="display: none;" value="paynow">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 
+                                <div class="mb-4" id="monthlyBankDetails" style="display: none;">
+                                    <div class="card p-3 bg-light">
+                                        <h5 class="mb-3">Standing Order Instructions</h5>
+                                        <p>Please set up a standing order with your bank using these details:</p>
+                                        <div class="mb-2">
+                                            <strong>Bank Name:</strong> CBZ Bank
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Account Name:</strong> Dzikwa Trust Fund
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Account Number:</strong> 1234567890
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Branch:</strong> Harare Main Branch
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Swift Code:</strong> COBZZWHA
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Reference:</strong> MONTHLY-[Your Name]
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4" id="monthlyPaynowDetails" style="display: none;">
+                                    <div class="card p-3 bg-light">
+                                        <h5 class="mb-3">Monthly PayNow Setup</h5>
+                                        <p>Please set up a recurring payment in your mobile banking app with these details:</p>
+                                        <div class="mb-2">
+                                            <strong>PayNow ID:</strong> DZIKWA-TRUST
+                                        </div>
+                                        <div class="mb-2">
+                                            <strong>Reference:</strong> MONTHLY-[Your Name]
+                                        </div>
+                                        <div class="alert alert-info mt-3">
+                                            You will receive a confirmation SMS for each monthly payment.
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="form-check mb-4">
-                                    <input class="form-check-input" type="checkbox" id="monthlyNewsletter" checked>
-                                    <label class="form-check-label" for="monthlyNewsletter">
-                                        Sign me up for the Dzikwa Trust newsletter
+                                    <input class="form-check-input" type="checkbox" id="monthlyAgreement" required>
+                                    <label class="form-check-label" for="monthlyAgreement">
+                                        I agree to make monthly donations and understand I can cancel at any time
                                     </label>
                                 </div>
                                 
@@ -480,11 +700,11 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <div class="card border-0 shadow-sm h-100">
+                    <div class="card border-0 shadow-lg h-100">
                         <div class="card-body p-4 p-lg-5">
                             <div class="text-center mb-4">
-                                <div class="icon-box text-white rounded-circle mx-auto mb-3" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                                    <i class="fas fa-child fa-2x"></i>
+                                <div class="icon-box text-white rounded-circle mx-auto mb-3" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                                    <i class="fas fa-child fa-2x pt-3"></i>
                                 </div>
                                 <h3>What Sponsorship Provides</h3>
                             </div>
@@ -622,7 +842,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="sponsorForm">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="sponsorFirstName" class="form-label">First Name</label>
@@ -697,20 +917,26 @@
                                 <textarea class="form-control" id="sponsorNotes" rows="3"></textarea>
                             </div>
                             <div class="col-12">
-                                <label class="form-label">Payment Information</label>
-                                <div class="card p-3 bg-light">
-                                    <div class="mb-3">
-                                        <label for="sponsorCardNumber" class="form-label">Card Number</label>
-                                        <input type="text" class="form-control" id="sponsorCardNumber" placeholder="1234 5678 9012 3456" required>
-                                    </div>
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <label for="sponsorExpiryDate" class="form-label">Expiry Date</label>
-                                            <input type="text" class="form-control" id="sponsorExpiryDate" placeholder="MM/YY" required>
+                                <label class="form-label">Payment Method</label>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="payment-method" onclick="selectSponsorPaymentMethod('bank')">
+                                            <div class="payment-icon">
+                                                <i class="fas fa-university"></i>
+                                            </div>
+                                            <h5>Bank Transfer</h5>
+                                            <p class="small">Monthly standing order</p>
+                                            <input type="radio" name="sponsorPaymentMethod" id="sponsorBank" style="display: none;" value="bank" checked>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="sponsorCvv" class="form-label">CVV</label>
-                                            <input type="text" class="form-control" id="sponsorCvv" placeholder="123" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="payment-method" onclick="selectSponsorPaymentMethod('paynow')">
+                                            <div class="payment-icon">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <h5>PayNow</h5>
+                                            <p class="small">Monthly mobile payment</p>
+                                            <input type="radio" name="sponsorPaymentMethod" id="sponsorPayNow" style="display: none;" value="paynow">
                                         </div>
                                     </div>
                                 </div>
@@ -728,7 +954,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-warning">Complete Sponsorship</button>
+                    <button type="button" class="btn btn-primary" onclick="submitSponsorForm()">Complete Sponsorship</button>
                 </div>
             </div>
         </div>
@@ -744,8 +970,8 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="support-option text-center p-4 h-100">
-                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                            <i class="fas fa-gift fa-2x"></i>
+                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                            <i class="fas fa-gift fa-2x pt-3"></i>
                         </div>
                         <h4 class="mb-3">In-Kind Donations</h4>
                         <p class="mb-3">We accept donations of school supplies, books, computers, and other items that support our programs.</p>
@@ -754,8 +980,8 @@
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="support-option text-center p-4 h-100">
-                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                            <i class="fas fa-bullhorn fa-2x"></i>
+                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                            <i class="fas fa-bullhorn fa-2x pt-3"></i>
                         </div>
                         <h4 class="mb-3">Fundraise for Us</h4>
                         <p class="mb-3">Organize a fundraiser in your community, workplace, or online to support our work.</p>
@@ -764,8 +990,8 @@
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="support-option text-center p-4 h-100">
-                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                            <i class="fas fa-briefcase fa-2x"></i>
+                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                            <i class="fas fa-briefcase fa-2x pt-3"></i>
                         </div>
                         <h4 class="mb-3">Corporate Giving</h4>
                         <p class="mb-3">Explore matching gifts, employee engagement, and corporate sponsorship opportunities.</p>
@@ -774,8 +1000,8 @@
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                     <div class="support-option text-center p-4 h-100">
-                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 100px; width: 100px; background-color: var(--primary-color);">
-                            <i class="fas fa-hand-holding-heart fa-2x"></i>
+                        <div class="icon-box text-white rounded-circle mx-auto mb-4" style="height: 80px; width: 80px; background-color: var(--primary-color);">
+                            <i class="fas fa-hand-holding-heart fa-2x pt-3"></i>
                         </div>
                         <h4 class="mb-3">Legacy Giving</h4>
                         <p class="mb-3">Include Dzikwa Trust in your will or estate plans to create lasting impact.</p>
@@ -787,7 +1013,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="cta-section py-5 text-white" style="background-color: var(--primary-color);">
+    <section class="cta-section py-5 bg-light text-dark">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
@@ -795,15 +1021,15 @@
                     <p class="lead mb-0">Our team is happy to help you find the best way to support our mission.</p>
                 </div>
                 <div class="col-lg-4 text-lg-end" data-aos="fade-left">
-                    <a href="contact.html" class="btn btn-light btn-lg me-2">Contact Us</a>
-                    <a href="tel:+263123456789" class="btn btn-outline-light btn-lg">Call Now</a>
+                    <a href="contact.html" class="btn btn-primary btn-lg me-2">Contact Us</a>
+                    <a href="tel:+263 24 2217455" class="btn btn-outline-primary btn-lg">Call Now</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-white pt-5 pb-3" style="background-color: var(--primary-color);">
+    <footer class="footer text-white pt-5 pb-3">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -887,31 +1113,201 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     
     <!-- Custom JS -->
-    <script src="assets/js/main.js"></script>
     <script>
-        AOS.init();
+    // Initialize AOS animations
+    AOS.init();
+    
+    // Show custom amount field when "Other" is selected
+    document.getElementById('amountCustom').addEventListener('change', function() {
+        document.getElementById('customAmountContainer').style.display = this.checked ? 'block' : 'none';
+    });
+    
+    document.getElementById('monthlyCustom').addEventListener('change', function() {
+        document.getElementById('customMonthlyAmountContainer').style.display = this.checked ? 'block' : 'none';
+    });
+    
+    // Payment method selection - ONE-TIME DONATION
+    function selectPaymentMethod(method, isMonthly = false) {
+        // Remove active class from all payment methods
+        const allMethods = document.querySelectorAll('.payment-method');
+        allMethods.forEach(el => el.classList.remove('active'));
         
-        // Show custom amount field when "Other" is selected
-        document.getElementById('amountCustom').addEventListener('change', function() {
-            document.getElementById('customAmountContainer').style.display = this.checked ? 'block' : 'none';
-        });
+        // Add active class to selected method
+        const prefix = isMonthly ? 'monthly' : '';
+        const methodElement = document.getElementById(`${prefix}${method}Method`);
+        if (methodElement) {
+            methodElement.classList.add('active');
+        }
         
-        document.getElementById('monthlyCustom').addEventListener('change', function() {
-            document.getElementById('customMonthlyAmountContainer').style.display = this.checked ? 'block' : 'none';
-        });
+        // Check the radio button
+        const radioId = isMonthly ? `monthly${method.charAt(0).toUpperCase() + method.slice(1)}` : method;
+        const radio = document.getElementById(radioId);
+        if (radio) {
+            radio.checked = true;
+        }
         
-        // Simple form submission handlers
-        document.getElementById('donationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your donation! A receipt will be sent to your email.');
-            this.reset();
-        });
+        // Hide all payment details
+        const allDetails = document.querySelectorAll('[id$="Details"]');
+        allDetails.forEach(el => el.style.display = 'none');
         
-        document.getElementById('monthlyDonationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for setting up monthly giving! You will receive a confirmation email shortly.');
-            this.reset();
-        });
-    </script>
+        // Show selected payment details
+        const detailsId = isMonthly ? `monthly${method.charAt(0).toUpperCase() + method.slice(1)}Details` : `${method}Details`;
+        const detailsElement = document.getElementById(detailsId);
+        if (detailsElement) {
+            detailsElement.style.display = 'block';
+        }
+    }
+    
+    // Set up event listeners for payment methods - ONE-TIME DONATION
+    document.getElementById('bankMethod')?.addEventListener('click', () => selectPaymentMethod('bank'));
+    document.getElementById('paynowMethod')?.addEventListener('click', () => selectPaymentMethod('paynow'));
+    document.getElementById('ecocashMethod')?.addEventListener('click', () => selectPaymentMethod('ecocash'));
+    document.getElementById('cashMethod')?.addEventListener('click', () => selectPaymentMethod('cash'));
+    
+    // Set up event listeners for payment methods - MONTHLY DONATION
+    document.getElementById('monthlyBankMethod')?.addEventListener('click', () => selectPaymentMethod('bank', true));
+    document.getElementById('monthlyPaynowMethod')?.addEventListener('click', () => selectPaymentMethod('paynow', true));
+    
+    // Sponsor form payment method selection
+    function selectSponsorPaymentMethod(method) {
+        // Remove active class from all sponsor payment methods
+        document.querySelectorAll('#sponsorModal .payment-method').forEach(el => el.classList.remove('active'));
+        
+        // Add active class to selected method
+        const methodElement = document.getElementById(`sponsor${method.charAt(0).toUpperCase() + method.slice(1)}`);
+        if (methodElement?.parentElement) {
+            methodElement.parentElement.classList.add('active');
+        }
+        
+        // Check the radio button
+        document.getElementById(`sponsor${method.charAt(0).toUpperCase() + method.slice(1)}`).checked = true;
+    }
+    
+    // Form submission handlers
+    document.getElementById('donationForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate payment method selection
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+        if (!paymentMethod) {
+            alert('Please select a payment method');
+            return;
+        }
+        
+        // Get form data
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            amount: document.querySelector('input[name="donationAmount"]:checked')?.value || document.getElementById('customAmount').value,
+            designation: document.getElementById('donationDesignation').value,
+            paymentMethod: paymentMethod.value,
+            newsletter: document.getElementById('newsletterSignup').checked
+        };
+        
+        // Here you would typically send this data to your backend
+        console.log('Donation submitted:', formData);
+        
+        // Show success message
+        alert('Thank you for your donation! Please complete your payment using the instructions provided.');
+        
+        // Reset form
+        this.reset();
+    });
+    
+    document.getElementById('monthlyDonationForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate payment method selection
+        const paymentMethod = document.querySelector('input[name="monthlyPaymentMethod"]:checked');
+        if (!paymentMethod) {
+            alert('Please select a payment method');
+            return;
+        }
+        
+        // Get form data
+        const formData = {
+            amount: document.querySelector('input[name="monthlyAmount"]:checked')?.value || document.getElementById('customMonthlyAmount').value,
+            designation: document.getElementById('monthlyDesignation').value,
+            paymentMethod: paymentMethod.value,
+            agreement: document.getElementById('monthlyAgreement').checked
+        };
+        
+        // Here you would typically send this data to your backend
+        console.log('Monthly donation submitted:', formData);
+        
+        // Show success message
+        alert('Thank you for setting up monthly giving! Please complete the payment setup using the instructions provided.');
+        
+        // Reset form
+        this.reset();
+    });
+    
+    function submitSponsorForm() {
+        // Get form data
+        const formData = {
+            firstName: document.getElementById('sponsorFirstName').value,
+            lastName: document.getElementById('sponsorLastName').value,
+            email: document.getElementById('sponsorEmail').value,
+            phone: document.getElementById('sponsorPhone').value,
+            address: document.getElementById('sponsorAddress').value,
+            country: document.getElementById('sponsorCountry').value,
+            level: document.querySelector('input[name="sponsorLevel"]:checked').value,
+            genderPreference: document.getElementById('childGender').value,
+            agePreference: document.getElementById('childAge').value,
+            notes: document.getElementById('sponsorNotes').value,
+            paymentMethod: document.querySelector('input[name="sponsorPaymentMethod"]:checked').value,
+            agreement: document.getElementById('sponsorAgreement').checked
+        };
+        
+        // Validate required fields
+        if (!formData.firstName || !formData.lastName || !formData.email || !formData.agreement) {
+            alert('Please fill in all required fields');
+            return;
+        }
+        
+        // Here you would typically send this data to your backend
+        console.log('Sponsorship submitted:', formData);
+        
+        // Show success message
+        alert('Thank you for sponsoring a child! We will contact you shortly with details about your sponsored child.');
+        
+        // Close modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('sponsorModal'));
+        modal.hide();
+        
+        // Reset form
+        document.getElementById('sponsorForm').reset();
+    }
+    
+    // Back to top button
+    window.addEventListener('scroll', function() {
+        const backToTop = document.getElementById('backToTop');
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+    
+    document.getElementById('backToTop').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Initialize first payment method as selected on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        // For one-time donation form
+        if (document.getElementById('bankMethod')) {
+            selectPaymentMethod('bank');
+        }
+        
+        // For monthly donation form
+        if (document.getElementById('monthlyBankMethod')) {
+            selectPaymentMethod('bank', true);
+        }
+    });
+</script>
 </body>
 </html>
